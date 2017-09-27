@@ -1,35 +1,10 @@
-# -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
-import time, unittest
 
 
-def is_alert_present(wd):
-    try:
-        wd.switch_to_alert().text
-        return True
-    except:
-        return False
-
-
-class fiz_delivery_auth(unittest.TestCase):
-    def setUp(self):
+class Application:
+    def __init__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(10)
-
-    def fiz_delivery_auth(self):
-        success = True
-        self.login(username="xigekuba@p33.org", password="111111")
-        self.search()
-        self.edit_quantity_product()
-        self.go_to_cart()
-        self.edit_card()
-        self.init_order_creation()
-        self.create_order()
-        self.thanks()
-        self.logout()
-
-    def tearDown(self):
-        self.wd.quit()
 
     def logout(self):
         # Выход из ЛК
@@ -37,7 +12,7 @@ class fiz_delivery_auth(unittest.TestCase):
         wd.find_element_by_css_selector("a.auth_user_link").click()
         wd.find_element_by_link_text("Выход").click()
 
-    def thanks(self, wd):
+    def thanks(self):
         wd = self.wd
         # Страница спасибо за покупку и переход в личный кабинет
         wd.find_element_by_css_selector("a.thanks__lk-link").click()
@@ -96,7 +71,6 @@ class fiz_delivery_auth(unittest.TestCase):
     def login(self, username, password):
         # Авторизация
         wd = self.wd
-        self.open_home_page()
         wd.find_element_by_link_text("Вход").click()
         wd.find_element_by_id("mainPetrovichLogin_login").send_keys(username)
         wd.find_element_by_id("mainPetrovichLogin_password").send_keys(password)
@@ -108,5 +82,5 @@ class fiz_delivery_auth(unittest.TestCase):
         wd = self.wd
         wd.get("https://petrovich.ru/")
 
-    if __name__ == '__main__':
-        unittest.main()
+    def destroy(self):
+        self.wd.quit()
