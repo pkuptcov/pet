@@ -114,7 +114,7 @@ class Application:
     def edit_card(self):
         # Удаляем предыдущую карту и вводим новую
         wd = self.wd
-        if wd.find_elements_by_link_text("Удалить").is_present:
+        if len(wd.find_elements_by_link_text("Удалить")) > 0:
             wd.find_element_by_link_text("Удалить").click()
         wd.find_element_by_css_selector("input[placeholder=\"•••••••\"]").send_keys("111111")
         wd.find_element_by_css_selector("button[ng-click='totalCtrl.addCard()']").click()
@@ -128,7 +128,8 @@ class Application:
         # Увеличение товара в листинге выдачи поиска
         wd = self.wd
         wd.find_element_by_css_selector("div.stepper-arrow.up.unit--step").click()
-        wd.find_element_by_css_selector("[data-product-code='101846']").click()
+        wd.find_element_by_css_selector("div.btn_cart.listing__product-button.product__button.ng-scope").click()
+        # wd.find_element_by_css_selector("[data-product-code='101846']").click()
 
     def search(self):
         # Поиск товара по сайту
