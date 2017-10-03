@@ -1,4 +1,5 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
+from fixture.session import SessionHelper
 import time
 
 
@@ -7,12 +8,7 @@ class Application:
     def __init__(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(10)
-
-    def logout(self):
-        # Выход из ЛК
-        wd = self.wd
-        wd.find_element_by_css_selector("a.auth_user_link").click()
-        wd.find_element_by_link_text("Выход").click()
+        self.session = SessionHelper(self)
 
     def thanks(self):
         wd = self.wd
@@ -136,15 +132,6 @@ class Application:
         wd = self.wd
         wd.find_element_by_id("query").send_keys("ондулин гвоздь")
         wd.find_element_by_css_selector("form#search [type=submit]").click()
-
-    def login(self, username, password):
-        # Авторизация
-        wd = self.wd
-        wd.find_element_by_link_text("Вход").click()
-        wd.find_element_by_id("mainPetrovichLogin_login").send_keys(username)
-        wd.find_element_by_id("mainPetrovichLogin_password").send_keys(password)
-        wd.find_element_by_css_selector("div.form_row [type=submit]").click()
-        #time.sleep(1)
 
     def open_home_page(self):
         # Переход на сайт

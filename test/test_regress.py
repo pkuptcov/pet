@@ -12,7 +12,7 @@ def app(request):
 
 def test_fiz_delivery_auth(app):
     app.open_home_page()
-    app.login(username="xigekuba@p33.org", password="111111")
+    app.session.login(username="xigekuba@p33.org", password="111111")
     app.search()
     app.edit_quantity_product()
     app.go_to_cart()
@@ -20,7 +20,7 @@ def test_fiz_delivery_auth(app):
     app.init_order_creation_delivery()
     app.create_order_fiz_delivery()
     app.thanks()
-    app.logout()
+    app.session.logout()
 
 
 def test_fiz_delivery_non_auth(app):
@@ -36,7 +36,7 @@ def test_fiz_delivery_non_auth(app):
 
 def test_fiz_self_auth(app):
     app.open_home_page()
-    app.login(username="xigekuba@p33.org", password="111111")
+    app.session.login(username="xigekuba@p33.org", password="111111")
     app.search()
     app.edit_quantity_product()
     app.go_to_cart()
@@ -44,7 +44,7 @@ def test_fiz_self_auth(app):
     app.init_order_creation_self()
     app.create_order_fiz_self()
     app.thanks()
-    app.logout()
+    app.session.logout()
 
 
 def test_fiz_self_non_auth(app):
@@ -60,7 +60,7 @@ def test_fiz_self_non_auth(app):
 
 def test_ur_delivery_auth(app):
     app.open_home_page()
-    app.login(username="xigekuba@p33.org", password="111111")
+    app.session.login(username="xigekuba@p33.org", password="111111")
     app.search()
     app.edit_quantity_product()
     app.go_to_cart()
@@ -68,7 +68,7 @@ def test_ur_delivery_auth(app):
     app.init_order_creation_delivery()
     app.create_order_ur_delivery()
     app.thanks()
-    app.logout()
+    app.session.logout()
 
 
 def test_ur_delivery_non_auth(app):
@@ -84,7 +84,7 @@ def test_ur_delivery_non_auth(app):
 
 def test_ur_self_auth(app):
     app.open_home_page()
-    app.login(username="xigekuba@p33.org", password="111111")
+    app.session.login(username="xigekuba@p33.org", password="111111")
     app.search()
     app.edit_quantity_product()
     app.go_to_cart()
@@ -92,7 +92,7 @@ def test_ur_self_auth(app):
     app.init_order_creation_self()
     app.create_order_ur_self()
     app.thanks()
-    app.logout()
+    app.session.logout()
 
 
 def test_ur_self_non_auth(app):
