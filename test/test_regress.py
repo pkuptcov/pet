@@ -1,15 +1,4 @@
 # -*- coding: utf-8 -*-
-import pytest
-from fixture.application import Application
-
-
-@pytest.fixture
-def app(request):
-    fixture = Application()
-    request.addfinalizer(fixture.destroy)
-    return fixture
-
-
 def test_fiz_delivery_auth(app):
     app.open_home_page()
     app.session.login(username="xigekuba@p33.org", password="111111")
