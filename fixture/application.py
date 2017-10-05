@@ -15,7 +15,7 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("https://pet.beta.kluatr.ru/")
+        wd.get("https://petrovich.ru/")
 
     def destroy(self):
         self.wd.quit()
