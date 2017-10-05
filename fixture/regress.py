@@ -128,6 +128,7 @@ class RegressHelper:
         wd = self.app.wd
         wd.find_element_by_id("query").send_keys("ондулин гвоздь")
         wd.find_element_by_css_selector("form#search [type=submit]").click()
+        time.sleep(1)
 
     def init_order_creation_self(self):
         # Выбираем самовывоз и нажимаем оформить
