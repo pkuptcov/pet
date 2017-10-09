@@ -9,13 +9,13 @@ class Application:
     def __init__(self):
         #self.wd = WebDriver()
         self.wd = WebDriver(capabilities={"marionette": True, "pageLoadStrategy": "eager"})
-        self.wd.implicitly_wait(3)
+        #self.wd.implicitly_wait(3)
         self.session = SessionHelper(self)
         self.regress = RegressHelper(self)
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("https://petrovich.ru/")
+        wd.get("https://pet.beta.kluatr.ru/")
 
     def destroy(self):
         self.wd.quit()

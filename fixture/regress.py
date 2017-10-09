@@ -9,6 +9,7 @@ class RegressHelper:
     def thanks(self):
         wd = self.app.wd
         # Страница спасибо за покупку и переход в личный кабинет
+        time.sleep(1)
         wd.find_element_by_css_selector("a.thanks__lk-link").click()
 
     def create_order_fiz_delivery(self):
@@ -18,7 +19,7 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        time.sleep(2)
+        time.sleep(1)
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[value=\"online\"]").click()
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.userEmail\"]").clear()
@@ -36,6 +37,7 @@ class RegressHelper:
 
     def create_order_fiz_self(self):
         wd = self.app.wd
+        time.sleep(1)
         wd.find_element_by_name("base").click()
         wd.find_element_by_css_selector("input[value=\"online\"]").click()
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.order.userEmail\"]").clear()
@@ -56,7 +58,7 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        time.sleep(2)
+        time.sleep(1)
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").clear()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
@@ -80,6 +82,7 @@ class RegressHelper:
 
     def create_order_ur_self(self):
         wd = self.app.wd
+        time.sleep(1)
         wd.find_element_by_name("base").click()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
         wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").clear()
@@ -108,8 +111,10 @@ class RegressHelper:
     def edit_card(self):
         # Удаляем предыдущую карту и вводим новую
         wd = self.app.wd
+        time.sleep(1)
         if len(wd.find_elements_by_link_text("Удалить")) > 0:
             wd.find_element_by_link_text("Удалить").click()
+        time.sleep(1)
         wd.find_element_by_css_selector("input[placeholder=\"•••••••\"]").send_keys("111111")
         wd.find_element_by_css_selector("button[ng-click='totalCtrl.addCard()']").click()
 
@@ -142,4 +147,5 @@ class RegressHelper:
     def select_ur(self):
         wd = self.app.wd
         # Выбор вкладки юридического лица
+        time.sleep(1)
         wd.find_element_by_xpath("//a[contains(text(),'Юридическое лицо')]").click()
