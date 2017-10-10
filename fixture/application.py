@@ -2,6 +2,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from fixture.session import SessionHelper
 from fixture.regress import RegressHelper
 from fixture.register import RegisterHelper
+#from fixture.city import CityHelper
 import time
 
 
@@ -13,6 +14,8 @@ class Application:
         #self.wd.implicitly_wait(3)
         self.session = SessionHelper(self)
         self.regress = RegressHelper(self)
+        self.register = RegisterHelper(self)
+        #self.register = CityHelper(self)
 
     def open_home_page(self):
         wd = self.wd

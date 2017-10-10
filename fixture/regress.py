@@ -19,7 +19,7 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        time.sleep(1)
+        time.sleep(2)
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[value=\"online\"]").click()
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.userEmail\"]").clear()
@@ -50,6 +50,7 @@ class RegressHelper:
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
+        time.sleep(1)
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def create_order_ur_delivery(self):
@@ -58,7 +59,7 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        time.sleep(1)
+        time.sleep(2)
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").clear()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
@@ -100,6 +101,7 @@ class RegressHelper:
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
+        time.sleep(1)
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def init_order_creation_delivery(self):
