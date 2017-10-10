@@ -32,7 +32,7 @@ class RegressHelper:
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
-        time.sleep(1)
+        time.sleep(2)
         wd.find_element_by_css_selector("input[ng-click=\"orderDeliveryCtrl.make($event)\"]").click()
 
     def create_order_fiz_self(self):
@@ -77,7 +77,7 @@ class RegressHelper:
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
-        time.sleep(1)
+        time.sleep(2)
         wd.find_element_by_css_selector("input[ng-click=\"orderDeliveryCtrl.make($event)\"]").click()
 
     def create_order_ur_self(self):
