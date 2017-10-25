@@ -14,3 +14,4 @@ class RegisterHelper:
         wd.find_element_by_id("mainPetrovichRegister_email").send_keys(email)
         wd.find_element_by_id("mainPetrovichRegister_password").send_keys(password)
         wd.find_element_by_xpath("//button[contains(text(),'Зарегистрироваться')]").click()
+        time.sleep(1)
