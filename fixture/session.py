@@ -19,4 +19,5 @@ class SessionHelper:
         # Выход из ЛК
         wd = self.app.wd
         wd.find_element_by_css_selector("a.auth_user_link").click()
+        time.sleep(1)
         wd.find_element_by_link_text("Выход").click()
