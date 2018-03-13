@@ -13,7 +13,7 @@ class RegressHelper:
         wd.find_element_by_css_selector("a.thanks__lk-link").click()
 
     def create_order_fiz_delivery(self):
-        # Страница оформления заказа для физю лиц доставка
+        # Страница оформления заказа для физ лиц доставка
         wd = self.app.wd
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
@@ -32,7 +32,8 @@ class RegressHelper:
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys("тест")
         time.sleep(2)
-        wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
+        wd.find_element_by_css_selector("div.__js__contacts--element").click()
+        #wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
         time.sleep(2)
 
@@ -52,7 +53,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(1)
-        wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
+        wd.find_element_by_css_selector("div.__js__contacts--element").click()
+        #wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def create_order_ur_delivery(self):
@@ -81,7 +83,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(2)
-        wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
+        wd.find_element_by_css_selector("div.__js__contacts--element").click()
+        #wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
         time.sleep(2)
 
@@ -106,7 +109,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(1)
-        wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
+        wd.find_element_by_css_selector("div.__js__contacts--element").click()
+        #wd.find_element_by_css_selector("p[class='confidentiality--text']").click()
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def init_order_creation_delivery(self):
