@@ -28,11 +28,11 @@ class RegressHelper:
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").clear()
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").send_keys(
             "(111) 111-11-11")
-        wd.find_element_by_name("user_name").clear()
-        wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_name("user_name").clear()
+        #wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys("тест")
         time.sleep(2)
-        wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
         time.sleep(2)
 
@@ -47,12 +47,12 @@ class RegressHelper:
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").clear()
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").send_keys(
             "(111) 111-11-11")
-        wd.find_element_by_name("user_name").clear()
-        wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_name("user_name").clear()
+        #wd.find_element_by_name("user_name").send_keys("Тест")
+        # wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(1)
-        wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def create_order_ur_delivery(self):
@@ -76,12 +76,12 @@ class RegressHelper:
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").clear()
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").send_keys(
             "(111) 111-11-11")
-        wd.find_element_by_name("user_name").clear()
-        wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_name("user_name").clear()
+        #wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(2)
-        wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
         time.sleep(2)
 
@@ -101,12 +101,12 @@ class RegressHelper:
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").clear()
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").send_keys(
             "(111) 111-11-11")
-        wd.find_element_by_name("user_name").clear()
-        wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_name("user_name").clear()
+        #wd.find_element_by_name("user_name").send_keys("Тест")
+        #wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         time.sleep(1)
-        wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
 
     def init_order_creation_delivery(self):
@@ -122,7 +122,7 @@ class RegressHelper:
         if len(wd.find_elements_by_link_text("Удалить")) > 0:
             wd.find_element_by_link_text("Удалить").click()
         time.sleep(1)
-        wd.find_element_by_css_selector("input[placeholder=\"•••••••\"]").send_keys("111111")
+        wd.find_element_by_css_selector("input[ng-model='totalCtrl.cardInput']").send_keys("111111")
         wd.find_element_by_css_selector("button[ng-click='totalCtrl.addCard()']").click()
 
     def go_to_cart(self):
