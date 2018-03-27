@@ -15,6 +15,7 @@ class RegressHelper:
     def create_order_fiz_delivery(self):
         # Страница оформления заказа для физ лиц доставка
         wd = self.app.wd
+        time.sleep(1)
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
@@ -57,6 +58,7 @@ class RegressHelper:
 
     def create_order_ur_delivery(self):
         wd = self.app.wd
+        time.sleep(1)
         wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
@@ -81,20 +83,20 @@ class RegressHelper:
         #wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
-        time.sleep(2)
-        wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
+        wd.find_element_by_css_selector("input[ng-click=\"orderDeliveryCtrl.make($event)\"]").click()
         time.sleep(2)
 
     def create_order_ur_self(self):
         wd = self.app.wd
         time.sleep(1)
         wd.find_element_by_name("base").click()
+        wd.find_element_by_css_selector("input[value=\"legalNonCash\"]").click()
+        wd.find_element_by_css_selector("input[placeholder=\"Название\"]").clear()
         wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
         wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").clear()
         wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").send_keys("1231231231")
         wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").clear()
         wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").send_keys("123123123")
-        wd.find_element_by_css_selector("input[value=\"legalNonCash\"]").click()
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.order.userEmail\"]").clear()
         wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.order.userEmail\"]").send_keys(
             "propetrovich@mail.ru")
@@ -106,8 +108,10 @@ class RegressHelper:
         #wd.find_element_by_css_selector("div.__js__contacts--element").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
-        time.sleep(1)
-        wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
+        time.sleep(2)
+        wd.find_element_by_css_selector("input[ng-click='orderingSelfCtrl.make($event)']").click()
+        #wd.find_element_by_css_selector("button[type='submit']").click()
+        #wd.find_element_by_css_selector("input[type='button']").click()
 
     def init_order_creation_delivery(self):
         # Нажимаем оформить
