@@ -1,10 +1,9 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
 #from selenium import webdriver
-from fixture.session import SessionHelper
-from fixture.regress import RegressHelper
-from fixture.register import RegisterHelper
-from fixture.city import CityHelper
-import time
+from pet_desktop.fixture.session import SessionHelper
+from pet_desktop.fixture.regress import RegressHelper
+from pet_desktop.fixture.register import RegisterHelper
+from pet_desktop.fixture.city import CityHelper
 
 
 class Application:
