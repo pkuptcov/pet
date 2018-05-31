@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-from pet_b2b.fixture.session import SessionHelper
-
-
 def test_auth_logout(app):
     app.open_home_page_b2b()
     app.session.login(login="pavel.kuptcov@gmail.com", password="111111")

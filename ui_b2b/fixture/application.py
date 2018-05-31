@@ -1,9 +1,9 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
 #from selenium import webdriver
-from pet_b2b.fixture.session import SessionHelper
-from pet_b2b.fixture.regress import RegressHelper
-from pet_b2b.fixture.register import RegisterHelper
-from pet_b2b.fixture.city import CityHelper
+from ui_b2b.fixture.session import SessionHelper
+from ui_b2b.fixture.regress import RegressHelper
+from ui_b2b.fixture.register import RegisterHelper
+from ui_b2b.fixture.city import CityHelper
 
 
 class Application:
