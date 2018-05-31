@@ -72,12 +72,12 @@ class RegressHelper:
         wait = WebDriverWait(wd, 10)
         wait.until(EC.element_to_be_clickable((By.NAME, "base")))
         wd.find_element_by_name("base").click()
-        wd.find_element_by_css_selector("input[value=\"online\"]").click()
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsEmail\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsEmail\"]").send_keys(
+        wd.find_element_by_css_selector("input[value='online']").click()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").send_keys(
             "info@kluatr.ru")
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").send_keys(
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsPhone']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsPhone']").send_keys(
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
@@ -85,28 +85,28 @@ class RegressHelper:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click=\"orderingSelfCtrl.make($event)\"]")))
-        wd.find_element_by_css_selector("input[ng-click=\"orderingSelfCtrl.make($event)\"]").click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderingSelfCtrl.make($event)']")))
+        wd.find_element_by_css_selector("input[ng-click='orderingSelfCtrl.make($event)']").click()
 
     def create_order_fiz_delivery(self):
         # Страница оформления заказа для физ лиц доставка
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
         wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]")))
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]").send_keys(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")))
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
         wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С2330До0330']")))
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
-        wd.find_element_by_css_selector("input[value=\"online\"]").click()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsEmail\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsEmail\"]").send_keys(
+        wd.find_element_by_css_selector("input[value='online']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").send_keys(
             "info@kluatr.ru")
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").send_keys(
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").send_keys(
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
@@ -124,20 +124,20 @@ class RegressHelper:
         wait = WebDriverWait(wd, 10)
         wait.until(EC.element_to_be_clickable((By.NAME, "base")))
         wd.find_element_by_name("base").click()
-        wd.find_element_by_css_selector("input[value=\"legalNonCash\"]").click()
-        wd.find_element_by_css_selector("input[placeholder=\"Название\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
+        wd.find_element_by_css_selector("input[value='legalNonCash']").click()
+        wd.find_element_by_css_selector("input[placeholder='Название']").clear()
+        wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
         if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
-        wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").send_keys("1231231231")
-        wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").send_keys("123123123")
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsEmail\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsEmail\"]").send_keys(
+        wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
+        wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
+        wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
+        wd.find_element_by_css_selector("input[placeholder='КПП']").send_keys("123123123")
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").send_keys(
             "info@kluatr.ru")
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderingSelfCtrl.contactsPhone\"]").send_keys(
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsPhone']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsPhone']").send_keys(
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
@@ -154,28 +154,28 @@ class RegressHelper:
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
         wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]")))
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.order.deliveryAddress\"]").send_keys(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")))
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
         wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С2330До0330']")))
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
-        wd.find_element_by_css_selector("input[placeholder=\"Название\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"Название\"]").send_keys("Тест")
+        wd.find_element_by_css_selector("input[placeholder='Название']").clear()
+        wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
         if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
-        wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"ИНН\"]").send_keys("1231231231")
-        wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").clear()
-        wd.find_element_by_css_selector("input[placeholder=\"КПП\"]").send_keys("123123123")
-        wd.find_element_by_css_selector("input[value=\"legalNonCash\"]").click()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsEmail\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsEmail\"]").send_keys(
+        wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
+        wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
+        wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
+        wd.find_element_by_css_selector("input[placeholder='КПП']").send_keys("123123123")
+        wd.find_element_by_css_selector("input[value='legalNonCash']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").send_keys(
             "info@kluatr.ru")
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").clear()
-        wd.find_element_by_css_selector("[ng-model=\"orderDeliveryCtrl.contactsPhone\"]").send_keys(
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").send_keys(
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")

@@ -1,5 +1,5 @@
 import pytest
-from pet_desktop.fixture.application import Application
+from ui_desktop.fixture.application import Application
 
 
 @pytest.fixture(scope="session")
