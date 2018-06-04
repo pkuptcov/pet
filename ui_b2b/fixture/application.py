@@ -1,5 +1,4 @@
-from selenium.webdriver.firefox.webdriver import WebDriver
-#from selenium import webdriver
+from selenium import webdriver
 from ui_b2b.fixture.session import SessionHelper
 from ui_b2b.fixture.regress import RegressHelper
 from ui_b2b.fixture.register import RegisterHelper
@@ -9,13 +8,10 @@ from ui_b2b.fixture.city import CityHelper
 class Application:
 
     def __init__(self):
-        #self.wd = WebDriver()
-        #options = webdriver.ChromeOptions()
-        #options.add_argument("--start-maximized")
-        #self.wd = webdriver.Chrome(chrome_options=options)
-        self.wd = WebDriver(capabilities={"marionette": True, "pageLoadStrategy": "eager"})
-        self.wd.set_window_size(1920, 1080)
-        #self.wd.implicitly_wait(3)
+        self.wd = webdriver.Chrome()
+        self.wd = webdriver.Ie()
+        self.wd = webdriver.Firefox()
+        self.wd = webdriver.Edge()
         self.session = SessionHelper(self)
         self.regress = RegressHelper(self)
         self.register = RegisterHelper(self)
