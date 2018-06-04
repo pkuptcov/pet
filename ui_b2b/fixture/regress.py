@@ -9,17 +9,24 @@ class RegressHelper:
     def __init__(self, app):
         self.app = app
 
-    def search(self):
-        # Поиск товара по сайту
+    def select_city(self):
+        # Выбор города и организации
         wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wd.find_element_by_id("query").send_keys("ондулин гвоздь")
-        wd.find_element_by_css_selector("form#search [type=submit]").click()
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.head_basket_wrapper')))
+        wd.find_element_by_css_selector("organiztions_and-city-chosen-box").click()
+        wd.find_element_by_css_selector("li[data-baseid='spb']").click()
+
+    def search(self):
+        # Поиск товара по сайту и добавление его
+        wd = self.app.wd
+        wd.find_element_by_name("q").click()
+        wd.find_element_by_name("q").send_keys("ондулин гвоздь")
+        wd.find_element_by_css_selector("span.plus")
+        wd.find_element_by_id("to_basket_button").click()
 
     def go_to_cart(self):
         # Переход в корзину
         wd = self.app.wd
+        wait = WebDriverWait(wd, 10)
         wd.find_element_by_css_selector("div.head_basket_wrapper").click()
 
     def select_ur(self):
