@@ -1,1 +1,6 @@
-{}
+{
+  "test_regress.py::test_ur_delivery_auth": true,
+  "test_regress.py::test_ur_delivery_non_auth": true,
+  "test_regress.py::test_ur_self_auth": true,
+  "test_regress.py::test_ur_self_non_auth": true
+}

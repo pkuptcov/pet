@@ -70,8 +70,8 @@ class RegressHelper:
         # Страница оформления заказа для физ лиц самовывоз
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.NAME, "base")))
-        wd.find_element_by_name("base").click()
+        wait.until(EC.presence_of_element_located((By.NAME, "base")))
+        wd.find_element_by_css_selector("[value='1ea6159b-594d-11e6-bef9-00259038e9f2']").click()
         wd.find_element_by_css_selector("input[value='online']").click()
         wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").clear()
         wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.contactsEmail']").send_keys(
@@ -122,8 +122,8 @@ class RegressHelper:
         # Страница оформления заказа для юр лиц самовывоз
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.NAME, "base")))
-        wd.find_element_by_name("base").click()
+        wait.until(EC.presence_of_element_located((By.NAME, "base")))
+        wd.find_element_by_css_selector("[value='1ea6159b-594d-11e6-bef9-00259038e9f2']").click()
         wd.find_element_by_css_selector("input[value='legalNonCash']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
@@ -164,8 +164,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
-        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector("plugin__dropdown--masked")) > 0:
+            wd.find_element_by_css_selector("plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
         wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
@@ -179,6 +179,7 @@ class RegressHelper:
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
+        time.sleep(2)
         if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(

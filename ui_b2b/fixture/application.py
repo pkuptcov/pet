@@ -9,9 +9,13 @@ class Application:
 
     def __init__(self):
         self.wd = webdriver.Chrome()
-        self.wd = webdriver.Ie()
-        self.wd = webdriver.Firefox()
-        self.wd = webdriver.Edge()
+        self.wd.set_window_size(1920, 1080)
+        #self.wd.maximize_window()
+        #self.wd = webdriver.Ie()
+        #self.wd = webdriver.Firefox()
+        #self.wd.set_window_size(1920, 1080)
+        #self.wd.maximize_window()
+        #self.wd = webdriver.Edge()
         self.session = SessionHelper(self)
         self.regress = RegressHelper(self)
         self.register = RegisterHelper(self)
