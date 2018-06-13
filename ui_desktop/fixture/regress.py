@@ -81,8 +81,8 @@ class RegressHelper:
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
-        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
+            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderingSelfCtrl.make($event)']")))
@@ -111,8 +111,8 @@ class RegressHelper:
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
-        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
+            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
         wait.until(
@@ -129,8 +129,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
         # time.sleep(2)
-        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
+            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
         wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
@@ -144,8 +144,8 @@ class RegressHelper:
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
         # time.sleep(2)
-        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
+            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
         # time.sleep(2)
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
