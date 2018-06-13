@@ -128,9 +128,8 @@ class RegressHelper:
         wd.find_element_by_css_selector("input[value='legalNonCash']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
-        # time.sleep(2)
-        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
+        if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked[ng-if='orderingSelfCtrl.views.companies']")) > 0:
+            wd.find_element_by_css_selector("div.plugin__dropdown--masked[ng-if='orderingSelfCtrl.views.companies']").click()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
         wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
@@ -143,10 +142,8 @@ class RegressHelper:
             "(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
-        # time.sleep(2)
-        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked")) > 0:
-            wd.find_element_by_css_selector(".plugin__dropdown--masked").click()
-        # time.sleep(2)
+        if len(wd.find_elements_by_css_selector(".plugin__dropdown--masked[ng-if='orderingSelfCtrl.views.contacts']")) > 0:
+            wd.find_element_by_css_selector(".plugin__dropdown--masked[ng-if='orderingSelfCtrl.views.contacts']").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderingSelfCtrl.order.userComment']").send_keys(
             "тест")
         wait.until(
