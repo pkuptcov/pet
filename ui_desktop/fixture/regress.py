@@ -128,7 +128,7 @@ class RegressHelper:
         wd.find_element_by_css_selector("input[value='legalNonCash']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
-        time.sleep(2)
+        time.sleep(1)
         if len(wd.find_elements_by_css_selector("div.plugin__dropdown--masked")) > 0:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
