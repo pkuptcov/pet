@@ -115,8 +115,9 @@ class RegressHelper:
         wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
-        if len(wd.find_elements_by_css_selector(".hint.error.ng-scope")) > 0:
+        if wd.current_url.endswith("/delivery/"):
             wd.find_element_by_css_selector("option[value='С23До03']").click()
+            time.sleep(3)
             wait.until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
             wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
@@ -187,11 +188,12 @@ class RegressHelper:
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
         wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
-        if len(wd.find_elements_by_css_selector(".hint.error.ng-scope")) > 0:
+        if wd.current_url.endswith("/delivery/"):
             wd.find_element_by_css_selector("option[value='С23До03']").click()
+            time.sleep(3)
             wait.until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
-            wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
+            wd.find_element_by_css_selector("//div[@id='delivery_final_scrolled']/div/button").click()
 
     def thanks(self):
         # Страница спасибо за покупку и переход в личный кабинет
