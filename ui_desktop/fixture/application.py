@@ -8,13 +8,14 @@ from ui_desktop.fixture.city import CityHelper
 class Application:
 
     def __init__(self):
-        self.wd = webdriver.Chrome()
-        self.wd.set_window_size(1920, 1080)
+        #self.wd.delete_all_cookies()
+        #self.wd = webdriver.Chrome()
+        #self.wd.set_window_size(1920, 1080)
         #self.wd.maximize_window()
         #self.wd = webdriver.Ie()
         #self.wd.set_window_size(1920, 1080)
-        #self.wd = webdriver.Firefox()
-        #self.wd.set_window_size(1920, 1080)
+        self.wd = webdriver.Firefox()
+        self.wd.set_window_size(1920, 1080)
         #self.wd.maximize_window()
         #self.wd = webdriver.Edge()
         #self.wd.set_window_size(1920, 1080)

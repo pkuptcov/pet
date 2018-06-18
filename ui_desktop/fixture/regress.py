@@ -46,6 +46,7 @@ class RegressHelper:
         # Удаляем предыдущую карту и вводим новую
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
+        time.sleep(2)
         if len(wd.find_elements_by_link_text("Удалить")) > 0:
             wd.find_element_by_link_text("Удалить").click()
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-model='totalCtrl.cardInput']")))
@@ -115,6 +116,7 @@ class RegressHelper:
         wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
         wd.find_element_by_css_selector("input[ng-click='orderDeliveryCtrl.make($event)']").click()
+        time.sleep(2)
         if wd.current_url.endswith("/delivery/"):
             wd.find_element_by_css_selector("option[value='С23До03']").click()
             time.sleep(3)
@@ -188,6 +190,7 @@ class RegressHelper:
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
             "тест")
         wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
+        time.sleep(2)
         if wd.current_url.endswith("/delivery/"):
             wd.find_element_by_css_selector("option[value='С23До03']").click()
             time.sleep(3)
@@ -199,5 +202,5 @@ class RegressHelper:
         # Страница спасибо за покупку и переход в личный кабинет
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'a.thanks__lk-link')))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a.thanks__lk-link")))
         wd.find_element_by_css_selector("a.thanks__lk-link").click()

@@ -1,4 +1,10 @@
 [
+  "test_regress.py::test_fiz_delivery_auth",
+  "test_regress.py::test_fiz_delivery_non_auth",
+  "test_regress.py::test_fiz_self_auth",
+  "test_regress.py::test_fiz_self_non_auth",
   "test_regress.py::test_ur_delivery_auth",
-  "test_regress.py::test_ur_delivery_non_auth"
+  "test_regress.py::test_ur_delivery_non_auth",
+  "test_regress.py::test_ur_self_auth",
+  "test_regress.py::test_ur_self_non_auth"
 ]
