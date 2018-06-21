@@ -97,9 +97,11 @@ class RegressHelper:
         wait.until(EC.element_to_be_clickable((By.XPATH, "//ymaps[@class='ymaps-2-1-65-inner-panes']")))
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
-        wd.find_element_by_xpath("//label[@for='date--1529657469000']").click()
+        wd.find_element_by_xpath("//label[@for='date--1529667707000']").click()
         wd.find_element_by_xpath("//label[@for='pay--online']").click()
         wd.find_element_by_xpath("//label[@for='day--interval']").click()
+        wd.find_element_by_xpath("//option[@label='23:30 – 03:30']']").click()
+
         wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").click()
         wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").click()
         wd.find_element_by_xpath("//input[@type='email']").clear()
