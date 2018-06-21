@@ -17,6 +17,12 @@ class RegressHelper:
         wd.find_element_by_css_selector("form#search [type=submit]").click()
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.head_basket_wrapper')))
 
+    def edit_quantity_product(self):
+        # Увеличение товара в листинге выдачи поиска и добавление в корзину
+        wd = self.app.wd
+        wd.find_element_by_css_selector("div.stepper-arrow.up.unit--step").click()
+        wd.find_element_by_css_selector("div.btn_cart.listing__product-button.product__button.ng-scope").click()
+
     def go_to_cart(self):
         # Переход в корзину
         wd = self.app.wd
@@ -35,12 +41,6 @@ class RegressHelper:
         wait = WebDriverWait(wd, 10)
         wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Физическое лицо')]")))
         wd.find_element_by_xpath("//a[contains(text(),'Физическое лицо')]").click()
-
-    def edit_quantity_product(self):
-        # Увеличение товара в листинге выдачи поиска и добавление в корзину
-        wd = self.app.wd
-        wd.find_element_by_css_selector("div.stepper-arrow.up.unit--step").click()
-        wd.find_element_by_css_selector("div.btn_cart.listing__product-button.product__button.ng-scope").click()
 
     def edit_card(self):
         # Удаляем предыдущую карту и вводим новую
