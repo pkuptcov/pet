@@ -15,13 +15,19 @@ class RegressHelper:
         wait = WebDriverWait(wd, 10)
         wd.find_element_by_id("query").send_keys("ондулин гвоздь")
         wd.find_element_by_css_selector("input.s--button").click()
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'jsx-catalog-sort')))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.c--plus')))
+
+    def edit_quantity_product(self):
+        # Увеличение товара в листинге выдачи поиска и добавление в корзину
+        wd = self.app.wd
+        wd.find_element_by_css_selector("div.c--plus").click()
+        wd.find_element_by_xpath("//button[contains(text(),'В корзину')]").click()
 
     def go_to_cart(self):
         # Переход в корзину
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wd.find_element_by_css_selector("b--cart").click()
+        wd.find_element_by_css_selector("div.b--cart").click()
         wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Перейти в корзину")))
         wd.find_element_by_link_text("Перейти в корзину").click()
 
@@ -39,22 +45,16 @@ class RegressHelper:
         wait.until(EC.element_to_be_clickable((By.XPATH, "//p[contains(text(),'Физическое лицо')]")))
         wd.find_element_by_xpath("//p[contains(text(),'Физическое лицо')]").click()
 
-    def edit_quantity_product(self):
-        # Увеличение товара в листинге выдачи поиска и добавление в корзину
-        wd = self.app.wd
-        wd.find_element_by_css_selector("div.block--goods-preview").click()
-        wd.find_element_by_css_selector("div.c--plus").click()
-
     def edit_card(self):
         # Удаляем предыдущую карту и вводим новую
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        #time.sleep(2)
-        if len(wd.find_elements_by_xpath("//p[@class='delete--card']")) > 0:
-            wd.find_element_by_xpath("//p[@class='delete--card']").click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.discount--card-event")))
+        if len(wd.find_elements_by_css_selector('p.delete--card')) > 0:
+            wd.find_element_by_css_selector('p.delete--card').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@type='number']")))
         wd.find_element_by_xpath("//input[@type='number']").send_keys("111111")
-        wd.find_element_by_css_selector("//button[@class='card--send']").click()
+        wd.find_element_by_css_selector('button.card--send').click()
 
     def init_order_creation_self(self):
         # Выбираем самовывоз и нажимаем оформить
@@ -72,17 +72,19 @@ class RegressHelper:
         # Страница оформления заказа для физ лиц самовывоз
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable({By.XPATH, "//label[@for='base--1ea6159b-594d-11e6-bef9-00259038e9f2']"}))
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//label[@for='base--1ea6159b-594d-11e6-bef9-00259038e9f2']")))
         wd.find_element_by_xpath("//label[@for='base--1ea6159b-594d-11e6-bef9-00259038e9f2']").click()
         wd.find_element_by_xpath("//label[@for='pay--online']").click()
-        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").clear()
-        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").send_keys(
-            "info@kluatr.ru")
+        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").click()
+        wd.find_element_by_xpath("//input[@type='email']").clear()
+        wd.find_element_by_xpath("//input[@type='email']").send_keys("info@kluatr.ru")
         wd.find_element_by_xpath("//input[@type='tel']").clear()
         wd.find_element_by_xpath("//input[@type='tel']").send_keys("(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
-        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Комментарии к заказу')]").send_keys("тест")
+        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Комментарии к заказу')]").click()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").click()
+        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").send_keys("тест")
         wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class='confirm--send']")))
         wd.find_element_by_xpath("//button[@class='confirm--send']").click()
 
