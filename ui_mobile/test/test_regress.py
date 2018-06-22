@@ -88,7 +88,7 @@ def test_ur_self_auth(app):
     app.regress.create_order_ur_self()
     app.regress.thanks()
     app.session.logout()
-#
+
 #
 # def test_ur_self_non_auth(app):
 #     app.open_home_page()
