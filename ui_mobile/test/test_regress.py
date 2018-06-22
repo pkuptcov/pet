@@ -76,7 +76,7 @@
 #     app.regress.create_order_ur_delivery()
 #     app.regress.thanks()
 #
-#
+
 def test_ur_self_auth(app):
     app.open_home_page()
     app.session.login(username="xigekuba@p33.org", password="111111")
