@@ -49,11 +49,12 @@ class RegressHelper:
         # Удаляем предыдущую карту и вводим новую
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.discount--card-event")))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.step--send")))
         if len(wd.find_elements_by_css_selector('p.delete--card')) > 0:
             wd.find_element_by_css_selector('p.delete--card').click()
         wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@type='number']")))
         wd.find_element_by_xpath("//input[@type='number']").send_keys("111111")
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.step--send")))
         wd.find_element_by_css_selector('button.card--send').click()
 
     def init_order_creation_self(self):
@@ -97,12 +98,13 @@ class RegressHelper:
         wait.until(EC.element_to_be_clickable((By.XPATH, "//ymaps[@class='ymaps-2-1-65-inner-panes']")))
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
-        wd.find_element_by_xpath("//label[@for='date--1529667707000']").click()
-        wd.find_element_by_xpath("//label[@for='pay--online']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.driverComment']").send_keys("тест")
+        wd.find_element_by_xpath("//label[contains(text(),'ЗАВТРА')]").click()
         wd.find_element_by_xpath("//label[@for='day--interval']").click()
-        wd.find_element_by_xpath("//option[@label='23:30 – 03:30']']").click()
-
-        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").click()
+        wd.find_element_by_css_selector(".ng-touched").click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//option[@label='23:30 – 03:30']")))
+        wd.find_element_by_xpath("//option[@label='23:30 – 03:30']").click()
+        wd.find_element_by_xpath("//label[@for='pay--online']").click()
         wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").click()
         wd.find_element_by_xpath("//input[@type='email']").clear()
         wd.find_element_by_xpath("//input[@type='email']").send_keys("info@kluatr.ru")
