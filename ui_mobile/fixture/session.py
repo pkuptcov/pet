@@ -21,7 +21,7 @@ class SessionHelper:
         wd.find_element_by_id("mainPetrovichLogin_login").send_keys(username)
         wd.find_element_by_id("mainPetrovichLogin_password").send_keys(password)
         wd.find_element_by_css_selector("button.ln--send").click()
-        wait.until(EC.presence_of_element_located((By.ID, "auth-form")))
+        wait.until(EC.presence_of_element_located((By.XPATH, "//small[contains(text(),'Вы успешно вошли в аккаунт!')]")))
 
     def logout(self):
         # Выход из ЛК

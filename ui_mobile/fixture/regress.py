@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -100,10 +99,10 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.driverComment']").send_keys("тест")
         wd.find_element_by_xpath("//label[contains(text(),'ЗАВТРА')]").click()
-        wd.find_element_by_xpath("//label[@for='day--interval']").click()
-        wd.find_element_by_css_selector(".ng-touched").click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, "//option[@label='23:30 – 03:30']")))
-        wd.find_element_by_xpath("//option[@label='23:30 – 03:30']").click()
+        wd.find_element_by_xpath("//label[@for='day--all']").click()
+        wd.find_element_by_css_selector("[ng-value='orderDeliveryCtrl.deliveryIntervals.today[0]']").click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С09До18']")))
+        wd.find_element_by_css_selector("option[value='С09До18']").click()
         wd.find_element_by_xpath("//label[@for='pay--online']").click()
         wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Ваша электронная почта')]").click()
         wd.find_element_by_xpath("//input[@type='email']").clear()
@@ -113,11 +112,10 @@ class RegressHelper:
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
         wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Комментарии к заказу')]").click()
-        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").click()
-        wd.find_element_by_css_selector("[ng-model='orderingSelfCtrl.order.userComment']").send_keys("тест")
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.userComment']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.userComment']").send_keys("тест")
         wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class='confirm--send']")))
         wd.find_element_by_xpath("//button[@class='confirm--send']").click()
-
 
     def create_order_ur_self(self):
         # Страница оформления заказа для юр лиц самовывоз
@@ -147,44 +145,35 @@ class RegressHelper:
         # Страница оформления заказа для юр лиц доставка
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")))
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//p[contains(text(),'Показать карту')]")))
+        wd.find_element_by_xpath("//p[contains(text(),'Показать карту')]").click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//ymaps[@class='ymaps-2-1-65-inner-panes']")))
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
-        wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
-        wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С2330До0330']")))
-        wd.find_element_by_css_selector("option[value='С2330До0330']").click()
-        wd.find_element_by_css_selector("input[placeholder='Название']").clear()
-        wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
-        wd.execute_script(
-            "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
-        wd.find_element_by_css_selector("input[placeholder='ИНН']").clear()
-        wd.find_element_by_css_selector("input[placeholder='ИНН']").send_keys("1231231231")
-        wd.find_element_by_css_selector("input[placeholder='КПП']").clear()
-        wd.find_element_by_css_selector("input[placeholder='КПП']").send_keys("123123123")
-        wd.find_element_by_css_selector("input[value='legalNonCash']").click()
-        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").clear()
-        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsEmail']").send_keys(
-            "info@kluatr.ru")
-        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").clear()
-        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.contactsPhone']").send_keys(
-            "(111) 111-11-11")
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.driverComment']").send_keys("тест")
+        wd.find_element_by_xpath("//label[contains(text(),'ЗАВТРА')]").click()
+        wd.find_element_by_xpath("//label[@for='day--all']").click()
+        wd.find_element_by_css_selector("[ng-value='orderDeliveryCtrl.deliveryIntervals.today[0]']").click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С09До18']")))
+        wd.find_element_by_css_selector("option[value='С09До18']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesName']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesName']").send_keys("Тест")
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesInn']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesInn']").send_keys("1231231231")
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesKpp']").clear()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesKpp']").send_keys("123123123")
+        wd.find_element_by_xpath("//label[@for='pay--legalNonCash']").click()
+        wd.find_element_by_xpath("//input[@type='email']").clear()
+        wd.find_element_by_xpath("//input[@type='email']").send_keys("info@kluatr.ru")
+        wd.find_element_by_xpath("//input[@type='tel']").clear()
+        wd.find_element_by_xpath("//input[@type='tel']").send_keys("(111) 111-11-11")
         wd.find_element_by_name("user_name").clear()
         wd.find_element_by_name("user_name").send_keys("Тест")
-        wd.execute_script(
-            "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
-        wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys(
-            "тест")
-        wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
-        time.sleep(2)
-        if wd.current_url.endswith("/delivery/"):
-            wd.find_element_by_css_selector("option[value='С23До03']").click()
-            time.sleep(3)
-            wait.until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
-            wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
+        wd.find_element_by_xpath("//p[@class='st--text'][contains(text(),'Комментарии к заказу')]").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.userComment']").click()
+        wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.userComment']").send_keys("тест")
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class='confirm--send']")))
+        wd.find_element_by_xpath("//button[@class='confirm--send']").click()
 
     def thanks(self):
         # Страница спасибо за покупку и переход в личный кабинет
