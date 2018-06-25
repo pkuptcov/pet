@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-
 def test_auth(app):
     app.open_home_page()
     app.session.login(username="xigekuba@p33.org", password="111111")
