@@ -5,16 +5,17 @@ from selenium.webdriver.common.by import By
 class OrderCreateHelperControls:
 
     # Адрес доставки
-    deliveryAdress = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")
-    # deliveryAdressHistory = (By.CSS_SELECTOR, "")
-    deliveryAdressShowMore = (By.XPATH, "//a[@ng-hide='showMoreAdresses']']")
+    deliveryAddress = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")
+    # deliveryAddressHistory = (By.CSS_SELECTOR, "")
+    deliveryAddressShowMore = (By.XPATH, "//a[@ng-hide='showMoreAdresses']']")
     deliveryArchParking = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.order.deliveryArchway']")
     deliveryVisibilityMap = (By.XPATH, "//a[@class='map_open_link']")
     deliveryDriverComment = (By.CSS_SELECTOR, "textarea[ng-model='orderDeliveryCtrl.order.driverComment']")
     deliveryForemanName = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.foremansName']")
     deliveryForemanPhone = (By.CSS_SELECTOR, ".master__phone __choose")
 
-    # Строительный центр
+    # Выбор строительного центра
+    # СПБ:
     baseTallinskoe = (By.CSS_SELECTOR, "[value='1ea6159b-594d-11e6-bef9-00259038e9f2']")
     baseEngelsa = (By.CSS_SELECTOR, "[value='42d0a3ba-2efc-11df-942d-0023543d7b52']")
     baseSofiyskaya = (By.CSS_SELECTOR, "[value='8e55188d-3e96-11e6-9830-00259038e9f2']")
@@ -23,6 +24,7 @@ class OrderCreateHelperControls:
     baseMurmanskoe = (By.CSS_SELECTOR, "[value='d41279b8-2f82-11df-942d-0023543d7b52']")
     baseMoskovskoe = (By.CSS_SELECTOR, "[value='d41279d5-2f82-11df-942d-0023543d7b52']")
     selfMoveToGatchina = (By.CSS_SELECTOR, "button[ng-click='orderingSelfCtrl.moveCartToGatchina()']")
+
 
     # Дни доставки
     deliveryDay1 = (By.XPATH, "(//input[@name='delivery_day'])[1]")
@@ -34,14 +36,14 @@ class OrderCreateHelperControls:
 
     # Типы доставки
     deliveryTypeToday = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('today')\"]")
-    deliveryTypeStandart = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]")
+    deliveryTypeStandard = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]")
     deliveryTypeExpress = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('express')\"]")
     deliveryTypeExactly = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('exactly')\"]")
     deliveryTypePacket = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('packet')\"]")
     deliveryTypeCourier = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('courier')\"]")
 
     # Время доставки
-    deliveryIntervalStandart = (By.CSS_SELECTOR, "option[value='С2330До0330']")
+    deliveryIntervalStandard = (By.CSS_SELECTOR, "option[value='С2330До0330']")
     deliveryIntervalToday = (By.CSS_SELECTOR, "option[value='С13До22']")
     deliveryIntervalExactlyHour = (By.CSS_SELECTOR, "option[value='23']")
     deliveryIntervalExactlyMinute = (By.CSS_SELECTOR, "option[value='59']")
