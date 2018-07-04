@@ -27,6 +27,15 @@ class HeaderHelperControls:
     registrationLink = (By.LINK_TEXT, "Регистрация")
     authLink = (By.LINK_TEXT, "Вход")
 
+    # Разделы ЛК при клике на Имя Фамилию
+    headerUsername = (By.CSS_SELECTOR, "a.auth_user_link")
+    headerProfile = (By.LINK_TEXT, "Профиль")
+    headerOrders = (By.LINK_TEXT, "Заказы")
+    headerProjects = (By.LINK_TEXT, "Проекты")
+    headerEstimates = (By.LINK_TEXT, "Сметы")
+    headerExpense = (By.LINK_TEXT, "Расходы")
+    headerLogout = (By.LINK_TEXT, "Выход")
+
     # Ссылки в желтой шапке
     logoPetrovich = (By.XPATH, "//div[@class='logo']")
     headerNovelty = (By.XPATH, "//a[contains(text(),'Новинки')]")
@@ -39,11 +48,14 @@ class HeaderHelperControls:
     headerBasketCount = (By.XPATH, "//div[@class='head_basket_wrapper']")
     headerBasketPrice = (By.XPATH, "//span[@class='head_basket_price']")
 
-    # Корзина в динамической шапке
-    headerShortBasket = (By.XPATH, "//div[@class='common__icons basket_ico head_basket_img']")
-    headerShortBasketCount = (By.XPATH, "//span[@class='short__fixed']")
-    headerShortBasketAuth = (By.XPATH, "//div[@class='head container clearfix']//a[@href='/login/']")
-
     # Поиск в динамической шапке
     headerShortSearchInput = (By.NAME, "q")
     headerShortSearchSubmit = (By.XPATH, "//span[@class='request_small_form']")
+
+    # Авторизация в динамической шапке / Переход в ЛК
+    headerShortAuth = (By.XPATH, "//div[@class='head container clearfix']//a[@href='/login/']")
+    headerShortIsAuth = (By.XPATH, "//div[@class='head container clearfix']//a[@href='/cabinet/orders/']")
+
+    # Корзина в динамической шапке
+    headerShortBasket = (By.XPATH, "//div[@class='common__icons basket_ico head_basket_img']")
+    headerShortBasketCount = (By.XPATH, "//span[@class='short__fixed']")
