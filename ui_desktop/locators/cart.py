@@ -18,9 +18,9 @@ class CartHelperControls:
     cartSelectFiz = (By.XPATH, "//a[contains(text(),'Физиическое лицо')]")
     cartDeleteAllConfirm = (By.XPATH, "//button[@class='confirm']")
     cartDeleteAllCancel = (By.XPATH, "//button[@class='cancel']")
-    cartUpQty = (By.CSS_SELECTOR, ".productItemCtrl.qtyStep('up', product, product.qty)")
-    cartDownQty = (By.CSS_SELECTOR, ".productItemCtrl.qtyStep('down', product, product.qty)")
-    cartEnterQty = (By.CSS_SELECTOR, ".product_id")
+    cartUpQty = (By.CSS_SELECTOR, "span.stepper-arrow.up")
+    cartDownQty = (By.CSS_SELECTOR, "span.stepper-arrow.down")
+    cartEnterQty = (By.NAME, "product_id")
 
     # Форма карты клуба друзей
     cartCardInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.cardInput']")

@@ -24,7 +24,28 @@ class OrderCreateHelperControls:
     baseMurmanskoe = (By.CSS_SELECTOR, "[value='d41279b8-2f82-11df-942d-0023543d7b52']")
     baseMoskovskoe = (By.CSS_SELECTOR, "[value='d41279d5-2f82-11df-942d-0023543d7b52']")
     selfMoveToGatchina = (By.CSS_SELECTOR, "button[ng-click='orderingSelfCtrl.moveCartToGatchina()']")
+    # МСК:
+    baseBalashiha = (By.CSS_SELECTOR, "[value='10c5ed9d-7185-11e4-89d5-00259038e9f2']")
+    baseNovorizhskoe = (By.CSS_SELECTOR, "[value='172b9cec-7185-11e4-89d5-00259038e9f2']")
+    baseNovoryazanskoe = (By.CSS_SELECTOR, "[value='6a60a7fc-53bf-11e6-bef9-00259038e9f2']")
+    baseAltufevo = (By.CSS_SELECTOR, "[value='8d019325-709f-11e4-89d5-00259038e9f2']")
+    # Великий Новгород:
+    baseNovgorod = (By.CSS_SELECTOR, "[value='d41279bd-2f82-11df-942d-0023543d7b52']")
+    # Выборг:
+    baseVyborg = (By.CSS_SELECTOR, "[value='a95a3747-2f82-11df-942d-0023543d7b52']")
+    # Гатчина:
+    baseGatchina = (By.CSS_SELECTOR, "[value='7d3f6711-f0fb-11e1-aa5b-00259038e9f2']")
+    # Луга:
+    baseLuga = (By.CSS_SELECTOR, "[value='309ed970-2951-11e0-9d49-001f29c6db02']")
+    # Кингисепп:
+    baseKingisepp = (By.CSS_SELECTOR, "[value='51c3d796-7fa7-11e0-b5e3-001f29c6db02']")
+    # Петрозаводск:
+    basePetrozavodsk = (By.CSS_SELECTOR, "[value='893c542a-8538-11e1-bb26-00259038e9f2']")
+    # Тверь:
+    baseTver = (By.CSS_SELECTOR, "[value='469f28be-ea07-11e2-8ae0-00259038e9f2']")
 
+    # Перейти в корзину и изменить заказ
+    baseReturnToCart = (By.XPATH, "//input[contains(text(),'Перейти в корзину и изменить заказ')]")
 
     # Дни доставки
     deliveryDay1 = (By.XPATH, "(//input[@name='delivery_day'])[1]")
@@ -51,14 +72,14 @@ class OrderCreateHelperControls:
     deliveryIntervalCourier = (By.CSS_SELECTOR, "option[value='С15До22М']")
 
     # Дополнительные услуги
-    deliveryLifting = (By.XPATH, "//span[@class='label_name'][contains(text(),'Подъем на этаж')]")
-    deliveryUnloading = (By.XPATH, "//span[@class='label_name'][contains(text(),'Разгрузка')]")
-    deliveryManipulator = (By.XPATH, "//span[@class='label_name'][contains(text(),'Манипулятор')]")
-    deliveryGarbageRemoval = (By.XPATH, "//span[@class='label_name'][contains(text(),'Вывоз мусора')]")
-    deliveryReturn = (By.XPATH, "//span[@class='label_name'][contains(text(),'Возврат товара')]")
-    deliveryRent = (By.XPATH, "//span[@class='label_name'][contains(text(),'Аренда оборудования)]")
-    deliveryColoring = (By.XPATH, "//span[@class='label_name'][contains(text(),'Колеровка')]")
-    deliverySawed = (By.XPATH, "//span[@class='label_name'][contains(text(),'Распил')]")
+    orderLifting = (By.XPATH, "//span[@class='label_name'][contains(text(),'Подъем на этаж')]")
+    orderUnloading = (By.XPATH, "//span[@class='label_name'][contains(text(),'Разгрузка')]")
+    orderManipulator = (By.XPATH, "//span[@class='label_name'][contains(text(),'Манипулятор')]")
+    orderGarbageRemoval = (By.XPATH, "//span[@class='label_name'][contains(text(),'Вывоз мусора')]")
+    orderReturn = (By.XPATH, "//span[@class='label_name'][contains(text(),'Возврат товара')]")
+    orderRent = (By.XPATH, "//span[@class='label_name'][contains(text(),'Аренда оборудования)]")
+    orderColoring = (By.XPATH, "//span[@class='label_name'][contains(text(),'Колеровка')]")
+    orderSawed = (By.XPATH, "//span[@class='label_name'][contains(text(),'Распил')]")
 
     # Реквизиты компании
     companyName = (By.CSS_SELECTOR, "input[placeholder='Название']")
@@ -74,11 +95,15 @@ class OrderCreateHelperControls:
     liftingCarryDistance = (By.CSS_SELECTOR, "input.only_digit.ng-valid-min")
 
     # Комментарии к доп. услугам
-    sawedComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.sawingComment']")
-    coloringComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.coloringComment']")
-    garbageComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.garbageComment']")
-    returnComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.returnComment']")
-    rentComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.rentComment']")
+    deliverySawedComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.sawingComment']")
+    deliveryColoringComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.coloringComment']")
+    deliveryGarbageComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.garbageComment']")
+    deliveryReturnComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.returnComment']")
+    deliveryRentComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.rentComment']")
+    selfSawedComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.sawingComment']")
+    selfColoringComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.coloringComment']")
+    selfGarbageComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.garbageComment']")
+    selfRentComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.rentComment']")
 
     # Способы оплаты заказа
     orderPayOnline = (By.CSS_SELECTOR, "input[value='online']")
@@ -96,8 +121,8 @@ class OrderCreateHelperControls:
     selfEmail = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsEmail']")
     deliveryPhone = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.contactsPhone']")
     selfPhone = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsPhone']")
-    deliveryUsername = (By.NAME, "user_name")
-    deliveryUsernameMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
+    orderUsername = (By.NAME, "user_name")
+    orderDropdownMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
     deliveryCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.order.callRequired']")
     selfCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderingSelfCtrl.order.callRequired']")
     deliveryCallRequiredNow = (By.XPATH, "//span[@class='label_name'][contains(text(),'Сейчас')]")
@@ -106,6 +131,7 @@ class OrderCreateHelperControls:
     # Тут должно быть время звонка на сегодня
     # Тут должно быть время звонка на завтра
     deliveryUserComment = (By.CSS_SELECTOR, "textarea[ng-model='orderDeliveryCtrl.order.userComment']")
+    selfUserComment = (By.CSS_SELECTOR, "textarea[ng-model='orderingSelfCtrl.order.userComment']")
 
     # Подтверждение заказа
     deliverySubmitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")
