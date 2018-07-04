@@ -2,8 +2,8 @@ import pytest
 from ui_desktop.fixture.application import Application
 
 
-@pytest.fixture(scope="session")
-def app(request):
+@pytest.yield_fixture(scope="session")
+def app():
     fixture = Application()
-    request.addfinalizer(fixture.destroy)
-    return fixture
+    yield fixture
+    fixture.destroy()
