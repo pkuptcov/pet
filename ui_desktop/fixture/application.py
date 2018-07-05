@@ -8,17 +8,17 @@ class Application:
 
     def __init__(self):
         #self.wd.delete_all_cookies()
-        # capabilities = {
-        #     "browserName": "firefox",
-        #     "version": "60.0",
-        #     "enableVNC": True
-        # }
-        # self.wd = webdriver.Remote(
-        #     command_executor="http://hw00.vm.a:4444/wd/hub",
-        #     desired_capabilities=capabilities)
-        # self.wd.set_window_size(1920, 1080)
-        self.wd = webdriver.Chrome()
+        capabilities = {
+            "browserName": "firefox",
+            "version": "60.0",
+            "enableVNC": True
+        }
+        self.wd = webdriver.Remote(
+            command_executor="http://hw00.vm.a:4444/wd/hub",
+            desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
+        #self.wd = webdriver.Chrome()
+        #self.wd.set_window_size(1920, 1080)
         #self.wd = webdriver.Ie()
         #self.wd = webdriver.Firefox()
         #self.wd.maximize_window()
