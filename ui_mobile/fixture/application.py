@@ -8,17 +8,18 @@ from ui_mobile.fixture.city import CityHelper
 class Application:
 
     def __init__(self):
-        capabilities = {
-            "browserName": "firefox",
-            "version": "60.0",
-            "enableVNC": True
-        }
-        self.wd = webdriver.Remote(
-            command_executor="http://hw00.vm.a:4444/wd/hub",
-            desired_capabilities=capabilities)
-        self.wd.set_window_size(1920, 1080)
-        # self.wd = webdriver.Chrome()
+        # capabilities = {
+        #     "browserName": "firefox",
+        #     "version": "60.0",
+        #     "enableVNC": True
+        # }
+        # self.wd = webdriver.Remote(
+        #     command_executor="http://hw00.vm.a:4444/wd/hub",
+        #     desired_capabilities=capabilities)
         # self.wd.set_window_size(1920, 1080)
+        # self.wd = webdriver.Firefox()
+        self.wd = webdriver.Chrome()
+        self.wd.set_window_size(1920, 1080)
         self.session = SessionHelper(self)
         self.regress = RegressHelper(self)
         self.register = RegisterHelper(self)
