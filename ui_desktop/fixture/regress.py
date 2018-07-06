@@ -20,7 +20,11 @@ class RegressHelper:
     def edit_quantity_product(self):
         # Увеличение товара в листинге выдачи поиска и добавление в корзину
         wd = self.app.wd
+        wait = WebDriverWait(wd, 10)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.stepper-arrow.up.unit--step")))
         wd.find_element_by_css_selector("div.stepper-arrow.up.unit--step").click()
+        wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "div.btn_cart.listing__product-button.product__button.ng-scope")))
         wd.find_element_by_css_selector("div.btn_cart.listing__product-button.product__button.ng-scope").click()
 
     def go_to_cart(self):
@@ -56,6 +60,8 @@ class RegressHelper:
     def init_order_creation_self(self):
         # Выбираем самовывоз и нажимаем оформить
         wd = self.app.wd
+        wait = WebDriverWait(wd, 10)
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[value=self]")))
         wd.find_element_by_css_selector("input[value=self]").click()
         wd.find_element_by_css_selector("button[ng-click='totalCtrl.goToOrdering()']").click()
 
