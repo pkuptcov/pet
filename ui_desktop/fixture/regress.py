@@ -61,8 +61,8 @@ class RegressHelper:
         # Выбираем самовывоз и нажимаем оформить
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[value=self]")))
-        wd.find_element_by_css_selector("input[value=self]").click()
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[value='self']")))
+        wd.find_element_by_css_selector("input[value='self']").click()
         wd.find_element_by_css_selector("button[ng-click='totalCtrl.goToOrdering()']").click()
 
     def init_order_creation_delivery(self):
@@ -210,3 +210,4 @@ class RegressHelper:
         wait = WebDriverWait(wd, 10)
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a.thanks__lk-link")))
         wd.find_element_by_css_selector("a.thanks__lk-link").click()
+        wait.until(EC.presence_of_element_located((By.XPATH, "//p[@class='__info__status __N']")))
