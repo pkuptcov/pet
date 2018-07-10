@@ -101,6 +101,9 @@ class CabinetOrdersHelperControls(SearchOrdersHelperControls):
     ordersFilterInProgress = (By.XPATH, "//span[contains(text(),'В работе')]")
     ordersFilterFulfilled = (By.XPATH, "//span[contains(text(),'Выполненные')]")
 
+    # Список заказов
+    orderName = (By.XPATH, "//span[contains(text(),'ТВЭ00325631 от 09.07.2018 10:16:35')]")
+
     # Пагинация
     ordersPagination1 = (By.XPATH, "//li[contains(@class,'pagination_item')]//a[contains(text(),'1')]")
     ordersPagination2 = (By.XPATH, "//li[contains(@class,'pagination_item')]//a[contains(text(),'2')]")
@@ -109,5 +112,30 @@ class CabinetOrdersHelperControls(SearchOrdersHelperControls):
     ordersPaginationFinish = (By.XPATH, "//i[@class='ic ic_arrow_finish']")
 
 
+class CabinetOrderHelperControls:
+
+    # Карточка заказа
+    orderPrint = (By.XPATH, "//div[contains(@class,'order__event __print')]")
+    orderRepeat = (By.XPATH, "//div[contains(@class,'order__event __repeat')]")
+    orderCopy = (By.XPATH, "//span[contains(@class,'order__copy')]")
+    orderId = (By.XPATH, "//span[contains(@class,'order__id')]")
+    orderUpdate = (By.XPATH, "//span[contains(@class,'order__update')]")
+    orderAddToProject = (By.XPATH, "//div[contains(@class,'order__folder add_folder')]")
+    orderPay = (By.CSS_SELECTOR, "button.__pay__to_pay")
+    orderEdit = (By.XPATH, "//button[contains(@class,'order__edit __js__order_edit')]")
+    orderCancel = (By.XPATH, "//button[contains(@class,'order__cancel')]")
+    orderPopupNo = (By.XPATH, "//button[contains(@class,'choose__button __orange __js__popup--close')]")
+    orderPopupYes = (By.XPATH, "//button[contains(@class,'choose__button __opacity __js__edit__order')]")
+    orderPopupClose = (By.XPATH, "//div[contains(@class,'close__popup __js__popup--close')]")
+
+
 class CabinetProjectsHelperControls(SearchOrdersHelperControls):
+
+    # Название проекта
     projectName = (By.XPATH, "//span[contains(text(),'test')]")
+
+
+class CabinetEstimatesHelperControls():
+
+    # Список смет
+    estimateName = (By.XPATH, "//a[contains(text(),'Смета 17.05.2018 17.05.21')]")
