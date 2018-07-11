@@ -14,20 +14,20 @@ class CabinetProfileHelperControls:
     menuLinkExpense = (By.XPATH, "//a[@class='menu__link'][contains(text(),'Расходы')]")
 
     # Профиль
-    profileFormFirstName = (By.CSS_SELECTOR, "input['formcontrolname=firstName']")
-    profileFormLastName = (By.CSS_SELECTOR, "input['formcontrolname=lastName']")
-    profileFormLogin = (By.CSS_SELECTOR, "input['formcontrolname=login']")
-    profileFormEmail = (By.CSS_SELECTOR, "input['formcontrolname=email']")
-    profileFormPassword = (By.CSS_SELECTOR, "input['formcontrolname=password']")
-    profileFormPasswordConfirm = (By.CSS_SELECTOR, "input['formcontrolname=passwordConfirm']")
+    profileFormFirstName = (By.CSS_SELECTOR, "input[formcontrolname='firstName']")
+    profileFormLastName = (By.CSS_SELECTOR, "input[formcontrolname='lastName']")
+    profileFormLogin = (By.CSS_SELECTOR, "input[formcontrolname='login']")
+    profileFormEmail = (By.CSS_SELECTOR, "input[formcontrolname='email']")
+    profileFormPassword = (By.CSS_SELECTOR, "input[formcontrolname='password']")
+    profileFormPasswordConfirm = (By.CSS_SELECTOR, "input[formcontrolname='passwordConfirm']")
     profileFormSave = (By.CSS_SELECTOR, "div.pet_input__col")
 
     # Моя карта
     profileCardStatusLink = (By.XPATH, "//a[contains(text(),'Статусы карты клуба Петрович')]")
-    profileCardNumber = (By.CSS_SELECTOR, "input['formcontrolname=number']")
+    profileCardNumber = (By.CSS_SELECTOR, "input[formcontrolname='number']")
     profileCardNumberSubmit = (By.XPATH, "//span[@class='pet_input__events events__submit __validation']")
     profileCardNumberClear = (By.XPATH, "//span[@class='pet_input__events events__clear']")
-    profileCardPin = (By.CSS_SELECTOR, "input['formcontrolname=pin']")
+    profileCardPin = (By.CSS_SELECTOR, "input[formcontrolname='pin']")
     profileCardPinQuestion = (By.XPATH, "//span[@class='interface--icons input--question']")
     profileCardPinQuestionPopup = (By.XPATH, "//a[contains(text(),'Подробнее про Клуб')]")
     profileCardPinSubmit = (By.XPATH, "//span[@class='pet_input__events events__submit __validation']")
@@ -46,7 +46,7 @@ class CabinetProfileHelperControls:
     # Мастера
     # profileMasterEdit = (By.CSS_SELECTOR, "")
     # profileMasterName = (By.CSS_SELECTOR, "")
-    profileMasterPhone = (By.CSS_SELECTOR, "input['formcontrolname=phone']")
+    profileMasterPhone = (By.CSS_SELECTOR, "input[formcontrolname='phone']")
     profileMasterSave = (By.XPATH, "//div[@class='editable__save']")
     profileMasterCancel = (By.XPATH, "//div[@class='editable__cancel']")
     # profileMasterDelete = (By.CSS_SELECTOR, "")
@@ -57,7 +57,7 @@ class CabinetProfileHelperControls:
     # profileContactEdit = (By.CSS_SELECTOR, "")
     # profileContactName = (By.CSS_SELECTOR, "")
     # profileContactEmail = (By.CSS_SELECTOR, "")
-    profileContactPhone = (By.CSS_SELECTOR, "input['formcontrolname=phone']")
+    profileContactPhone = (By.CSS_SELECTOR, "input[formcontrolname='phone']")
     profileContactSave = (By.XPATH, "//div[@class='editable__save']")
     profileContactCancel = (By.XPATH, "//div[@class='editable__cancel']")
     # profileContactDelete = (By.CSS_SELECTOR, "")
@@ -83,8 +83,8 @@ class CabinetOrdersHelperControls(SearchOrdersHelperControls):
     # Показать больше заказов
     ordersShowMore = (By.XPATH, "//p[@class='__upload']")
     ordersPopupContractors = (By.XPATH, "//div[@class='choose__data __js__dd__contractor']")
-    ordersPopupSelectContractorCard = (By.CSS_SELECTOR, "div['data-value-inn=1231231231']")
-    ordersPopupSelectContractorINN = (By.CSS_SELECTOR, "div['data-value-card=4269282']")
+    ordersPopupSelectContractorCard = (By.CSS_SELECTOR, "div[data-value-inn='1231231231']")
+    ordersPopupSelectContractorINN = (By.CSS_SELECTOR, "div[data-value-card='4269282']")
     ordersPopupPin = (By.XPATH, "//input[@class='card__pin __js__pin--input']")
     ordersPopupPinSubmit = (By.XPATH, "//button[@class='submit__pin __js__pin--submit']")
     ordersPopupHint = (By.XPATH, "//span[@class='hint__hover']")
@@ -148,7 +148,7 @@ class CabinetEstimatesHelperControls:
     estimateFormCart = (By.XPATH, "//a[@class='estimateToCart']")
 
     # Поп-ап изменения названия сметы
-    estimateNameEditInput = (By.CSS_SELECTOR, "input['placeholder=новое название']")
+    estimateNameEditInput = (By.CSS_SELECTOR, "input[placeholder='новое название']")
     estimateNameEditConfirm = (By.XPATH, "//button[@class='confirm']")
     estimateNameEditCancel = (By.XPATH, "//button[@class='cancel']")
 
