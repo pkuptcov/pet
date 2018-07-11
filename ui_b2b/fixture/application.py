@@ -8,8 +8,8 @@ from ui_b2b.fixture.city import CityHelper
 class Application:
 
     def __init__(self):
-        #self.wd = webdriver.Chrome()
-        #self.wd.set_window_size(1920, 1080)
+        self.wd = webdriver.Chrome()
+        self.wd.set_window_size(1920, 1080)
         #self.wd.maximize_window()
         #self.wd = webdriver.Ie()
         #self.wd = webdriver.Firefox()

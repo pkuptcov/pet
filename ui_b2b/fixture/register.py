@@ -20,5 +20,5 @@ class RegisterHelper:
         wd.find_element_by_name("email").send_keys(email)
         wd.find_element_by_name("phone").send_keys(phone)
         wd.find_element_by_css_selector("label[for='antibot_check']").click()
-        wd.find_element_by_css_selector("button.registration_button_send").click()
-        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.head_basket_wrapper')))
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@class='registration_button_send']")))
+        wd.find_element_by_xpath("//button[@class='registration_button_send']").click()
