@@ -135,7 +135,32 @@ class CabinetProjectsHelperControls(SearchOrdersHelperControls):
     projectName = (By.XPATH, "//span[contains(text(),'test')]")
 
 
-class CabinetEstimatesHelperControls():
+class CabinetEstimatesHelperControls:
 
     # Список смет
-    estimateName = (By.XPATH, "//a[contains(text(),'Смета 17.05.2018 17.05.21')]")
+    estimateListName = (By.XPATH, "//a[contains(text(),'Смета 17.05.2018 17.05.21')]")
+    estimateListEdit = (By.XPATH, "//*[@class='ic ic_pen']")
+    estimateListDelete = (By.XPATH, "//*[@class='ic ic_delete_grey']")
+    estimateListDownload = (By.XPATH, "//span[contains(text(),'скачать')]")
+
+    # Карточка сметы
+    estimateNameEdit = (By.XPATH, "//*[@class='ic ic_pen']")
+    estimateFormCart = (By.XPATH, "//a[@class='estimateToCart']")
+
+    # Поп-ап изменения названия сметы
+    estimateNameEditInput = (By.CSS_SELECTOR, "input['placeholder=новое название']")
+    estimateNameEditConfirm = (By.XPATH, "//button[@class='confirm']")
+    estimateNameEditCancel = (By.XPATH, "//button[@class='cancel']")
+
+
+class CabinetExpenseHelperControls:
+
+    # Расходы
+    expenseProjectList = (By.XPATH, "//div[@class='field__search __tags']")
+    expenseProjectSelect = (By.XPATH, "//p[contains(text(),'test')]")
+    expenseIntervalYear = (By.XPATH, "//div[contains(text(),'За год')]")
+    expenseIntervalMonth = (By.XPATH, "//div[contains(text(),'За месяц')]")
+    expenseIntervalWeek = (By.XPATH, "//div[contains(text(),'За неделю')]")
+    expenseIntervalCalendar = (By.XPATH, "//input[@class='__order__search_enter']")
+    # expenseViewBlock = (By.XPATH, "")
+    # expenseViewList =(By.XPATH, "")
