@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 
 class RegisterHelperControls:
+
+    # Форма регистрации
     registrationFirstname = (By.ID, "mainPetrovichRegister_firstName")
     registrationLastname = (By.ID, "mainPetrovichRegister_lastName")
     registrationEmail = (By.ID, "mainPetrovichRegister_email")
@@ -14,6 +16,8 @@ class RegisterHelperControls:
 
 
 class AuthorizationHelperControls:
+
+    # Форма авторизации
     authLogin = (By.ID, "mainPetrovichLogin_login")
     authPassword = (By.ID, "mainPetrovichLogin_password")
     authRemember = (By.NAME, "remember")
@@ -22,6 +26,7 @@ class AuthorizationHelperControls:
 
 
 class GetPasswordHelperControls:
+    # Форма восстановления пароля
     getPasswordLink = (By.LINK_TEXT, "Получить пароль")
     getPasswordEmail = (By.NAME, "email_restore")
     getPasswordSubmit = (By.XPATH, "//button[contains(text(),'Выслать')]")
