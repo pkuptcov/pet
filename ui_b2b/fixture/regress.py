@@ -55,8 +55,8 @@ class RegressHelper:
         # Страница оформления заказа для юр лиц самовывоз
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable((By.NAME, "base")))
-        wd.find_element_by_name("base").click()
+        wait.until(EC.presence_of_element_located((By.NAME, "base")))
+        wd.find_element_by_css_selector("[value='1ea6159b-594d-11e6-bef9-00259038e9f2']").click()
         wd.find_element_by_css_selector("input[value='legalNonCash']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")
@@ -108,16 +108,16 @@ class RegressHelper:
             wd.find_element_by_css_selector("div.plugin__dropdown--masked").click()
         wd.find_element_by_css_selector("textarea[ng-model='orderDeliveryCtrl.order.userComment']").send_keys("тест")
         wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
+        time.sleep(2)
         if wd.current_url.endswith("/delivery/"):
             wd.find_element_by_css_selector("option[value='С23До03']").click()
             time.sleep(3)
-            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")))
             wd.find_element_by_xpath("//div[@id='delivery_final_scrolled']/div/button").click()
 
     def thanks(self):
         # Страница спасибо за покупку и переход в личный кабинет
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        time.sleep(1)
-        wait.until(EC.presence_of_element_located((By.XPATH, "//p[@class='thanks__big-text']")))
+        # time.sleep(2)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'заказ')]")))
         wd.find_element_by_xpath("//a[contains(text(),'заказ')]").click()
