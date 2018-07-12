@@ -32,7 +32,6 @@ class RegressHelper:
     def go_to_cart(self):
         # Переход в корзину
         wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
         wd.find_element_by_css_selector("button.basket_catalog_search").click()
 
     def init_order_creation_self(self):
@@ -118,6 +117,5 @@ class RegressHelper:
         # Страница спасибо за покупку и переход в личный кабинет
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        # time.sleep(2)
         wait.until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'заказ')]")))
         wd.find_element_by_xpath("//a[contains(text(),'заказ')]").click()
