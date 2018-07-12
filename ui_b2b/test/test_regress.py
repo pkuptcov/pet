@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-# def test_auth_logout(app):
-#     app.open_home_page()
-#     app.session.login(login="pavel.kuptcov@gmail.com", password="111111")
-#     app.session.logout()
 
 
 def test_ur_delivery_auth(app):
