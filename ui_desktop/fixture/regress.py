@@ -171,8 +171,7 @@ class RegressHelper:
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()
         wd.find_element_by_css_selector("[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]").click()
-        wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С2330До0330']")))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С2330До0330']")))
         wd.find_element_by_css_selector("option[value='С2330До0330']").click()
         wd.find_element_by_css_selector("input[placeholder='Название']").clear()
         wd.find_element_by_css_selector("input[placeholder='Название']").send_keys("Тест")

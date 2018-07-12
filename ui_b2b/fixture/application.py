@@ -21,7 +21,7 @@ class Application:
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
 
-    def open_home_page_b2b(self):
+    def open_home_page(self):
         wd = self.wd
         wd.get("https://b2b.beta.kluatr.ru/")
 
