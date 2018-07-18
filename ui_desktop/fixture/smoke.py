@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class RegressHelper:
+class SmokeHelper:
 
     def __init__(self, app):
         self.app = app
