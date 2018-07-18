@@ -9,18 +9,18 @@ class Application:
 
     def __init__(self):
 
-        # capabilities = {
-        #     "browserName": "firefox",
-        #     "version": "60.0",
-        #     "enableVNC": True
-        # }
-        # self.wd = webdriver.Remote(
-        #     command_executor="http://hw00.vm.a:4444/wd/hub",
-        #     desired_capabilities=capabilities)
-        # self.wd.set_window_size(1920, 1080)
-
-        self.wd = webdriver.Firefox()
+        capabilities = {
+            "browserName": "firefox",
+            "version": "60.0",
+            "enableVNC": True
+        }
+        self.wd = webdriver.Remote(
+            command_executor="http://hw00.vm.a:4444/wd/hub",
+            desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
+
+        # self.wd = webdriver.Firefox()
+        # self.wd.set_window_size(1920, 1080)
         self.session = SessionHelper(self)
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
