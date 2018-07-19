@@ -27,13 +27,13 @@ class Application:
 
     @staticmethod
     def get_capabilities(browser_name):
-        if browser_name == 'firefox':
-            return {
-                "browserName": "firefox",
-                "version": "60.0",
-                "enableVNC": True
-            }
-        elif browser_name == 'chrome':
+        # if browser_name == 'firefox':
+        #     return {
+        #         "browserName": "firefox",
+        #         "version": "60.0",
+        #         "enableVNC": True
+        #     }
+        if browser_name == 'chrome':
             return {
                 "browserName": "chrome",
                 "version": "66.0",

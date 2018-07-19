@@ -2,8 +2,8 @@ import pytest
 from ui_b2b.fixture.application import Application
 
 
-@pytest.fixture(scope="session")
+@pytest.yield_fixture(scope="session", params=['firefox', 'chrome'])
 def app(request):
-    fixture = Application()
-    request.addfinalizer(fixture.destroy)
-    return fixture
+    fixture = Application(browser=request.param)
+    yield fixture
+    fixture.destroy()
