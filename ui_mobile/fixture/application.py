@@ -7,13 +7,12 @@ from ui_mobile.fixture.city import CityHelper
 
 class Application:
 
-    def __init__(self):
+    def __init__(self, browser):
 
-        capabilities = {
-            "browserName": "chrome",
-            "version": "66.0",
-            "enableVNC": True
-        }
+        if browser not in ['firefox', 'chrome']:
+            raise Exception('{} browser is not supported'.format(browser))
+
+        capabilities = self.get_capabilities(browser)
         self.wd = webdriver.Remote(
             command_executor="http://hw00.vm.a:4444/wd/hub",
             desired_capabilities=capabilities)
@@ -25,6 +24,21 @@ class Application:
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
+
+    @staticmethod
+    def get_capabilities(browser_name):
+        if browser_name == 'firefox':
+            return {
+                "browserName": "firefox",
+                "version": "60.0",
+                "enableVNC": True
+            }
+        elif browser_name == 'chrome':
+            return {
+                "browserName": "chrome",
+                "version": "66.0",
+                "enableVNC": True
+            }
 
     def open_home_page(self):
         wd = self.wd
