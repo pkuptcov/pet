@@ -7,14 +7,12 @@ from ui_desktop.fixture.city import CityHelper
 
 class Application:
 
-    def __init__(self):
-        # self.wd.delete_all_cookies()
+    def __init__(self, browser):
 
-        capabilities = {
-            "browserName": "firefox",
-            "version": "60.0",
-            "enableVNC": True
-        }
+        if browser not in ['firefox', 'chrome']:
+            raise Exception('{} browser is not supported'.format(browser))
+
+        capabilities = self.get_capabilities(browser)
         self.wd = webdriver.Remote(
             command_executor="http://hw00.vm.a:4444/wd/hub",
             desired_capabilities=capabilities)
@@ -22,14 +20,25 @@ class Application:
 
         # self.wd = webdriver.Chrome()
         # self.wd.set_window_size(1920, 1080)
-        # self.wd = webdriver.Ie()
-        # self.wd = webdriver.Firefox()
-        # self.wd.maximize_window()
-        # self.wd = webdriver.Edge()
         self.session = SessionHelper(self)
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
+
+    @staticmethod
+    def get_capabilities(browser_name):
+        if browser_name == 'firefox':
+            return {
+                "browserName": "firefox",
+                "version": "60.0",
+                "enableVNC": True
+            }
+        if browser_name == 'chrome':
+            return {
+                "browserName": "chrome",
+                "version": "66.0",
+                "enableVNC": True
+            }
 
     def open_home_page(self):
         wd = self.wd
