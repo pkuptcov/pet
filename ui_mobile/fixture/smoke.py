@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 class SmokeHelper:
@@ -59,6 +60,7 @@ class SmokeHelper:
     def init_order_creation_self(self):
         # Выбираем самовывоз и нажимаем оформить
         wd = self.app.wd
+        time.sleep(1)
         wd.find_element_by_xpath("//label[@for='shipment--place']").click()
         wd.find_element_by_xpath("//button[@class='step--send']").click()
 
@@ -154,6 +156,7 @@ class SmokeHelper:
         wd.find_element_by_xpath("//label[contains(text(),'ЗАВТРА')]").click()
         wd.find_element_by_xpath("//label[@for='day--all']").click()
         wd.find_element_by_css_selector("[ng-value='orderDeliveryCtrl.deliveryIntervals.today[0]']").click()
+        time.sleep(1)
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "option[value='С09До18']")))
         wd.find_element_by_css_selector("option[value='С09До18']").click()
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.companiesName']").clear()
