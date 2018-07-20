@@ -7,7 +7,9 @@ from ui_b2b.fixture.city import CityHelper
 
 class Application:
 
-    def __init__(self, browser):
+    def __init__(self, browser, chrome_version, firefox_version):
+        self.chrome_version = chrome_version
+        self.firefox_version = firefox_version
 
         if browser not in ['firefox', 'chrome']:
             raise Exception('{} browser is not supported'.format(browser))
@@ -18,25 +20,22 @@ class Application:
             desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
 
-        # self.wd = webdriver.Chrome()
-        # self.wd.set_window_size(1920, 1080)
         self.session = SessionHelper(self)
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
 
-    @staticmethod
-    def get_capabilities(browser_name):
+    def get_capabilities(self, browser_name):
         if browser_name == 'firefox':
             return {
                 "browserName": "firefox",
-                "version": "60.0",
+                "version": self.firefox_version,
                 "enableVNC": True
             }
         if browser_name == 'chrome':
             return {
                 "browserName": "chrome",
-                "version": "66.0",
+                "version": self.chrome_version,
                 "enableVNC": True
             }
 
