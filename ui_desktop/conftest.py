@@ -50,4 +50,3 @@ def settings(request):
     else:
         a_settings.URL = 'http://petrovich.{}.pet.a'.format(request.config.option.url)
     return a_settings
-
