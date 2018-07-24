@@ -13,7 +13,7 @@ def firefox_app(settings):
 
 
 @pytest.yield_fixture(scope="session", params=['firefox_app', 'chrome_app'])
-def complex_app(request, settings):
+def complex_app(request):
     return request.getfixturevalue('request.param')
 
 
@@ -33,14 +33,21 @@ def app(request, settings):
 def pytest_addoption(parser):
     parser.addoption('--chrome', default=None)
     parser.addoption('--firefox', default=None)
+    parser.addoption('--url', default=None)
 
 
 @pytest.fixture(scope='session')
 def settings(request):
     class Settings(object):
-       CHROME_VERSION = None
-       FIREFOX_VERSION = None
+        CHROME_VERSION = None
+        FIREFOX_VERSION = None
+        URL = None
     a_settings = Settings()
     a_settings.CHROME_VERSION = request.config.option.chrome
     a_settings.FIREFOX_VERSION = request.config.option.firefox
+    if not request.config.option.url:
+        a_settings.URL = 'https://pet.beta.kluatr.ru/'
+    else:
+        a_settings.URL = 'http://petrovich.{}.pet.a'.format(request.config.option.url)
     return a_settings
+

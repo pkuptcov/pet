@@ -10,9 +10,10 @@ FIREFOX_DEFAULT_VERSION = '60'
 
 class Application:
 
-    def __init__(self, browser, version=None):
+    def __init__(self, browser, url, version=None):
         self.browser = browser
         self.version = version
+        self.url = url
 
         if browser not in ['firefox', 'chrome']:
             raise Exception('{} browser is not supported'.format(browser))
@@ -44,7 +45,7 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("https://pet.beta.kluatr.ru/")
+        wd.get(self.url)
 
     def destroy(self):
         self.wd.quit()
