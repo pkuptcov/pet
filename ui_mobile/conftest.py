@@ -13,7 +13,6 @@ def app(request, settings):
         fixture = request.getfixturevalue('chrome_app')
     else:
         fixture = request.getfixturevalue('chrome_app')
-
     yield fixture
     fixture.destroy()
 
