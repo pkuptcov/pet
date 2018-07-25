@@ -40,9 +40,9 @@ def settings(request):
     a_settings.CHROME_VERSION = request.config.option.chrome
     a_settings.FIREFOX_VERSION = request.config.option.firefox
     if not request.config.option.url:
-        a_settings.URL = 'https://pet.beta.kluatr.ru/'
+        a_settings.URL = 'https://b2b.beta.kluatr.ru/'
     else:
-        a_settings.URL = 'http://petrovich.{}.pet.a'.format(request.config.option.url)
+        a_settings.URL = 'http://b2b.{}.pet.a'.format(request.config.option.url)
     return a_settings
 
 

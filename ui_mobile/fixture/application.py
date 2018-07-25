@@ -45,6 +45,9 @@ class Application:
     def open_home_page(self):
         wd = self.wd
         wd.get(self.url)
+        self.wd.delete_cookie("u__typeDevice")
+        self.wd.add_cookie({"name": "u__typeDevice", "value": "mobile", "domen": ".kluatr.ru", "path": "/"})
+        self.wd.refresh()
 
     def destroy(self):
         self.wd.quit()
