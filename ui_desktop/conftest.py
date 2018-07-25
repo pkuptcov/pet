@@ -4,7 +4,7 @@ from ui_desktop.fixture.application import Application
 
 @pytest.yield_fixture(scope="session")
 def chrome_app(settings):
-    return Application('chrome', version=settings.CHROME_VERSION)
+    return Application('chrome', version=settings.CHROME_VERSION,  url=settings.URL,)
 
 
 @pytest.yield_fixture(scope="session")
@@ -30,12 +30,6 @@ def app(request, settings):
     fixture.destroy()
 
 
-def pytest_addoption(parser):
-    parser.addoption('--chrome', default=None)
-    parser.addoption('--firefox', default=None)
-    parser.addoption('--url', default=None)
-
-
 @pytest.fixture(scope='session')
 def settings(request):
     class Settings(object):
@@ -50,3 +44,9 @@ def settings(request):
     else:
         a_settings.URL = 'http://petrovich.{}.pet.a'.format(request.config.option.url)
     return a_settings
+
+
+def pytest_addoption(parser):
+    parser.addoption('--chrome', default=None)
+    parser.addoption('--firefox', default=None)
+    parser.addoption('--url', default=None)
