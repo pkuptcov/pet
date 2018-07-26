@@ -46,7 +46,7 @@ class Application:
         wd = self.wd
         wd.get(self.url)
         self.wd.delete_cookie("u__typeDevice")
-        self.wd.add_cookie({"name": "u__typeDevice", "value": "mobile", "domen": ".kluatr.ru", "path": "/"})
+        self.wd.add_cookie({"name": "u__typeDevice", "value": "mobile"})
         self.wd.refresh()
 
     def destroy(self):
