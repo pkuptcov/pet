@@ -4,12 +4,12 @@ from ui_b2b.fixture.application import Application
 
 @pytest.yield_fixture(scope="session")
 def chrome_app(settings):
-    return Application('chrome', version=settings.CHROME_VERSION,  url=settings.URL,)
+    return Application('chrome', version=settings.CHROME_VERSION,  url=settings.URL)
 
 
 @pytest.yield_fixture(scope="session")
 def firefox_app(settings):
-    return Application('firefox', version=settings.FIREFOX_VERSION)
+    return Application('firefox', version=settings.FIREFOX_VERSION, url=settings.URL)
 
 
 @pytest.yield_fixture(scope="session", params=['firefox_app', 'chrome_app'])
