@@ -4,7 +4,7 @@ from ui_mobile.fixture.application import Application
 
 @pytest.yield_fixture(scope="session")
 def chrome_app(settings):
-    return Application('chrome', version=settings.CHROME_VERSION,  url=settings.URL,)
+    return Application('chrome', version=settings.CHROME_VERSION,  url=settings.URL)
 
 
 @pytest.yield_fixture(scope="session")
