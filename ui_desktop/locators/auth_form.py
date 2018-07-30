@@ -30,4 +30,4 @@ class GetPasswordHelperControls:
     getPasswordLink = (By.LINK_TEXT, "Получить пароль")
     getPasswordEmail = (By.NAME, "email_restore")
     getPasswordSubmit = (By.XPATH, "//button[contains(text(),'Выслать')]")
-    hetPasswordClose = (By.CSS_SELECTOR, "svg.ic.ic_close")  # or "use"
+    getPasswordClose = (By.CSS_SELECTOR, "svg.ic.ic_close")  # or "use"
