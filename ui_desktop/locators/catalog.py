@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class CatalogHelperControls:
+class CatalogControls:
 
     # Каталог - Напольные покрытия
     catalogFirstLevelLinoleum = (By.XPATH, "//ul[@class='categories_list']//li[3]//a[1]")

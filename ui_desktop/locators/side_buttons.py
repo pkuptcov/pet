@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class SideButtonsHelperControls:
+class SideButtonsControls:
 
     # Кнопки справа (Оплатить заказ, Сообщить об ошибке, Задать вопрос)
     sideButtonOrder = (By.CSS_SELECTOR, ".side_button_order")

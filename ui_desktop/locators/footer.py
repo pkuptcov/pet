@@ -2,4 +2,4 @@
 from selenium.webdriver.common.by import By
 
 
-# class FooterHelperControls:
+# class FooterControls:

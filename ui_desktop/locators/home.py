@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class HomeHelperControls:
+class HomeControls:
 
     # Баннеры
     bannerTop1 = (By.ID, "desktop_index_top1")

@@ -1,5 +1,5 @@
 import pytest
-from ui_desktop.fixture.application import Application
+from ui_desktop.application import Application
 
 
 @pytest.yield_fixture(scope="session")

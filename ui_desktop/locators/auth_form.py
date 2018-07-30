@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class RegisterHelperControls:
+class RegisterControls:
 
     # Форма регистрации
     registrationFirstname = (By.ID, "mainPetrovichRegister_firstName")

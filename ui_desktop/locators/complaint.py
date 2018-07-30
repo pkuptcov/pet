@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class ComplaintHelperControls:
+class ComplaintControls:
 
     # Форма в СПК
     firstName = (By.NAME, "name")

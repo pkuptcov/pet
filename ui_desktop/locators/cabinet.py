@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class CabinetProfileHelperControls:
+class CabinetProfileControls:
 
     # Левое меню в ЛК
     menuLinkProfile = (By.XPATH, "//a[@class='menu__link'][contains(text(),'Профиль')]")

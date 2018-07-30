@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class CartHelperControls:
+class CartControls:
 
     # Кнопки для перемещения в корзину
     cartButtonAlready = (By.CSS_SELECTOR, "span.btn btn_cart.product__button.btn_cart_already")

@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class MapBasesHelperControls:
+class MapBasesControls:
 
     # Вкладки выбора города и карта яндекса
     mapBasesRegionCfo = (By.CSS_SELECTOR, "div[data-region-code='r_cfo']")

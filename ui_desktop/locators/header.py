@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class HeaderHelperControls:
+class HeaderControls:
     # Топбар (черный)
     headerBuildCenter = (By.XPATH, "(//a[contains(text(),'Строительные центры')])[1]")
     headerDeliveryAndLift = (By.XPATH, "//a[@href='/services/delivery/'][contains(text(),'Доставка и подъем')]]")

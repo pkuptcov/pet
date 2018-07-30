@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class LeftCatalogHelperControls:
+class LeftCatalogControls:
     leftCatalogButton = (By.CSS_SELECTOR, "a.catalog_open_link")
     leftCatalogDropdownButton = (By.CSS_SELECTOR, "div.catalog_dropdown-button']")
     leftCatalogCategory1 = (By.LINK_TEXT, "Общестроительные материалы")
