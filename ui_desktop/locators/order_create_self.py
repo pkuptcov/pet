@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 class OrderCreateSelfControls:
 
     # Выбор строительного центра
+    # Список баз:
+    baseList = (By.CSS_SELECTOR, "ul.bases_list")
     # СПБ:
     baseTallinskoe = (By.CSS_SELECTOR, "[value='1ea6159b-594d-11e6-bef9-00259038e9f2']")
     baseEngelsa = (By.CSS_SELECTOR, "[value='42d0a3ba-2efc-11df-942d-0023543d7b52']")
@@ -58,6 +60,9 @@ class OrderCreateSelfControls:
     # Подтверждение заказа
     submitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderingSelfCtrl.make($event)']")
     submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
+
+    # Dropdown маска
+    orderDropdownMask2 = execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
 
 
 class OrderCreateSelfUrControls(OrderCreateSelfControls):
