@@ -11,8 +11,7 @@ class BasePage:
         self.wd = self.app.wd
         self.wait = WebDriverWait(10)
 
-    def click(self, By, selector):
+    def click(self, selector_type, selector):
         self.wd = self.app.wd
-        self.selector =
-        self.By =
+        wait.until(EC.presence_of_element_located(controls.submitOrderButtonMain))
 
