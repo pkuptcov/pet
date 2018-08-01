@@ -53,16 +53,13 @@ class OrderCreateSelfControls:
     selfEmail = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsEmail']")
     selfPhone = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsPhone']")
     orderUsername = (By.NAME, "user_name")
-    orderDropdownMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
+    # orderDropdownMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
     selfCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderingSelfCtrl.order.callRequired']")
     selfUserComment = (By.CSS_SELECTOR, "textarea[ng-model='orderingSelfCtrl.order.userComment']")
 
     # Подтверждение заказа
     submitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderingSelfCtrl.make($event)']")
     submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
-
-    # Dropdown маска
-    orderDropdownMask2 = execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
 
 
 class OrderCreateSelfUrControls(OrderCreateSelfControls):

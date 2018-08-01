@@ -8,6 +8,7 @@ from ui_desktop.locators.order_create_self import OrderCreateSelfUrControls
 
 class OrderCreateSelfPage:
     controls = OrderCreateSelfControls
+    dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
     def __init__(self, app):
         self.app = app
@@ -47,28 +48,28 @@ class OrderCreateSelfFizPage(OrderCreateSelfPage):
         wd = self.app.wd
         wd.controls.orderPayOnline.click()
 
-    def input_username(self):
+    def input_username(self, dropdown_mask):
         wd = self.app.wd
         wd.controls.orderUsername.clear()
         wd.controls.orderUsername.send_keys("Тест")
-        wd.execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
+        wd.execute_script(dropdown_mask)
 
 
 class OrderCreateSelfUrPage(OrderCreateSelfPage):
     controls = OrderCreateSelfUrControls
 
-    def input_company_details(self, controls):
+    def input_company_details(self, dropdown_mask):
         wd = self.app.wd
         wd.companyName.clear()
         wd.companyName.send_keys("Тест")
-        wd.execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
+        wd.execute_script(dropdown_mask)
         wd.companyInn.clear()
         wd.companyInn.send_keys("1231231231")
         wd.companyKpp.clear()
         wd.companyKpp.send_keys("123123123")
 
-    def input_username(self, controls):
+    def input_username(self, dropdown_mask):
         wd = self.app.wd
         wd.controls.orderUsername.clear()
         wd.controls.orderUsername.send_keys("Тест")
-        wd.execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
+        wd.execute_script(dropdown_mask)

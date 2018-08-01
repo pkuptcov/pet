@@ -67,7 +67,7 @@ class OrderCreateDeliveryControls:
     deliveryEmail = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.contactsEmail']")
     deliveryPhone = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.contactsPhone']")
     orderUsername = (By.NAME, "user_name")
-    orderDropdownMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
+    # orderDropdownMask = (By.CSS_SELECTOR, ".plugin__dropdown--masked")
     deliveryCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.order.callRequired']")
     deliveryCallRequiredNow = (By.XPATH, "//span[@class='label_name'][contains(text(),'Сейчас')]")
     deliveryCallRequiredToday = (By.XPATH, "//span[@class='label_name'][contains(text(),'Сегодня')]")
