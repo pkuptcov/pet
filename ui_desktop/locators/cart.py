@@ -22,6 +22,20 @@ class CartControls:
     cartDownQty = (By.CSS_SELECTOR, "span.stepper-arrow.down")
     cartEnterQty = (By.NAME, "product_id")
 
+    # Форма сертификатов Высшей Лиги
+    cartCouponWhere = (By.XPATH, "//a[contains(text(),'Куда ввести номер сертификата?')]")
+    cartCouponInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.couponValue']")
+    cartCouponSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.checkVerifyCoupon($event)']")
+
+    # Блок с суммой заказа и выбором доставки / покупки
+    cartOrderDelivery = (By.CSS_SELECTOR, "input[value=delivery]")
+    cartOrderSelf = (By.CSS_SELECTOR, "input[value=self]")
+    cartOrderInit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.goToOrdering()']")
+    cartOrderPrice = (By.CSS_SELECTOR, ".cart_total_container_universal_sum_price")
+
+
+class CartControlsFiz(CartControls):
+
     # Форма карты клуба друзей
     cartCardInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.cardInput']")
     cartCardSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.addCard()']")
@@ -30,9 +44,9 @@ class CartControls:
     cartCardDelete = (By.XPATH, "//a[contains(text(),'Удалить')]")
     cartCardPin = (By.XPATH, "//a[contains(text(),'Ввести пин-код карты Клуба Друзей')]")
 
-    # Форма сертификатов Высшей Лиги
-    cartCouponWhere = (By.XPATH, "//a[contains(text(),'Куда ввести номер сертификата?')]")
-    cartCouponInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.couponValue']")
-    cartOrderDelivery = (By.CSS_SELECTOR, "input[value=delivery]")
-    cartOrderSelf = (By.CSS_SELECTOR, "input[value=self]")
-    cartOrderInit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.goToOrdering()']")
+
+class CartControlsUr(CartControls):
+
+    # Форма карты клуба друзей
+    cartInnInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.innValue']")
+    cartInnSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.checkVerifyInn($event)']")

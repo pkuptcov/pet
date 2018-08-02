@@ -4,14 +4,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryControls
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryFizControls
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryUrControls
+from ui_desktop.pages.base import BasePage
 
 
-class OrderCreateDeliveryPage:
+class OrderCreateDeliveryPage(BasePage):
     controls = OrderCreateDeliveryControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
-
-    def __init__(self, app):
-        self.app = app
 
     def input_address(self, controls):
         wd = self.app.wd
