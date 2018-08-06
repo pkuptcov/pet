@@ -23,7 +23,7 @@ class Application:
 
         capabilities = self.get_capabilities()
         self.wd = webdriver.Remote(
-            command_executor="http://hw00.vm.a:4444/wd/hub",
+            command_executor="http://sel01.hw00.vm.a:4444/wd/hub",
             desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
 
