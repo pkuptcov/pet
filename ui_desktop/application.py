@@ -46,13 +46,13 @@ class Application:
             }
         elif self.browser == 'edge':
             return {
-                "browserName": "edge",
+                "browserName": "MicrosoftEdge",
                 "version": str(self.version) if self.version else EDGE_DEFAULT_VERSION,
                 "enableVNC": True
             }
         elif self.browser == 'ie':
             return {
-                "browserName": "ie",
+                "browserName": "internet explorer",
                 "version": str(self.version) if self.version else IE_DEFAULT_VERSION,
                 "enableVNC": True
             }
