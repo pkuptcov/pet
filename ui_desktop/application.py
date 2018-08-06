@@ -4,6 +4,7 @@ from ui_desktop.fixture.smoke import SmokeHelper
 from ui_desktop.fixture.register import RegisterHelper
 from ui_desktop.fixture.city import CityHelper
 
+
 CHROME_DEFAULT_VERSION = '66'
 FIREFOX_DEFAULT_VERSION = '60'
 EDGE_DEFAULT_VERSION = '42'
