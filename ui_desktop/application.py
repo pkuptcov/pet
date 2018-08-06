@@ -6,6 +6,8 @@ from ui_desktop.fixture.city import CityHelper
 
 CHROME_DEFAULT_VERSION = '66'
 FIREFOX_DEFAULT_VERSION = '60'
+EDGE_DEFAULT_VERSION = '42'
+IE_DEFAULT_VERSION = '11'
 
 
 class Application:
@@ -15,12 +17,12 @@ class Application:
         self.version = version
         self.url = url
 
-        if browser not in ['firefox', 'chrome']:
+        if browser not in ['firefox', 'chrome', 'edge', 'ie']:
             raise Exception('{} browser is not supported'.format(browser))
 
         capabilities = self.get_capabilities()
         self.wd = webdriver.Remote(
-            command_executor="http://hw00.vm.a:4444/wd/hub",
+            command_executor="http://sel01.hw00.vm.a:4444/wd/hub",
             desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
 
@@ -40,6 +42,18 @@ class Application:
             return {
                 "browserName": "chrome",
                 "version": str(self.version) if self.version else CHROME_DEFAULT_VERSION,
+                "enableVNC": True
+            }
+        elif self.browser == 'edge':
+            return {
+                "browserName": "edge",
+                "version": str(self.version) if self.version else EDGE_DEFAULT_VERSION,
+                "enableVNC": True
+            }
+        elif self.browser == 'ie':
+            return {
+                "browserName": "ie",
+                "version": str(self.version) if self.version else IE_DEFAULT_VERSION,
                 "enableVNC": True
             }
 

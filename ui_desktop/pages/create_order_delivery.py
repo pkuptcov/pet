@@ -11,19 +11,14 @@ class OrderCreateDeliveryPage(BasePage):
     controls = OrderCreateDeliveryControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
-    def input_address(self, controls):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable(controls.deliveryAddress))
+    def input_address(self):
+        self.click(*self.controls.deliveryAddress)
         wd.controls.deliveryAddress.send_keys("Россия, Санкт-Петербург, Благодатная улица, 6")
 
-    def select_delivery_standart3(self, controls):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wd.controls.deliveryDay3.click()
-        wd.controls.deliveryTypeStandard.click()
-        wait.until(EC.element_to_be_clickable(controls.deliveryIntervalStandard))
-        wd.deliveryIntervalStandard.click()
+    def select_delivery_standart3(self):
+        self.click(*self.controls.deliveryDay3)
+        self.click(*self.controls.deliveryTypeStandard)
+        self.click(*self.controls.deliveryIntervalStandard)
 
     def input_email(self):
         wd = self.app.wd
