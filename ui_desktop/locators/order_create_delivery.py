@@ -14,6 +14,10 @@ class OrderCreateDeliveryControls:
     deliveryForemanName = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.foremansName']")
     deliveryForemanPhone = (By.CSS_SELECTOR, ".master__phone __choose")
 
+    orderElementBase = ".order"
+    deliveryAddressInput = (By.CSS_SELECTOR, "{} input[name='addressInput'] [data-modify='ur,delivery']".format(orderElementBase))
+
+
     # Дни доставки
     deliveryDay1 = (By.XPATH, "(//input[@name='delivery_day'])[1]")
     deliveryDay2 = (By.XPATH, "(//input[@name='delivery_day'])[2]")

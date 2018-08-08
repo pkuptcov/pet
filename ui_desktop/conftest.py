@@ -52,12 +52,16 @@ def settings(request):
         EDGE_VERSION = None
         IE_VERSION = None
         URL = None
+        LOGIN = None
+        PASSWORD = None
 
     a_settings = Settings()
     a_settings.CHROME_VERSION = request.config.option.chrome
     a_settings.FIREFOX_VERSION = request.config.option.firefox
     a_settings.EDGE_VERSION = request.config.option.edge
     a_settings.IE_VERSION = request.config.option.ie
+    a_settings.LOGIN = request.config.option.login
+    a_settings.PASSWORD = request.config.option.password
 
     if not request.config.option.url:
         a_settings.URL = 'https://pet.beta.kluatr.ru/'
