@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-def test_fiz_delivery_auth(app):
+def test_fiz_delivery_auth(app, settings):
     app.open_home_page()
-    app.session.login(login="test@kluatr.ru", password="111111")
+    app.session.login(settings.LOGIN, settings.PASSWORD)
     app.smoke.search()
     app.smoke.edit_quantity_product()
     app.smoke.go_to_cart()

@@ -30,3 +30,5 @@ class BasePage:
         self.wd.find_element(selector_type, selector).clear()
         self.wd.find_element(selector_type, selector).send_keys()
 
+
+
