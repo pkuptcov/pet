@@ -93,10 +93,10 @@ class SmokeHelper:
         # Страница оформления заказа для физ лиц доставка
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
-        #order = ".order"
+        # order = ".order"
 
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")))
-        # wd.find_element_by_css_selector("{}[data-modify='ur,delivery'] input [name='deliveryAddress']".format(order))
+        # wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[.order[data-modifier='ur, delivery'] input[name='delivery-address']")))
         wd.find_element_by_css_selector("[ng-model='orderDeliveryCtrl.order.deliveryAddress']").send_keys(
             "Россия, Санкт-Петербург, Благодатная улица, 6")
         wd.find_element_by_xpath("(//input[@name='delivery_day'])[3]").click()

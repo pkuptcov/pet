@@ -20,6 +20,9 @@ class Application:
         self.version = version
         self.url = url
 
+        # self.wd = webdriver.Chrome()
+        # self.wd.set_window_size(1920, 1080)
+
         if browser not in ['firefox', 'chrome', 'edge', 'ie']:
             raise Exception('{} browser is not supported'.format(browser))
 
