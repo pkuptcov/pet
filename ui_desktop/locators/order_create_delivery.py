@@ -15,7 +15,7 @@ class OrderCreateDeliveryControls:
     deliveryForemanPhone = (By.CSS_SELECTOR, ".master__phone __choose")
 
     orderElementBase = ".order"
-    deliveryAddressInput = (By.CSS_SELECTOR, "{} input[name='addressInput'] [data-modify='ur,delivery']".format(orderElementBase))
+    deliveryAddressInput = (By.CSS_SELECTOR, "{}[data-modify='ur,delivery'] input [name='deliveryAddress']".format(orderElementBase))
 
 
     # Дни доставки
@@ -82,7 +82,7 @@ class OrderCreateDeliveryControls:
 
     # Подтверждение заказа
     deliverySubmitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")
-    SubmitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
+    submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
 
 
 class OrderCreateDeliveryUrControls(OrderCreateDeliveryControls):

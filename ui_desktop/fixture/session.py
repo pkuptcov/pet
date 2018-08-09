@@ -8,7 +8,7 @@ class SessionHelper:
     def __init__(self, app):
         self.app = app
 
-    def login(self, username, password):
+    def login(self, login, password):
         # Авторизация
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
@@ -19,7 +19,7 @@ class SessionHelper:
             wd.find_element_by_link_text("Выход").click()
             wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Вход")))
         wd.find_element_by_link_text("Вход").click()
-        wd.find_element_by_id("mainPetrovichLogin_login").send_keys(username)
+        wd.find_element_by_id("mainPetrovichLogin_login").send_keys(login)
         wd.find_element_by_id("mainPetrovichLogin_password").send_keys(password)
         wd.find_element_by_css_selector("div.form_row [type=submit]").click()
         wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "auth_user_link")))

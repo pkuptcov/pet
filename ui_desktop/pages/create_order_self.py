@@ -11,45 +11,31 @@ class OrderCreateSelfPage(BasePage):
     controls = OrderCreateSelfControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
-    def select_base(self, controls):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wait.until(EC.presence_of_element_located(controls.baseList))
-        wd.controls.baseTallinskoe.click()
+    def select_base(self):
+        self.click(*self.controls.baseTallinskoe)
 
     def input_phone(self):
-        wd = self.app.wd
-        wd.controls.selfPhone.clear()
-        wd.controls.selfPhone.send_keys("(111) 111-11-11")
+        self.input(*self.controls.selfPhone)("(111) 111-11-11")
 
     def input_email(self):
-        wd = self.app.wd
-        wd.controls.selfEmail.clear()
-        wd.controls.selfEmail.send_keys("info@kluatr.ru")
+        self.input(*self.controls.selfEmail)("info@kluatr.ru")
 
     def input_comment(self):
-        wd = self.app.wd
-        wd.controls.orderUsername.clear()
-        wd.controls.selfUserComment.send_keys("тест")
+        self.input(*self.controls.selfUserComment)("тест")
 
-    def submit_order(self, controls):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable(controls.submitOrderButtonMain))
-        wd.find_element_by_css_selector(controls.submitOrderButtonRight).click()
+    def submit_order(self):
+        self.click(*self.controls.submitOrderButtonMain)
 
 
 class OrderCreateSelfFizPage(OrderCreateSelfPage):
     controls = OrderCreateSelfFizControls
 
     def select_pay_online(self):
-        wd = self.app.wd
-        wd.controls.orderPayOnline.click()
+        self.click(*self.controls.orderPayOnline)
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
-        wd.controls.orderUsername.clear()
-        wd.controls.orderUsername.send_keys("Тест")
+        self.input(*self.controls.orderUsername)("Тест")
         wd.execute_script(dropdown_mask)
 
 
@@ -58,16 +44,12 @@ class OrderCreateSelfUrPage(OrderCreateSelfPage):
 
     def input_company_details(self, dropdown_mask):
         wd = self.app.wd
-        wd.companyName.clear()
-        wd.companyName.send_keys("Тест")
+        self.input(*self.controls.companyName)("Тест")
         wd.execute_script(dropdown_mask)
-        wd.companyInn.clear()
-        wd.companyInn.send_keys("1231231231")
-        wd.companyKpp.clear()
-        wd.companyKpp.send_keys("123123123")
+        self.input(*self.controls.companyInn)("1231231231")
+        self.input(*self.controls.companyKpp)("123123123")
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
-        wd.controls.orderUsername.clear()
-        wd.controls.orderUsername.send_keys("Тест")
+        self.input(*self.controls.orderUsername)("Тест")
         wd.execute_script(dropdown_mask)

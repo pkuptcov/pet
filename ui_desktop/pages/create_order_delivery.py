@@ -13,7 +13,7 @@ class OrderCreateDeliveryPage(BasePage):
 
     def input_address(self):
         self.click(*self.controls.deliveryAddress)
-        wd.controls.deliveryAddress.send_keys("Россия, Санкт-Петербург, Благодатная улица, 6")
+        self.input(*self.controls.deliveryAddress)("Россия, Санкт-Петербург, Благодатная улица, 6")
 
     def select_delivery_standart3(self):
         self.click(*self.controls.deliveryDay3)
@@ -21,51 +21,39 @@ class OrderCreateDeliveryPage(BasePage):
         self.click(*self.controls.deliveryIntervalStandard)
 
     def input_email(self):
-        wd = self.app.wd
-        wd.controls.selfEmail.clear()
-        wd.controls.selfEmail.send_keys("info@kluatr.ru")
+        self.input(*self.controls.deliveryEmail)("info@kluatr.ru")
 
     def input_comment(self):
-        wd = self.app.wd
-        wd.controls.orderUsername.clear()
-        wd.controls.selfUserComment.send_keys("тест")
+        self.input(*self.controls.deliveryUserComment)("тест")
 
-    def submit_order(self, controls):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 10)
-        wait.until(EC.element_to_be_clickable(controls.submitOrderButtonMain))
-        wd.find_element_by_css_selector(controls.submitOrderButtonRight).click()
+    def submit_order(self):
+        self.click(*self.controls.deliverySubmitOrderButtonMain)
 
 
 class OrderCreateDeliveryFizPage(OrderCreateDeliveryPage):
     controls = OrderCreateDeliveryFizControls
 
     def select_pay_online(self):
-        wd = self.app.wd
-        wd.controls.orderPayOnline.click()
+        self.click(*self.controls.orderPayOnline)
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
-        wd.controls.orderUsername.clear()
-        wd.controls.orderUsername.send_keys("Тест")
+        self.input(*self.controls.orderUsername)("Тест")
         wd.execute_script(dropdown_mask)
 
 
 class OrderCreateSelfUrPage(OrderCreateDeliveryPage):
     controls = OrderCreateDeliveryUrControls
 
-    def input_company_details(self, controls):
+    def input_company_details(self):
         wd = self.app.wd
-        wd.companyName.clear()
-        wd.companyName.send_keys("Тест")
-        wd.execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
-        wd.companyInn.clear()
-        wd.companyInn.send_keys("1231231231")
-        wd.companyKpp.clear()
-        wd.companyKpp.send_keys("123123123")
+        self.input(*self.controls.companyName)("Тест")
+        wd.execute_script(OrderCreateDeliveryPage.dropdown_mask)
+        self.input(*self.controls.companyInn)("1231231231")
+        self.input(*self.controls.companyKpp)("123123123")
 
-    def input_username(self, controls):
+    def input_username(self):
         wd = self.app.wd
         wd.controls.orderUsername.clear()
-        wd.controls.orderUsername.send_keys("Тест")
-        wd.execute_script("document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')")
+        self.input(*self.controls.orderUsername)("Тест")
+        wd.execute_script(OrderCreateDeliveryPage.dropdown_mask)
