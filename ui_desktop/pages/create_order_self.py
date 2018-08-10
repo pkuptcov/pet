@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from ui_desktop.locators.order_create_self import OrderCreateSelfControls
 from ui_desktop.locators.order_create_self import OrderCreateSelfFizControls
 from ui_desktop.locators.order_create_self import OrderCreateSelfUrControls
@@ -8,6 +6,7 @@ from ui_desktop.pages.base import BasePage
 
 
 class OrderCreateSelfPage(BasePage):
+
     controls = OrderCreateSelfControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
