@@ -29,6 +29,3 @@ class BasePage:
         self.wait.until(EC.visibility_of_element_located((selector_type, selector)))
         self.wd.find_element(selector_type, selector).clear()
         self.wd.find_element(selector_type, selector).send_keys()
-
-
-

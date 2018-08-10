@@ -76,5 +76,5 @@ def pytest_addoption(parser):
     parser.addoption('--edge', default=None)
     parser.addoption('--ie', default=None)
     parser.addoption('--url', default=None)
-    parser.addoption('--login', default='test@kluatr.ru')
-    parser.addoption('--password', default='111111')
+    parser.addoption('--login', default=None)
+    parser.addoption('--password', default=None)
