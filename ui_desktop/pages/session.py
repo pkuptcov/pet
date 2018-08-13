@@ -20,6 +20,7 @@ class Session(BasePage):
         self.click(*self.auth_controls.authSubmitButton)
 
     def logout(self):
+
         # Выход из ЛК
         self.click(*self.header_controls.headerUsername)
         self.click(*self.header_controls.headerLogout)
