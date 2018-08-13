@@ -4,10 +4,6 @@ from selenium.webdriver.common.by import By
 
 class CartControls:
 
-    # Кнопки для перемещения в корзину
-    cartButtonAlready = (By.CSS_SELECTOR, "span.btn btn_cart.product__button.btn_cart_already")
-    cartHeadBasket = (By.CSS_SELECTOR, "div.head_basket_wrapper")
-
     # Работа с корзиной и товарами
     cartFastAddToCart = (By.ID, "add-product-from-cart")
     cartPrint = (By.CSS_SELECTOR, "a.cart_page_print_link")

@@ -1,11 +1,11 @@
 from ui_desktop.pages.base import BasePage
-from ui_desktop.locators.auth_form import AuthorizationHelperControls
+from ui_desktop.locators.auth_form import AuthorizationControls
 from ui_desktop.locators.header import HeaderControls
 
 
 class Session(BasePage):
 
-    auth_controls = AuthorizationHelperControls
+    auth_controls = AuthorizationControls
     header_controls = HeaderControls
 
     def login(self, username, password):
