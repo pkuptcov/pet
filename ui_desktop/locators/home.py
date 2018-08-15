@@ -16,6 +16,9 @@ class HomeControls:
     burnViewAll = (By.XPATH, "//a[@href='/action-type/burns/']")
     bannerAvailability = (By.CSS_SELECTOR, "div.tooltip_container.product_status_tooltip_container.tooltip_container_open")
 
+    # Баннер биржи профессионалов
+    bannerPropetrovichClient = (By.XPATH, "//img[@src='//s2.petrovich.ru/common/banners/client.png']")
+
     # Блок Вам может быть интересно
     interestingViewAll = (By.XPATH, "//div[@class='rocketRetail--more']")
     interestingPrevCat = (By.XPATH, "//button[@class='rr-tab-arrow rr-tab-arrow--next']")

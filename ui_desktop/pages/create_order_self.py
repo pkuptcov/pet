@@ -14,13 +14,13 @@ class OrderCreateSelfPage(BasePage):
         self.click(*self.controls.baseTallinskoe)
 
     def input_phone(self):
-        self.input(*self.controls.selfPhone)("(111) 111-11-11")
+        self.input(*self.controls.selfPhone, value="(111) 111-11-11")
 
     def input_email(self):
-        self.input(*self.controls.selfEmail)("info@kluatr.ru")
+        self.input(*self.controls.selfEmail, value="info@kluatr.ru")
 
     def input_comment(self):
-        self.input(*self.controls.selfUserComment)("тест")
+        self.input(*self.controls.selfUserComment, value="тест")
 
     def submit_order(self):
         self.click(*self.controls.submitOrderButtonMain)
@@ -34,7 +34,7 @@ class OrderCreateSelfFizPage(OrderCreateSelfPage):
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
-        self.input(*self.controls.orderUsername)("Тест")
+        self.input(*self.controls.orderUsername, value="Тест")
         wd.execute_script(dropdown_mask)
 
 
@@ -43,12 +43,12 @@ class OrderCreateSelfUrPage(OrderCreateSelfPage):
 
     def input_company_details(self, dropdown_mask):
         wd = self.app.wd
-        self.input(*self.controls.companyName)("Тест")
+        self.input(*self.controls.companyName, value="Тест")
         wd.execute_script(dropdown_mask)
-        self.input(*self.controls.companyInn)("1231231231")
-        self.input(*self.controls.companyKpp)("123123123")
+        self.input(*self.controls.companyInn, value="1231231231")
+        self.input(*self.controls.companyKpp, value="123123123")
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
-        self.input(*self.controls.orderUsername)("Тест")
+        self.input(*self.controls.orderUsername, value="Тест")
         wd.execute_script(dropdown_mask)

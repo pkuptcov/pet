@@ -4,8 +4,16 @@ from selenium.webdriver.common.by import By
 
 class CartControls:
 
-    # Работа с корзиной и товарами
+    # Форма добавить по-быстрому
     cartFastAddToCart = (By.ID, "add-product-from-cart")
+    cartFastAddToCartSearch = (By.XPATH, "//input[@id='guid']")
+    cartFastAddToCartSudjest101847 = (By.XPATH, "//div[@class='ui-menu-item-wrapper']")
+    cartFastAddToCartQantityInput = (By.XPATH, "//input[@placeholder='1']")
+    cartFastAddToCartQantityUp = (By.XPATH, "//div[@class='fast-add-up stepper-arrow up product__stepper unit--step']")
+    cartFastAddToCartQantityDown = (By.XPATH, "//div[@class='fast-add-down stepper-arrow down product__stepper unit--step']")
+    cartFastAddToCartSubmit = (By.XPATH, "//div[@class='fast-add-button']")
+
+    # Работа с корзиной и товарами
     cartPrint = (By.CSS_SELECTOR, "a.cart_page_print_link")
     cartSaveEstimate = (By.CSS_SELECTOR, "cart_page_save_link")
     cartDelete = (By.CSS_SELECTOR, "a.cart_row_delete_link")

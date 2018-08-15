@@ -15,8 +15,8 @@ class Session(BasePage):
             self.click(*self.header_controls.headerUsername)
             self.click(*self.header_controls.headerLogout)
             self.click(*self.header_controls.authLink)
-        self.input(*self.auth_controls.authLogin)(username)
-        self.input(*self.auth_controls.authPassword)(password)
+        self.input(*self.auth_controls.authLogin, value=username)
+        self.input(*self.auth_controls.authPassword, value=password)
         self.click(*self.auth_controls.authSubmitButton)
 
     def logout(self):
