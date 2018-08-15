@@ -37,8 +37,6 @@ class CartPage(BasePage):
         self.click(*self.controls.cartDelete)
 
 
-
-
 class CartPageFiz(CartPage):
     controls = CartControlsFiz
 
