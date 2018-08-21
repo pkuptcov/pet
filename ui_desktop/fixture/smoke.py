@@ -23,8 +23,7 @@ class SmokeHelper:
         wait = WebDriverWait(wd, 10)
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.stepper-arrow.up.unit--step")))
         wd.find_element_by_css_selector("div.stepper-arrow.up.unit--step").click()
-        wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "div.btn_cart.listing__product-button.product__button.ng-scope")))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.btn_cart.listing__product-button.product__button.ng-scope")))
         wd.find_element_by_css_selector("div.btn_cart.listing__product-button.product__button.ng-scope").click()
 
     def go_to_cart(self):

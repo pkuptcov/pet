@@ -28,8 +28,10 @@ class CatalogControls:
     catalogSubdivisionTallinskoe = (By.XPATH, "//option[contains(text(),'Таллинское')]")
 
     # Сортировка по цене и по названию
-    catalogSortPrice = (By.XPATH, "//span[@class='product_table_sorting_link sorting__link price price_asc active__link']")
-    catalogSortTitle = (By.XPATH, "//span[@class='product_table_sorting_link sorting__link title title_asc']")
+    catalogSortPrice = (By.XPATH, "//span[(text()='по цене')]")
+    catalogSortTitle = (By.XPATH, "//span[(text()='по названию')]")
+    catalogSortUsefulness = (By.XPATH, "//span[(text()='по полезности')]")
+    catalogSortAccordance = (By.XPATH, "//span[(text()='по соответствию')]")
 
     # Вид отображение товара сеткой / списком
     catalogViewList = (By.CSS_SELECTOR, "ic_table")
@@ -52,6 +54,14 @@ class CatalogControls:
     # Кнопка добавления в корзину
     catalogAddToCart = (By.XPATH, "//div[@class='btn_cart listing__product-button product__button ng-scope']")
 
+    # Кнопка "В козине"
+    catalogAlreadyInCart = (By.XPATH, "//span[(text()='в корзине')]")
+
     # Добавить к сравнению
     catalogProductCompare = (By.XPATH, "//div[contains(@class,'listing__product-compare compare__product')]")
 
+    # Название товара
+    catalogProductName = (By.CSS_SELECTOR, "a[data-product-code='101846']")
+
+    # Фото товара
+    catalogProductImage = (By.CSS_SELECTOR, "img[src='//tdp.ru/images/8e5a2946-b646-11df-9b7f-001f29c68b0a_220x220_1.tif']")

@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 
 class SessionHelper:
@@ -12,6 +13,7 @@ class SessionHelper:
         # Авторизация
         wd = self.app.wd
         wait = WebDriverWait(wd, 10)
+        # time.sleep(13)
         wd.find_element_by_name("login").send_keys(login)
         wd.find_element_by_name("password").send_keys(password)
         wd.find_element_by_class_name("button_login_in").click()
