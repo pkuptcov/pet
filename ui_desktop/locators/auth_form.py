@@ -22,7 +22,7 @@ class AuthorizationControls:
     authLogin = (By.ID, "mainPetrovichLogin_login")
     authPassword = (By.ID, "mainPetrovichLogin_password")
     authRemember = (By.NAME, "remember")
-    authSubmitButton = (By.XPATH, "//button[contains(text(),'Вход')]")
+    authSubmitButton = (By.XPATH, "//button[(text()='Вход')]")
     authClose = (By.CSS_SELECTOR, "svg.ic.ic_close")  # or "use"
     authForgotPasswordLink = (By.LINK_TEXT, "Получить пароль")
 

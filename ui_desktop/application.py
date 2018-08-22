@@ -1,5 +1,5 @@
 from selenium import webdriver
-from ui_desktop.fixture.session import SessionHelper
+from ui_desktop.pages.session import Session
 from ui_desktop.fixture.smoke import SmokeHelper
 from ui_desktop.fixture.register import RegisterHelper
 from ui_desktop.fixture.city import CityHelper
@@ -20,19 +20,19 @@ class Application:
         self.version = version
         self.url = url
 
-        # self.wd = webdriver.Chrome()
-        # self.wd.set_window_size(1920, 1080)
-
-        if browser not in ['firefox', 'chrome', 'edge', 'ie']:
-            raise Exception('{} browser is not supported'.format(browser))
-
-        hub_url, capabilities = self.get_webdriver()
-        self.wd = webdriver.Remote(
-            command_executor=hub_url,
-            desired_capabilities=capabilities)
+        self.wd = webdriver.Chrome()
         self.wd.set_window_size(1920, 1080)
 
-        self.session = SessionHelper(self)
+        # if browser not in ['firefox', 'chrome', 'edge', 'ie']:
+        #     raise Exception('{} browser is not supported'.format(browser))
+        #
+        # hub_url, capabilities = self.get_webdriver()
+        # self.wd = webdriver.Remote(
+        #     command_executor=hub_url,
+        #     desired_capabilities=capabilities)
+        # self.wd.set_window_size(1920, 1080)
+
+        self.session = Session(self)
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
