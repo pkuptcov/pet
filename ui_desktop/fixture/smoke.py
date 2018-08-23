@@ -188,4 +188,8 @@ class SmokeHelper:
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a.thanks__lk-link")))
         wd.find_element_by_css_selector("a.thanks__lk-link").click()
         time.sleep(1)
-        wait.until(EC.presence_of_element_located((By.XPATH, "//p[@class='__info__status __N']")))
+        if not wait.until(EC.presence_of_element_located((By.XPATH, "//p[@class='__info__status __N']"))):
+            wait.until(EC.presence_of_element_located((By.XPATH, "//p[@class='__info__status __R']")))
+
+
+

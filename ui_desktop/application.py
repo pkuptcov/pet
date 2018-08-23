@@ -20,17 +20,17 @@ class Application:
         self.version = version
         self.url = url
 
-        self.wd = webdriver.Edge()
-        self.wd.set_window_size(1920, 1080)
-
-        # if browser not in ['firefox', 'chrome', 'edge', 'ie']:
-        #     raise Exception('{} browser is not supported'.format(browser))
-        #
-        # hub_url, capabilities = self.get_webdriver()
-        # self.wd = webdriver.Remote(
-        #     command_executor=hub_url,
-        #     desired_capabilities=capabilities)
+        # self.wd = webdriver.Edge()
         # self.wd.set_window_size(1920, 1080)
+
+        if browser not in ['firefox', 'chrome', 'edge', 'ie']:
+            raise Exception('{} browser is not supported'.format(browser))
+
+        hub_url, capabilities = self.get_webdriver()
+        self.wd = webdriver.Remote(
+            command_executor=hub_url,
+            desired_capabilities=capabilities)
+        self.wd.set_window_size(1920, 1080)
 
         self.session = Session(self)
         self.smoke = SmokeHelper(self)
