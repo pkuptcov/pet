@@ -70,7 +70,7 @@ class CabinetProfileControls:
     profileCompanyDeleteNo = (By.XPATH, "//button[contains(text(),'Нет')]")
 
 
-class SearchOrdersHelperControls:
+class SearchOrdersControls:
 
     # Поиск заказов
     ordersSearch = (By.CSS_SELECTOR, "input['formcontrolname=query']")
@@ -78,7 +78,7 @@ class SearchOrdersHelperControls:
     ordersSearchContractor = (By.XPATH, "//input[@class='__order__search_enter __js__dd--element']")
 
 
-class CabinetOrdersHelperControls(SearchOrdersHelperControls):
+class CabinetOrderListControls(SearchOrdersControls):
 
     # Показать больше заказов
     ordersShowMore = (By.XPATH, "//p[@class='__upload']")
@@ -112,9 +112,10 @@ class CabinetOrdersHelperControls(SearchOrdersHelperControls):
     ordersPaginationFinish = (By.XPATH, "//i[@class='ic ic_arrow_finish']")
 
 
-class CabinetOrderHelperControls:
+class CabinetOrderControls:
 
     # Карточка заказа
+    orderStatus = (By.XPATH, "")
     orderPrint = (By.XPATH, "//div[contains(@class,'order__event __print')]")
     orderRepeat = (By.XPATH, "//div[contains(@class,'order__event __repeat')]")
     orderCopy = (By.XPATH, "//span[contains(@class,'order__copy')]")
@@ -129,13 +130,13 @@ class CabinetOrderHelperControls:
     orderPopupClose = (By.XPATH, "//div[contains(@class,'close__popup __js__popup--close')]")
 
 
-class CabinetProjectsHelperControls(SearchOrdersHelperControls):
+class CabinetProjectsControls(SearchOrdersControls):
 
     # Название проекта
     projectName = (By.XPATH, "//span[contains(text(),'test')]")
 
 
-class CabinetEstimatesHelperControls:
+class CabinetEstimatesControls:
 
     # Список смет
     estimateListName = (By.XPATH, "//a[contains(text(),'Смета 17.05.2018 17.05.21')]")
@@ -153,7 +154,7 @@ class CabinetEstimatesHelperControls:
     estimateNameEditCancel = (By.XPATH, "//button[@class='cancel']")
 
 
-class CabinetExpenseHelperControls:
+class CabinetExpenseControls:
 
     # Расходы
     expenseProjectList = (By.XPATH, "//div[@class='field__search __tags']")

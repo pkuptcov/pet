@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryControls
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryFizControls
 from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryUrControls
@@ -41,8 +39,11 @@ class OrderCreateDeliveryFizPage(OrderCreateDeliveryPage):
         wd.execute_script(dropdown_mask)
 
 
-class OrderCreateSelfUrPage(OrderCreateDeliveryPage):
+class OrderCreateDeliveryUrPage(OrderCreateDeliveryPage):
     controls = OrderCreateDeliveryUrControls
+
+    def select_pay_online(self):
+        self.click(*self.controls.orderPayLegalNonCash)
 
     def input_company_details(self):
         wd = self.app.wd

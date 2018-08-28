@@ -6,6 +6,6 @@ from ui_desktop.pages.base import BasePage
 class SearchBlock(BasePage):
     controls = SearchControls
 
-    def login(self, username, password):
-        self.click(*self.controls.)
-        self.input(*self.controls.searchProductInput, value=username)
+    def search_product(self, product_name):
+        self.input(*self.controls.searchProductInput, value=product_name)
+        self.click(*self.controls.searchProductSubmit)

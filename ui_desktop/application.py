@@ -3,6 +3,16 @@ from ui_desktop.pages.session import Session
 from ui_desktop.fixture.smoke import SmokeHelper
 from ui_desktop.fixture.register import RegisterHelper
 from ui_desktop.fixture.city import CityHelper
+from ui_desktop.pages.search_product import SearchBlock
+from ui_desktop.pages.authorization import AuthorizationPage
+from ui_desktop.pages.authorization import RegisterPage
+from ui_desktop.pages.authorization import ForgotPasswordPage
+from ui_desktop.pages.cart import CartPageFiz
+from ui_desktop.pages.cart import CartPageUr
+from ui_desktop.pages.catalog import CatalogPage
+from ui_desktop.pages.create_order_delivery import OrderCreateDeliveryFizPage
+from ui_desktop.pages.create_order_delivery import OrderCreateDeliveryUrPage
+from ui_desktop.pages.thanks import ThanksPage
 
 
 CHROME_DEFAULT_VERSION = '66'
@@ -20,7 +30,7 @@ class Application:
         self.version = version
         self.url = url
 
-        # self.wd = webdriver.Edge()
+        # self.wd = webdriver.Chrome()
         # self.wd.set_window_size(1920, 1080)
 
         if browser not in ['firefox', 'chrome', 'edge', 'ie']:
@@ -36,6 +46,7 @@ class Application:
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
+        self.search_product = SearchBlock(self)
 
     def get_webdriver(self):
         if self.browser == 'firefox':
