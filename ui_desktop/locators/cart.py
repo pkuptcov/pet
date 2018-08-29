@@ -43,9 +43,9 @@ class CartControlsFiz(CartControls):
     # Форма карты клуба друзей
     cartCardInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.cardInput']")
     cartCardSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.addCard()']")
-    cartCardHowGet = (By.XPATH, "//a[contains(text(),'Как получить карту?')]")
-    cartCardChange = (By.XPATH, "//a[contains(text(),'Изменить')]")
-    cartCardDelete = (By.XPATH, "//a[contains(text(),'Удалить')]")
+    cartCardHowGet = (By.XPATH, "//a[(text()='Как получить карту?')]")
+    cartCardChange = (By.XPATH, "//a[(text()='Изменить')]")
+    cartCardDelete = (By.XPATH, "//a[(text()='Удалить')]")
     cartCardPin = (By.XPATH, "//a[contains(text(),'Ввести пин-код карты Клуба Друзей')]")
 
 

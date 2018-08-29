@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryControls
-from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryFizControls
-from ui_desktop.locators.order_create_delivery import OrderCreateDeliveryUrControls
+from ui_desktop.locators.order_delivery import OrderCreateDeliveryControls
+from ui_desktop.locators.order_delivery import OrderCreateDeliveryFizControls
+from ui_desktop.locators.order_delivery import OrderCreateDeliveryUrControls
 from ui_desktop.pages.base import BasePage
 
 
-class OrderCreateDeliveryPage(BasePage):
+class OrderDeliveryPage(BasePage):
     controls = OrderCreateDeliveryControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
@@ -27,7 +27,7 @@ class OrderCreateDeliveryPage(BasePage):
         self.click(*self.controls.deliverySubmitOrderButtonMain)
 
 
-class OrderCreateDeliveryFizPage(OrderCreateDeliveryPage):
+class OrderCreateDeliveryFizPage(OrderDeliveryPage):
     controls = OrderCreateDeliveryFizControls
 
     def select_pay_online(self):
@@ -39,7 +39,7 @@ class OrderCreateDeliveryFizPage(OrderCreateDeliveryPage):
         wd.execute_script(dropdown_mask)
 
 
-class OrderCreateDeliveryUrPage(OrderCreateDeliveryPage):
+class OrderCreateDeliveryUrPage(OrderDeliveryPage):
     controls = OrderCreateDeliveryUrControls
 
     def select_pay_online(self):
@@ -48,7 +48,7 @@ class OrderCreateDeliveryUrPage(OrderCreateDeliveryPage):
     def input_company_details(self):
         wd = self.app.wd
         self.input(*self.controls.companyName, value="Тест")
-        wd.execute_script(OrderCreateDeliveryPage.dropdown_mask)
+        wd.execute_script(OrderDeliveryPage.dropdown_mask)
         self.input(*self.controls.companyInn, value="1231231231")
         self.input(*self.controls.companyKpp, value="123123123")
 
@@ -56,4 +56,4 @@ class OrderCreateDeliveryUrPage(OrderCreateDeliveryPage):
         wd = self.app.wd
         wd.controls.orderUsername.clear()
         self.input(*self.controls.orderUsername, value="Тест")
-        wd.execute_script(OrderCreateDeliveryPage.dropdown_mask)
+        wd.execute_script(OrderDeliveryPage.dropdown_mask)

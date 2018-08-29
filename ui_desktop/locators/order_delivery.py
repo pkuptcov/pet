@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class OrderCreateDeliveryControls:
+class OrderDeliveryControls:
 
     # Адрес доставки
     deliveryAddress = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.deliveryAddress']")

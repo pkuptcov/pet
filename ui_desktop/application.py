@@ -10,9 +10,12 @@ from ui_desktop.pages.authorization import ForgotPasswordPage
 from ui_desktop.pages.cart import CartPageFiz
 from ui_desktop.pages.cart import CartPageUr
 from ui_desktop.pages.catalog import CatalogPage
-from ui_desktop.pages.create_order_delivery import OrderCreateDeliveryFizPage
-from ui_desktop.pages.create_order_delivery import OrderCreateDeliveryUrPage
+from ui_desktop.pages.order_delivery import OrderCreateDeliveryFizPage
+from ui_desktop.pages.order_delivery import OrderCreateDeliveryUrPage
+from ui_desktop.pages.order_self import OrderCreateSelfFizPage
+from ui_desktop.pages.order_self import OrderCreateSelfUrPage
 from ui_desktop.pages.thanks import ThanksPage
+from ui_desktop.pages.cabinet import CabinetOrderPage
 
 
 CHROME_DEFAULT_VERSION = '66'
@@ -47,6 +50,15 @@ class Application:
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
         self.search_product = SearchBlock(self)
+        self.cart_fiz = CartPageFiz(self)
+        self.cart_ur = CartPageUr(self)
+        self.catalog = CatalogPage(self)
+        self.create_order_delivery_fiz = OrderCreateDeliveryFizPage(self)
+        self.create_order_delivery_ur = OrderCreateDeliveryUrPage(self)
+        self.create_order_self_fiz = OrderCreateSelfFizPage(self)
+        self.create_order_self_fiz = OrderCreateSelfUrPage(self)
+        self.thanks = ThanksPage(self)
+        self.cabinet_order = CabinetOrderPage(self)
 
     def get_webdriver(self):
         if self.browser == 'firefox':

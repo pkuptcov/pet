@@ -10,10 +10,10 @@ class CatalogPage(BasePage):
         self.click(*self.controls.catalogAddToCart)
         self.click(*self.controls.catalogAlreadyInCart)
 
-    def quantity(self):
+    def quantity(self, qty):
         self.click(*self.controls.catalogProductQuantityUp)
         self.click(*self.controls.catalogProductQuantityDown)
-        self.input(*self.controls.catalogProductQuantityInput, value="2")
+        self.input(*self.controls.catalogProductQuantityInput, value=qty)
 
     def product_name(self):
         self.click(*self.controls.catalogProductName)

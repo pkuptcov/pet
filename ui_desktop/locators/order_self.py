@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
-class OrderCreateSelfControls:
+class OrderSelfControls:
 
     # Выбор строительного центра
     # Список баз:
@@ -62,7 +62,7 @@ class OrderCreateSelfControls:
     submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
 
 
-class OrderCreateSelfUrControls(OrderCreateSelfControls):
+class OrderSelfUrControls(OrderSelfControls):
 
     # Реквизиты компании
     companyName = (By.CSS_SELECTOR, "input[placeholder='Название']")
@@ -75,7 +75,7 @@ class OrderCreateSelfUrControls(OrderCreateSelfControls):
     orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
 
 
-class OrderCreateSelfFizControls(OrderCreateSelfControls):
+class OrderSelfFizControls(OrderSelfControls):
 
     # Способы оплаты заказа
     orderPayOnline = (By.CSS_SELECTOR, "input[value='online']")

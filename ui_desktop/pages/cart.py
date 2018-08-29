@@ -33,12 +33,32 @@ class CartPage(BasePage):
     def select_fiz(self):
         self.click(*self.controls.cartSelectFiz)
 
+    def quantity(self, qty):
+        self.click(*self.controls.cartUpQty)
+        self.click(*self.controls.cartDownQty)
+        self.input(*self.controls.cartEnterQty, value=qty)
+
     def delete(self):
         self.click(*self.controls.cartDelete)
+
+    def init_order_delivery(self):
+        self.click(*self.controls.cartOrderDelivery)
+        self.click(*self.controls.cartOrderInit)
+
+    def init_order_self(self):
+        self.click(*self.controls.cartOrderSelf)
+        self.click(*self.controls.cartOrderInit)
 
 
 class CartPageFiz(CartPage):
     controls = CartControlsFiz
+
+    def edit_card(self, card_number):
+        # Удаляем предыдущую карту и вводим новую
+        if len(self.wd.find_elements(*self.controls.cartCardDelete)) > 0:
+            self.click(*self.controls.cartCardDelete)
+        self.input(*self.controls.cartCardInput, value=card_number)
+        self.click(*self.controls.cartCardSubmit)
 
 
 class CartPageUr(CartPage):

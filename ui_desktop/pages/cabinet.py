@@ -8,8 +8,9 @@ from ui_desktop.locators.cabinet import CabinetProjectsControls
 from ui_desktop.pages.base import BasePage
 
 
-class CartPage(BasePage):
+class CabinetOrderPage(BasePage):
     order_controls = CabinetOrderControls
 
-    def status(self):
-        self.click(*self.order_controls.s)
+    def check_information(self):
+        self.click(*self.order_controls.orderInformation)
+

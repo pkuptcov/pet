@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_create_self import OrderCreateSelfControls
-from ui_desktop.locators.order_create_self import OrderCreateSelfFizControls
-from ui_desktop.locators.order_create_self import OrderCreateSelfUrControls
+from ui_desktop.locators.order_self import OrderCreateSelfControls
+from ui_desktop.locators.order_self import OrderCreateSelfFizControls
+from ui_desktop.locators.order_self import OrderCreateSelfUrControls
 from ui_desktop.pages.base import BasePage
 
 

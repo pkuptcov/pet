@@ -38,9 +38,9 @@ class CatalogControls:
     catalogViewTile = (By.CSS_SELECTOR, "ic_tile")
 
     # Выбор кол-ва товара
-    catalogProductQuantityUp = (By.XPATH, "//span[@class='count--up product__stepper up unit--step']")
-    catalogProductQuantityDown = (By.XPATH, "//span[@class='count--down product__stepper down unit--step']")
-    catalogProductQuantityInput = (By.XPATH, "//div[@class='unit--input']")
+    catalogProductQuantityUp = (By.CSS_SELECTOR, "div.stepper-arrow.up.unit--step")
+    catalogProductQuantityDown = (By.CSS_SELECTOR, "div.stepper-arrow.down.unit--step")
+    catalogProductQuantityInput = (By.CSS_SELECTOR, "input.product__count")
 
     # Альтернативные единицы измерения
     catalogAlterM2 = (By.XPATH, "//p[contains(text(),'м2')]")

@@ -115,7 +115,7 @@ class CabinetOrderListControls(SearchOrdersControls):
 class CabinetOrderControls:
 
     # Карточка заказа
-    orderStatus = (By.XPATH, "")
+    orderInformation = (By.XPATH, "//div[@class='block__line order__information']")
     orderPrint = (By.XPATH, "//div[contains(@class,'order__event __print')]")
     orderRepeat = (By.XPATH, "//div[contains(@class,'order__event __repeat')]")
     orderCopy = (By.XPATH, "//span[contains(@class,'order__copy')]")
