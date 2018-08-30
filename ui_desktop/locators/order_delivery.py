@@ -17,7 +17,6 @@ class OrderDeliveryControls:
     orderElementBase = ".order"
     deliveryAddressInput = (By.CSS_SELECTOR, "{}[data-modify='ur,delivery'] input [name='deliveryAddress']".format(orderElementBase))
 
-
     # Дни доставки
     deliveryDay1 = (By.XPATH, "(//input[@name='delivery_day'])[1]")
     deliveryDay2 = (By.XPATH, "(//input[@name='delivery_day'])[2]")
@@ -85,7 +84,7 @@ class OrderDeliveryControls:
     submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
 
 
-class OrderCreateDeliveryUrControls(OrderCreateDeliveryControls):
+class OrderDeliveryUrControls(OrderDeliveryControls):
 
     # Реквизиты компании
     companyName = (By.CSS_SELECTOR, "input[placeholder='Название']")
@@ -98,7 +97,7 @@ class OrderCreateDeliveryUrControls(OrderCreateDeliveryControls):
     orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
 
 
-class OrderCreateDeliveryFizControls(OrderCreateDeliveryControls):
+class OrderDeliveryFizControls(OrderDeliveryControls):
 
     # Способы оплаты заказа
     orderPayOnline = (By.CSS_SELECTOR, "input[value='online']")

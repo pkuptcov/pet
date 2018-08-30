@@ -10,10 +10,10 @@ from ui_desktop.pages.authorization import ForgotPasswordPage
 from ui_desktop.pages.cart import CartPageFiz
 from ui_desktop.pages.cart import CartPageUr
 from ui_desktop.pages.catalog import CatalogPage
-from ui_desktop.pages.order_delivery import OrderCreateDeliveryFizPage
-from ui_desktop.pages.order_delivery import OrderCreateDeliveryUrPage
-from ui_desktop.pages.order_self import OrderCreateSelfFizPage
-from ui_desktop.pages.order_self import OrderCreateSelfUrPage
+from ui_desktop.pages.order_delivery import OrderDeliveryFizPage
+from ui_desktop.pages.order_delivery import OrderDeliveryUrPage
+from ui_desktop.pages.order_self import OrderSelfFizPage
+from ui_desktop.pages.order_self import OrderSelfUrPage
 from ui_desktop.pages.thanks import ThanksPage
 from ui_desktop.pages.cabinet import CabinetOrderPage
 
@@ -53,10 +53,10 @@ class Application:
         self.cart_fiz = CartPageFiz(self)
         self.cart_ur = CartPageUr(self)
         self.catalog = CatalogPage(self)
-        self.create_order_delivery_fiz = OrderCreateDeliveryFizPage(self)
-        self.create_order_delivery_ur = OrderCreateDeliveryUrPage(self)
-        self.create_order_self_fiz = OrderCreateSelfFizPage(self)
-        self.create_order_self_fiz = OrderCreateSelfUrPage(self)
+        self.create_order_delivery_fiz = OrderDeliveryFizPage(self)
+        self.create_order_delivery_ur = OrderDeliveryUrPage(self)
+        self.create_order_self_fiz = OrderSelfFizPage(self)
+        self.create_order_self_fiz = OrderSelfUrPage(self)
         self.thanks = ThanksPage(self)
         self.cabinet_order = CabinetOrderPage(self)
 

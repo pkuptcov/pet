@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_self import OrderCreateSelfControls
-from ui_desktop.locators.order_self import OrderCreateSelfFizControls
-from ui_desktop.locators.order_self import OrderCreateSelfUrControls
+from ui_desktop.locators.order_self import OrderSelfControls
+from ui_desktop.locators.order_self import OrderSelfFizControls
+from ui_desktop.locators.order_self import OrderSelfUrControls
 from ui_desktop.pages.base import BasePage
 
 
-class OrderCreateSelfPage(BasePage):
+class OrderSelfPage(BasePage):
 
-    controls = OrderCreateSelfControls
+    controls = OrderSelfControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
     def select_base(self):
@@ -26,11 +26,11 @@ class OrderCreateSelfPage(BasePage):
         self.click(*self.controls.submitOrderButtonMain)
 
 
-class OrderCreateSelfFizPage(OrderCreateSelfPage):
-    controls = OrderCreateSelfFizControls
+class OrderSelfFizPage(OrderSelfPage):
+    controls_fiz = OrderSelfFizControls
 
     def select_pay_online(self):
-        self.click(*self.controls.orderPayOnline)
+        self.click(*self.controls_fiz.orderPayOnline)
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd
@@ -38,15 +38,15 @@ class OrderCreateSelfFizPage(OrderCreateSelfPage):
         wd.execute_script(dropdown_mask)
 
 
-class OrderCreateSelfUrPage(OrderCreateSelfPage):
-    controls = OrderCreateSelfUrControls
+class OrderSelfUrPage(OrderSelfPage):
+    controls_ur = OrderSelfUrControls
 
     def input_company_details(self, dropdown_mask):
         wd = self.app.wd
-        self.input(*self.controls.companyName, value="Тест")
+        self.input(*self.controls_ur.companyName, value="Тест")
         wd.execute_script(dropdown_mask)
-        self.input(*self.controls.companyInn, value="1231231231")
-        self.input(*self.controls.companyKpp, value="123123123")
+        self.input(*self.controls_ur.companyInn, value="1231231231")
+        self.input(*self.controls_ur.companyKpp, value="123123123")
 
     def input_username(self, dropdown_mask):
         wd = self.app.wd

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_delivery import OrderCreateDeliveryControls
-from ui_desktop.locators.order_delivery import OrderCreateDeliveryFizControls
-from ui_desktop.locators.order_delivery import OrderCreateDeliveryUrControls
+from ui_desktop.locators.order_delivery import OrderDeliveryControls
+from ui_desktop.locators.order_delivery import OrderDeliveryFizControls
+from ui_desktop.locators.order_delivery import OrderDeliveryUrControls
 from ui_desktop.pages.base import BasePage
 
 
 class OrderDeliveryPage(BasePage):
-    controls = OrderCreateDeliveryControls
+    controls = OrderDeliveryControls
     dropdown_mask = "document.querySelectorAll('.plugin__dropdown--masked').forEach((item) => item.style.display = 'none')"
 
     def input_address(self):
@@ -27,8 +27,8 @@ class OrderDeliveryPage(BasePage):
         self.click(*self.controls.deliverySubmitOrderButtonMain)
 
 
-class OrderCreateDeliveryFizPage(OrderDeliveryPage):
-    controls = OrderCreateDeliveryFizControls
+class OrderDeliveryFizPage(OrderDeliveryPage):
+    controls = OrderDeliveryFizControls
 
     def select_pay_online(self):
         self.click(*self.controls.orderPayOnline)
@@ -39,8 +39,8 @@ class OrderCreateDeliveryFizPage(OrderDeliveryPage):
         wd.execute_script(dropdown_mask)
 
 
-class OrderCreateDeliveryUrPage(OrderDeliveryPage):
-    controls = OrderCreateDeliveryUrControls
+class OrderDeliveryUrPage(OrderDeliveryPage):
+    controls = OrderDeliveryUrControls
 
     def select_pay_online(self):
         self.click(*self.controls.orderPayLegalNonCash)
