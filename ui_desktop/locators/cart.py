@@ -33,8 +33,8 @@ class CartControls:
 
     # Блок с суммой заказа и выбором доставки / покупки
     cartOrderDelivery = (By.CSS_SELECTOR, "input[value=delivery]")
-    cartOrderSelf = (By.CSS_SELECTOR, "input[value=self]")
-    cartOrderInit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.goToOrdering()']")
+    cartOrderSelf = (By.XPATH, "//span[(text()='Самовывоз')]")
+    cartOrderInit = (By.XPATH, "//button[(text()='Оформить')]")
     cartOrderPrice = (By.CSS_SELECTOR, ".cart_total_container_universal_sum_price")
 
 

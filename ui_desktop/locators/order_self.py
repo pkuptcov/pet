@@ -8,7 +8,7 @@ class OrderSelfControls:
     # Список баз:
     baseList = (By.CSS_SELECTOR, "ul.bases_list")
     # СПБ:
-    baseTallinskoe = (By.CSS_SELECTOR, "[value='1ea6159b-594d-11e6-bef9-00259038e9f2']")
+    baseTallinskoe = (By.XPATH, "//div[(text()=' Таллинское ш., 155, 1, стр. 1')]")
     baseEngelsa = (By.CSS_SELECTOR, "[value='42d0a3ba-2efc-11df-942d-0023543d7b52']")
     baseSofiyskaya = (By.CSS_SELECTOR, "[value='8e55188d-3e96-11e6-9830-00259038e9f2']")
     basePlanernaya = (By.CSS_SELECTOR, "[value='a15db6c3-305d-11e0-9d49-001f29c6db02']")
@@ -78,7 +78,7 @@ class OrderSelfUrControls(OrderSelfControls):
 class OrderSelfFizControls(OrderSelfControls):
 
     # Способы оплаты заказа
-    orderPayOnline = (By.CSS_SELECTOR, "input[value='online']")
-    orderPayBase = (By.CSS_SELECTOR, "input[value='base']")
-    orderPayPromo = (By.CSS_SELECTOR, "input[value='promo']")
-    orderPayDelay = (By.CSS_SELECTOR, "input[value='delay']")
+    orderPayOnline = (By.XPATH, "//span[(text()='На сайте картой')]")
+    orderPayBase = (By.XPATH, "//span[(text()='На базе или в офисе')]")
+    orderPayPromo = (By.XPATH, "//span[(text()='Баллами Клуба Друзей')]")
+    orderPayDelay = (By.XPATH, "//span[(text()='С отсрочкой на пять дней')]")
