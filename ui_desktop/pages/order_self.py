@@ -13,11 +13,11 @@ class OrderSelfPage(BasePage):
     def select_base(self):
         self.click(*self.controls.baseTallinskoe)
 
-    def input_phone(self):
-        self.input(*self.controls.selfPhone, value="(111) 111-11-11")
-
     def input_email(self):
         self.input(*self.controls.selfEmail, value="info@kluatr.ru")
+
+    def input_phone(self):
+        self.input(*self.controls.selfPhone, value="(111) 111-11-11")
 
     def input_comment(self):
         self.input(*self.controls.selfUserComment, value="тест")

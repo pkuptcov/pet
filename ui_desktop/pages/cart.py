@@ -51,15 +51,15 @@ class CartPage(BasePage):
 
 
 class CartPageFiz(CartPage):
-    controls = CartControlsFiz
+    controls_fiz = CartControlsFiz
 
     def edit_card(self, card_number):
         # Удаляем предыдущую карту и вводим новую
-        if len(self.wd.find_elements(*self.controls.cartCardDelete)) > 0:
-            self.click(*self.controls.cartCardDelete)
-        self.input(*self.controls.cartCardInput, value=card_number)
-        self.click(*self.controls.cartCardSubmit)
+        if len(self.wd.find_elements(*self.controls_fiz.cartCardDelete)) > 0:
+            self.click(*self.controls_fiz.cartCardDelete)
+        self.input(*self.controls_fiz.cartCardInput, value=card_number)
+        self.click(*self.controls_fiz.cartCardSubmit)
 
 
 class CartPageUr(CartPage):
-    controls = CartControlsUr
+    controls_ur = CartControlsUr
