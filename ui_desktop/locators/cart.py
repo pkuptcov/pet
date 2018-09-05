@@ -18,8 +18,8 @@ class CartControls:
     cartSaveEstimate = (By.CSS_SELECTOR, "cart_page_save_link")
     cartDelete = (By.CSS_SELECTOR, "a.cart_row_delete_link")
     cartDeleteAll = (By.CSS_SELECTOR, "a.cart_page_delete_all_link")
-    cartSelectUr = (By.XPATH, "//a[contains(text(),'Юридическое лицо')]")
-    cartSelectFiz = (By.XPATH, "//a[contains(text(),'Физиическое лицо')]")
+    cartSelectUr = (By.XPATH, "//a[(text()='Юридическое лицо')]")
+    cartSelectFiz = (By.XPATH, "//a[(text()='Физическое лицо')]")
     cartDeleteAllConfirm = (By.XPATH, "//button[@class='confirm']")
     cartDeleteAllCancel = (By.XPATH, "//button[@class='cancel']")
     cartUpQty = (By.CSS_SELECTOR, "span.stepper-arrow.up")
@@ -32,7 +32,7 @@ class CartControls:
     cartCouponSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.checkVerifyCoupon($event)']")
 
     # Блок с суммой заказа и выбором доставки / покупки
-    cartOrderDelivery = (By.CSS_SELECTOR, "input[value=delivery]")
+    cartOrderDelivery = (By.XPATH, "//span[(text()='Доставка')]")
     cartOrderSelf = (By.XPATH, "//span[(text()='Самовывоз')]")
     cartOrderInit = (By.XPATH, "//button[(text()='Оформить')]")
     cartOrderPrice = (By.CSS_SELECTOR, ".cart_total_container_universal_sum_price")

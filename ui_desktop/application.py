@@ -18,8 +18,8 @@ from ui_desktop.pages.thanks import ThanksPage
 from ui_desktop.pages.cabinet import CabinetOrderPage
 
 
-CHROME_DEFAULT_VERSION = '66'
-FIREFOX_DEFAULT_VERSION = '60'
+CHROME_DEFAULT_VERSION = '68'
+FIREFOX_DEFAULT_VERSION = '61'
 EDGE_DEFAULT_VERSION = '42'
 IE_DEFAULT_VERSION = '11'
 DEFAULT_LOGIN = 'test@kluatr.ru'
@@ -33,17 +33,17 @@ class Application:
         self.version = version
         self.url = url
 
-        # self.wd = webdriver.Chrome()
-        # self.wd.set_window_size(1920, 1080)
-
-        if browser not in ['firefox', 'chrome', 'edge', 'ie']:
-            raise Exception('{} browser is not supported'.format(browser))
-
-        hub_url, capabilities = self.get_webdriver()
-        self.wd = webdriver.Remote(
-            command_executor=hub_url,
-            desired_capabilities=capabilities)
+        self.wd = webdriver.Chrome()
         self.wd.set_window_size(1920, 1080)
+
+        # if browser not in ['firefox', 'chrome', 'edge', 'ie']:
+        #     raise Exception('{} browser is not supported'.format(browser))
+
+        # hub_url, capabilities = self.get_webdriver()
+        # self.wd = webdriver.Remote(
+        #     command_executor=hub_url,
+        #     desired_capabilities=capabilities)
+        # self.wd.set_window_size(1920, 1080)
 
         self.session = Session(self)
         self.smoke = SmokeHelper(self)

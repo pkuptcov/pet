@@ -32,18 +32,21 @@ class OrderSelfPage(BasePage):
 
 
 class OrderSelfFizPage(OrderSelfPage):
-    controls_fiz = OrderSelfFizControls
+    controls = OrderSelfFizControls
 
     def select_pay_online(self):
-        self.click(*self.controls_fiz.orderPayOnline)
+        self.click(*self.controls.orderPayOnline)
 
 
 class OrderSelfUrPage(OrderSelfPage):
-    controls_ur = OrderSelfUrControls
+    controls = OrderSelfUrControls
 
-    def input_company_details(self, dropdown_mask):
+    def select_pay_noncash(self):
+        self.click(*self.controls.orderPayLegalNonCash)
+
+    def input_company_details(self, company_name, inn, kpp, dropdown_mask=OrderSelfPage.dropdown_mask):
         wd = self.app.wd
-        self.input(*self.controls_ur.companyName, value="Тест")
+        self.input(*self.controls.companyName, value=company_name)
         wd.execute_script(dropdown_mask)
-        self.input(*self.controls_ur.companyInn, value="1231231231")
-        self.input(*self.controls_ur.companyKpp, value="123123123")
+        self.input(*self.controls.companyInn, value=inn)
+        self.input(*self.controls.companyKpp, value=kpp)

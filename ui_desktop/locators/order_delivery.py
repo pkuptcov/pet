@@ -34,7 +34,8 @@ class OrderDeliveryControls:
     deliveryTypeCourier = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('courier')\"]")
 
     # Время доставки
-    deliveryIntervalStandard = (By.CSS_SELECTOR, "option[value='С2330До0330']")
+    deliveryIntervalStandard2330 = (By.XPATH, "//option[@value='С2330До0330']")
+    deliveryIntervalStandard2230 = (By.XPATH, "//option[@value='С2230До0230']")
     deliveryIntervalToday = (By.CSS_SELECTOR, "option[value='С13До22']")
     deliveryIntervalExactlyHour = (By.CSS_SELECTOR, "option[value='23']")
     deliveryIntervalExactlyMinute = (By.CSS_SELECTOR, "option[value='59']")
@@ -87,9 +88,9 @@ class OrderDeliveryControls:
 class OrderDeliveryUrControls(OrderDeliveryControls):
 
     # Реквизиты компании
-    companyName = (By.CSS_SELECTOR, "input[placeholder='Название']")
-    companyInn = (By.CSS_SELECTOR, "input[placeholder='ИНН']")
-    companyKpp = (By.CSS_SELECTOR, "input[placeholder='КПП']")
+    companyName = (By.XPATH, "//input[@placeholder='Название']")
+    companyInn = (By.XPATH, "//input[@placeholder='ИНН']")
+    companyKpp = (By.XPATH, "//input[@placeholder='КПП']")
 
     # Способы оплаты заказа
     orderPayLegalNonCash = (By.CSS_SELECTOR, "input[value='legalNonCash']")
@@ -100,9 +101,9 @@ class OrderDeliveryUrControls(OrderDeliveryControls):
 class OrderDeliveryFizControls(OrderDeliveryControls):
 
     # Способы оплаты заказа
-    orderPayOnline = (By.CSS_SELECTOR, "input[value='online']")
-    orderPayDriverCash = (By.CSS_SELECTOR, "input[value='driverCash']")
-    orderPayDriverCard = (By.CSS_SELECTOR, "input[value='driverCard']")
-    orderPayBase = (By.CSS_SELECTOR, "input[value='base']")
-    orderPayPromo = (By.CSS_SELECTOR, "input[value='promo']")
-    orderPayDelay = (By.CSS_SELECTOR, "input[value='delay']")
+    orderPayOnline = (By.XPATH, "//span[(text()='На сайте картой')]")
+    orderPayDriverCash = (By.XPATH, "//span[(text()='Водителю наличными')]")
+    orderPayDriverCard = (By.XPATH, "//span[(text()='Водителю картой')]")
+    orderPayBase = (By.XPATH, "//span[(text()='На базе или в офисе')]")
+    orderPayPromo = (By.XPATH, "//span[(text()='Баллами Клуба Друзей')]")
+    orderPayDelay = (By.XPATH, "//span[(text()='С отсрочкой на пять дней')]")
