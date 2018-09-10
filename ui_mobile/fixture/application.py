@@ -4,7 +4,7 @@ from ui_mobile.fixture.smoke import SmokeHelper
 from ui_mobile.fixture.register import RegisterHelper
 from ui_mobile.fixture.city import CityHelper
 
-CHROME_DEFAULT_VERSION = '66'
+CHROME_DEFAULT_VERSION = '68'
 
 
 class Application:
@@ -13,6 +13,9 @@ class Application:
         self.browser = browser
         self.version = version
         self.url = url
+
+        # self.wd = webdriver.Firefox()
+        # self.wd.set_window_size(1920, 1080)
 
         if browser not in ['chrome']:
             raise Exception('{} browser is not supported'.format(browser))

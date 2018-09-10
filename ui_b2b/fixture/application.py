@@ -4,7 +4,7 @@ from ui_b2b.fixture.smoke import SmokeHelper
 from ui_b2b.fixture.register import RegisterHelper
 from ui_b2b.fixture.city import CityHelper
 
-CHROME_DEFAULT_VERSION = '66'
+CHROME_DEFAULT_VERSION = '68'
 FIREFOX_DEFAULT_VERSION = '60'
 
 
