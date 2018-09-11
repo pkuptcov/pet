@@ -39,10 +39,10 @@ class OrderDeliveryPage(BasePage):
     def submit_order(self):
         wd = self.app.wd
         self.click(*self.controls.deliverySubmitOrderButtonMain)
-        time.sleep(2)
+        time.sleep(1)
         if wd.current_url.endswith("/delivery/"):
             self.click(*self.controls.deliveryIntervalStandard2230)
-            time.sleep(3)
+            time.sleep(2)
             self.click(*self.controls.deliverySubmitOrderButtonMain)
 
 

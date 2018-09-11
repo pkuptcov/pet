@@ -20,14 +20,14 @@ class OrderDeliveryControls:
     # Дни доставки
     deliveryDay1 = (By.XPATH, "(//input[@name='delivery_day'])[1]")
     deliveryDay2 = (By.XPATH, "(//input[@name='delivery_day'])[2]")
-    deliveryDay3 = (By.XPATH, "(//input[@name='delivery_day'])[3]")
+    deliveryDay3 = (By.XPATH, "//ul[@class='delivery_form_step_list_variant delivery_time delivery_form_step_calendar_container']//li[3]")
     deliveryDay4 = (By.XPATH, "(//input[@name='delivery_day'])[4]")
     deliveryDay5 = (By.XPATH, "(//input[@name='delivery_day'])[5]")
     deliveryDay6 = (By.XPATH, "(//input[@name='delivery_day'])[6]")
 
     # Типы доставки
     deliveryTypeToday = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('today')\"]")
-    deliveryTypeStandard = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('standard')\"]")
+    deliveryTypeStandard = (By.XPATH, "//span[(text()='Стандартная доставка')]")
     deliveryTypeExpress = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('express')\"]")
     deliveryTypeExactly = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('exactly')\"]")
     deliveryTypePacket = (By.CSS_SELECTOR, "[ng-change=\"orderDeliveryCtrl.deliveryTypeChange('packet')\"]")
@@ -82,7 +82,7 @@ class OrderDeliveryControls:
 
     # Подтверждение заказа
     deliverySubmitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderDeliveryCtrl.make($event)']")
-    submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
+    submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][(text()='Подтвердить заказ')]")
 
 
 class OrderDeliveryUrControls(OrderDeliveryControls):
@@ -93,7 +93,7 @@ class OrderDeliveryUrControls(OrderDeliveryControls):
     companyKpp = (By.XPATH, "//input[@placeholder='КПП']")
 
     # Способы оплаты заказа
-    orderPayLegalNonCash = (By.CSS_SELECTOR, "input[value='legalNonCash']")
+    orderPayLegalNonCash = (By.XPATH, "//span[(text()='По безналичному расчету')]")
     orderPayLegalCard = (By.CSS_SELECTOR, "input[value='legalCard']")
     orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
 

@@ -69,7 +69,7 @@ class OrderSelfUrControls(OrderSelfControls):
     companyKpp = (By.CSS_SELECTOR, "input[placeholder='КПП']")
 
     # Способы оплаты заказа
-    orderPayLegalNonCash = (By.CSS_SELECTOR, "input[value='legalNonCash']")
+    orderPayLegalNonCash = (By.XPATH, "//span[(text()='По безналичному расчету')]")
     orderPayLegalCard = (By.CSS_SELECTOR, "input[value='legalCard']")
     orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
 

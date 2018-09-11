@@ -5,7 +5,11 @@ from ui_b2b.fixture.register import RegisterHelper
 from ui_b2b.fixture.city import CityHelper
 
 CHROME_DEFAULT_VERSION = '68'
-FIREFOX_DEFAULT_VERSION = '60'
+FIREFOX_DEFAULT_VERSION = '61'
+EDGE_DEFAULT_VERSION = '42'
+IE_DEFAULT_VERSION = '11'
+DEFAULT_LOGIN = 'pavel.kuptcov@gmail.com'
+DEFAULT_PASSWORD = '111111'
 
 
 class Application:
@@ -18,12 +22,12 @@ class Application:
         # self.wd = webdriver.Chrome()
         # self.wd.set_window_size(1920, 1080)
 
-        if browser not in ['firefox', 'chrome']:
+        if browser not in ['firefox', 'chrome', 'edge', 'ie']:
             raise Exception('{} browser is not supported'.format(browser))
 
-        capabilities = self.get_capabilities()
+        hub_url, capabilities = self.get_webdriver()
         self.wd = webdriver.Remote(
-            command_executor="http://hw00.vm.a:4444/wd/hub",
+            command_executor=hub_url,
             desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
 
@@ -32,19 +36,42 @@ class Application:
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
 
-    def get_capabilities(self):
+    def get_webdriver(self):
         if self.browser == 'firefox':
-            return {
+            hub_url = "http://hw00.vm.a:4444/wd/hub"
+            capabilities = {
                 "browserName": "firefox",
                 "version": str(self.version) if self.version else FIREFOX_DEFAULT_VERSION,
                 "enableVNC": True
             }
+            return hub_url, capabilities
+
         elif self.browser == 'chrome':
-            return {
+            hub_url = "http://hw00.vm.a:4444/wd/hub"
+            capabilities = {
                 "browserName": "chrome",
                 "version": str(self.version) if self.version else CHROME_DEFAULT_VERSION,
                 "enableVNC": True
             }
+            return hub_url, capabilities
+
+        elif self.browser == 'edge':
+            hub_url = "http://sel01.hw00.vm.a:4444/wd/hub"
+            capabilities = {
+                "browserName": "MicrosoftEdge",
+                "version": str(self.version) if self.version else EDGE_DEFAULT_VERSION,
+                "enableVNC": True,
+            }
+            return hub_url, capabilities
+
+        elif self.browser == 'ie':
+            hub_url = "http://sel01.hw00.vm.a:4444/wd/hub"
+            capabilities = {
+                "browserName": "internet explorer",
+                "version": str(self.version) if self.version else IE_DEFAULT_VERSION,
+                "enableVNC": True,
+            }
+            return hub_url, capabilities
 
     def open_home_page(self):
         wd = self.wd
