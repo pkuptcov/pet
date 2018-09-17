@@ -77,7 +77,7 @@ class OrderSelfUrControls(OrderSelfControls):
 class OrderSelfFizControls(OrderSelfControls):
 
     # Способы оплаты заказа
-    orderPayOnline = (By.XPATH, "//span[(text()='Картой онлайн')]")
+    orderPayOnline = (By.XPATH, "//span[(text()='На сайте картой')]")
     orderPayBase = (By.XPATH, "//span[(text()='На базе или в офисе')]")
     orderPayPromo = (By.XPATH, "//span[(text()='Баллами Клуба Друзей')]")
     orderPayDelay = (By.XPATH, "//span[(text()='С отсрочкой на пять дней')]")

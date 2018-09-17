@@ -101,7 +101,7 @@ class OrderDeliveryUrControls(OrderDeliveryControls):
 class OrderDeliveryFizControls(OrderDeliveryControls):
 
     # Способы оплаты заказа
-    orderPayOnline = (By.XPATH, "//span[(text()='Картой онлайн')]")
+    orderPayOnline = (By.XPATH, "//span[(text()='На сайте картой')]")
     orderPayDriverCash = (By.XPATH, "//span[(text()='Водителю наличными')]")
     orderPayDriverCard = (By.XPATH, "//span[(text()='Водителю картой')]")
     orderPayBase = (By.XPATH, "//span[(text()='На базе или в офисе')]")
