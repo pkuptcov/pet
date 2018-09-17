@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class CompanyListControls:
+class HeaderControls:
 
     # Форма выбора компании и города
     headerCompanyList = (By.XPATH, "//div[@class='organiztions_and-city-chosen-box js--slide-menu']")

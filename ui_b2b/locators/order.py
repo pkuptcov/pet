@@ -25,7 +25,7 @@ class OrderControls:
     orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
 
     # Подтверждение заказа
-    deliverySubmitOrderButtonMain = (By.XPATH, "//input[@value='Подтвердить заказ']")
+    submitOrderButtonMain = (By.XPATH, "//input[@value='Подтвердить заказ']")
     submitOrderButtonRight = (By.XPATH, "//button[@type='submit']")
 
 
@@ -85,8 +85,8 @@ class OrderDeliveryControls(OrderControls):
     deliveryRentComment = (By.CSS_SELECTOR, "[ng-model='orderDeliveryCtrl.order.rentComment']")
 
     # Контактная информация
-    deliveryEmail = (By.CSS_SELECTOR, "//input[@placeholder='+7 (999) 999-99-99']")
-    deliveryPhone = (By.CSS_SELECTOR, "//input[@placeholder='имя']")
+    deliveryEmail = (By.XPATH, "//input[@placeholder='например, petrovich@mail.ru']")
+    deliveryPhone = (By.XPATH, "//input[@placeholder='+7 (999) 999-99-99']")
     orderUsername = (By.NAME, "user_name")
     deliveryCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderDeliveryCtrl.order.callRequired']")
     deliveryCallRequiredNow = (By.XPATH, "//span[@class='label_name'][contains(text(),'Сейчас')]")
@@ -102,7 +102,7 @@ class OrderSelfControls(OrderControls):
     # Список баз:
     baseList = (By.CSS_SELECTOR, "ul.bases_list")
     # СПБ:
-    baseTallinskoe = (By.XPATH, "//div[(text()=' Таллинское ш., 155, 1, стр. 1')]")
+    baseTallinskoe = (By.XPATH, "//div[(text()=' Таллинское ш., 155, 1, стр. 1 ')]")
     baseEngelsa = (By.CSS_SELECTOR, "[value='42d0a3ba-2efc-11df-942d-0023543d7b52']")
     baseSofiyskaya = (By.CSS_SELECTOR, "[value='8e55188d-3e96-11e6-9830-00259038e9f2']")
     basePlanernaya = (By.CSS_SELECTOR, "[value='a15db6c3-305d-11e0-9d49-001f29c6db02']")

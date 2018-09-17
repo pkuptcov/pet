@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.search_product import SearchControls
-from ui_desktop.pages.base import BasePage
+from ui_b2b.locators.search_product import SearchControls
+from ui_b2b.pages.base import BasePage
 
 
 class SearchBlock(BasePage):

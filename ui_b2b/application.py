@@ -1,8 +1,16 @@
 from selenium import webdriver
-from ui_b2b.fixture.session import SessionHelper
 from ui_b2b.fixture.smoke import SmokeHelper
 from ui_b2b.fixture.register import RegisterHelper
 from ui_b2b.fixture.city import CityHelper
+from ui_b2b.pages.session import Session
+from ui_b2b.pages.header import HeaderPage
+from ui_b2b.pages.search_product import SearchBlock
+from ui_b2b.pages.cart import CartPage
+from ui_b2b.pages.catalog import CatalogPage
+from ui_b2b.pages.order_delivery import OrderDeliveryPage
+from ui_b2b.pages.order_self import OrderSelfPage
+from ui_b2b.pages.thanks import ThanksPage
+
 
 CHROME_DEFAULT_VERSION = '68'
 FIREFOX_DEFAULT_VERSION = '61'
@@ -31,10 +39,17 @@ class Application:
             desired_capabilities=capabilities)
         self.wd.set_window_size(1920, 1080)
 
-        self.session = SessionHelper(self)
+        self.session = Session(self)
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
+        self.header = HeaderPage(self)
+        self.search_product = SearchBlock(self)
+        self.cart = CartPage(self)
+        self.catalog = CatalogPage(self)
+        self.order_delivery = OrderDeliveryPage(self)
+        self.order_self = OrderSelfPage(self)
+        self.thanks = ThanksPage(self)
 
     def get_webdriver(self):
         if self.browser == 'firefox':

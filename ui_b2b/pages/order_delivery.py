@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_delivery import OrderDeliveryControls
-from ui_desktop.locators.order_delivery import OrderDeliveryFizControls
-from ui_desktop.locators.order_delivery import OrderDeliveryUrControls
-from ui_desktop.pages.base import BasePage
+from ui_b2b.locators.order import OrderControls
+from ui_b2b.locators.order import OrderDeliveryControls
+from ui_b2b.pages.base import BasePage
 import time
 
 
@@ -38,28 +37,17 @@ class OrderDeliveryPage(BasePage):
 
     def submit_order(self):
         wd = self.app.wd
-        self.click(*self.controls.deliverySubmitOrderButtonMain)
+        self.click(*self.controls.submitOrderButtonMain)
         time.sleep(1)
         if wd.current_url.endswith("/delivery/"):
             self.click(*self.controls.deliveryIntervalStandard2230)
             time.sleep(2)
-            self.click(*self.controls.deliverySubmitOrderButtonMain)
-
-
-class OrderDeliveryFizPage(OrderDeliveryPage):
-    controls = OrderDeliveryFizControls
-
-    def select_pay_online(self):
-        self.click(*self.controls.orderPayOnline)
-
-
-class OrderDeliveryUrPage(OrderDeliveryPage):
-    controls = OrderDeliveryUrControls
+            self.click(*self.controls.submitOrderButtonMain)
 
     def select_pay_noncash(self):
         self.click(*self.controls.orderPayLegalNonCash)
 
-    def input_company_details(self, company_name, inn, kpp, dropdown_mask=OrderDeliveryPage.dropdown_mask):
+    def input_company_details(self, company_name, inn, kpp, dropdown_mask=dropdown_mask):
         wd = self.app.wd
         self.input(*self.controls.companyName, value=company_name)
         wd.execute_script(dropdown_mask)

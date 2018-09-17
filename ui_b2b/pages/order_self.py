@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.order_self import OrderSelfControls
-from ui_desktop.locators.order_self import OrderSelfFizControls
-from ui_desktop.locators.order_self import OrderSelfUrControls
-from ui_desktop.pages.base import BasePage
+from ui_b2b.locators.order import OrderSelfControls
+from ui_b2b.pages.base import BasePage
 
 
 class OrderSelfPage(BasePage):
@@ -30,21 +28,10 @@ class OrderSelfPage(BasePage):
     def submit_order(self):
         self.click(*self.controls.submitOrderButtonMain)
 
-
-class OrderSelfFizPage(OrderSelfPage):
-    controls = OrderSelfFizControls
-
-    def select_pay_online(self):
-        self.click(*self.controls.orderPayOnline)
-
-
-class OrderSelfUrPage(OrderSelfPage):
-    controls = OrderSelfUrControls
-
     def select_pay_noncash(self):
         self.click(*self.controls.orderPayLegalNonCash)
 
-    def input_company_details(self, company_name, inn, kpp, dropdown_mask=OrderSelfPage.dropdown_mask):
+    def input_company_details(self, company_name, inn, kpp, dropdown_mask=dropdown_mask):
         wd = self.app.wd
         self.input(*self.controls.companyName, value=company_name)
         wd.execute_script(dropdown_mask)

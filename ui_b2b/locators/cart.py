@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 class CartControls:
 
     # Работа с корзиной и товарами
+    cartRefresh = (By.XPATH, "//a[@class='order_container_refresh_link']")
     cartPrint = (By.CSS_SELECTOR, "a.cart_page_print_link")
     cartDelete = (By.CSS_SELECTOR, "a.cart_row_delete_link")
     cartDeleteAll = (By.CSS_SELECTOR, "a.cart_page_delete_all_link")
