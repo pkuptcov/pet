@@ -1,8 +1,5 @@
 from selenium import webdriver
 from ui_desktop.pages.session import Session
-from ui_desktop.fixture.smoke import SmokeHelper
-from ui_desktop.fixture.register import RegisterHelper
-from ui_desktop.fixture.city import CityHelper
 from ui_desktop.pages.search_product import SearchBlock
 from ui_desktop.pages.authorization import AuthorizationPage
 from ui_desktop.pages.authorization import RegisterPage
@@ -46,9 +43,6 @@ class Application:
         self.wd.set_window_size(1920, 1080)
 
         self.session = Session(self)
-        self.smoke = SmokeHelper(self)
-        self.register = RegisterHelper(self)
-        self.city = CityHelper(self)
         self.search_product = SearchBlock(self)
         self.cart_fiz = CartPageFiz(self)
         self.cart_ur = CartPageUr(self)
