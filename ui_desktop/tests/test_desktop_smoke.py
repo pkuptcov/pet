@@ -80,6 +80,7 @@ def test_fiz_self_non_auth(app):
     app.thanks.order_link()
 
 
+
 def test_ur_delivery_auth(app, settings):
     app.open_home_page()
     app.session.login(settings.LOGIN, settings.PASSWORD)
