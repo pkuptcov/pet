@@ -8,14 +8,15 @@ class OrderSelfControls:
     # Список баз:
     baseList = (By.CSS_SELECTOR, "ul.bases_list")
     # СПБ:
-    baseTallinskoe = (By.XPATH, "//div[(text()=' Таллинское ш., 155, 1, стр. 1')]")
-    baseEngelsa = (By.CSS_SELECTOR, "[value='42d0a3ba-2efc-11df-942d-0023543d7b52']")
-    baseSofiyskaya = (By.CSS_SELECTOR, "[value='8e55188d-3e96-11e6-9830-00259038e9f2']")
-    basePlanernaya = (By.CSS_SELECTOR, "[value='a15db6c3-305d-11e0-9d49-001f29c6db02']")
-    baseIndustrialniy = (By.CSS_SELECTOR, "[value='a95a374c-2f82-11df-942d-0023543d7b52']")
-    baseMurmanskoe = (By.CSS_SELECTOR, "[value='d41279b8-2f82-11df-942d-0023543d7b52']")
-    baseMoskovskoe = (By.CSS_SELECTOR, "[value='d41279d5-2f82-11df-942d-0023543d7b52']")
-    selfMoveToGatchina = (By.CSS_SELECTOR, "button[ng-click='orderingSelfCtrl.moveCartToGatchina()']")
+    baseTallinskoe = (By.XPATH, "//label[text()=' Таллинское ш., 155, 1, стр. 1 ']")
+    baseEngelsa = (By.XPATH, "//label[text()=' пр. Энгельса, 157, лит. А ']")
+    baseSofiyskaya = (By.XPATH, "//label[text()=' ул. Софийская, д.59, корп.2, стр.1 ']")
+    basePlanernaya = (By.XPATH, "//label[text()=' ул. Планерная, 15в ']")
+    baseIndustrialniy = (By.XPATH, "//label[text()=' Индустриальный пр., 73 ']")
+    baseMurmanskoe = (By.XPATH, "//label[text()=' Мурманское шоссе 12-13 км ']")
+    baseMoskovskoe = (By.XPATH, "//label[text()=' Московское шоссе, д.304 ']")
+    baseKadSever = (By.XPATH, "//label[text()=' КАД, 21 км, между Выборгским ш. и пр. Энгельса ']")
+
     # МСК:
     baseBalashiha = (By.CSS_SELECTOR, "[value='10c5ed9d-7185-11e4-89d5-00259038e9f2']")
     baseNovorizhskoe = (By.CSS_SELECTOR, "[value='172b9cec-7185-11e4-89d5-00259038e9f2']")
@@ -36,48 +37,46 @@ class OrderSelfControls:
     # Тверь:
     baseTver = (By.CSS_SELECTOR, "[value='469f28be-ea07-11e2-8ae0-00259038e9f2']")
 
-    # Перейти в корзину и изменить заказ
-    baseReturnToCart = (By.XPATH, "//input[contains(text(),'Перейти в корзину и изменить заказ')]")
-
     # Дополнительные услуги
-    orderRent = (By.XPATH, "//span[@class='label_name'][contains(text(),'Аренда оборудования)]")
-    orderColoring = (By.XPATH, "//span[@class='label_name'][contains(text(),'Колеровка')]")
-    orderSawed = (By.XPATH, "//span[@class='label_name'][contains(text(),'Распил')]")
+    orderGarbageRemoval = (By.XPATH, "//label[@for='garbage--i'][(text()=' Вывоз мусора ')]")
+    orderRent = (By.XPATH, "//label[@for='rent--i'][(text()=' Аренда оборудования ')]")
+    orderColoring = (By.XPATH, "//label[@for='coloring--i'][(text()=' Колеровка ')]")
+    orderSawed = (By.XPATH, "//label[@for='cut--i'][(text()=' Распил ')]")
 
     # Комментарии к доп. услугам
-    selfSawedComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.sawingComment']")
-    selfColoringComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.coloringComment']")
-    selfRentComment = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.order.rentComment']")
+    selfSawedComment = (By.XPATH, "//label[@for='cut--i']//textarea[@placeholder='Комментарий']")
+    selfColoringComment = (By.XPATH, "//label[@for='coloring--i']//textarea[@placeholder='Комментарий']")
+    selfGarbageComment = (By.XPATH, "//label[@for='garbage--i']//textarea[@placeholder='Комментарий']")
+    selfRentComment = (By.XPATH, "//label[@for='rent--i']//textarea[@placeholder='Комментарий']")
 
     # Контактная информация
-    selfEmail = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsEmail']")
-    selfPhone = (By.CSS_SELECTOR, "[ng-model='orderingSelfCtrl.contactsPhone']")
+    selfEmail = (By.XPATH, "//input[@type='email'][@placeholder='например, petrovich@mail.ru']")
+    selfPhone = (By.XPATH, "//input[@type='tel'][@placeholder='+7 (999) 999-99-99']")
     orderUsername = (By.NAME, "user_name")
-    selfCallRequired = (By.CSS_SELECTOR, "input[ng-model='orderingSelfCtrl.order.callRequired']")
-    selfUserComment = (By.CSS_SELECTOR, "textarea[ng-model='orderingSelfCtrl.order.userComment']")
+    selfCallRequired = (By.XPATH, "//label[@for='call--i']//span[(text()='Обязательно нужен звонок оператора')]")
+    selfUserComment = (By.XPATH, "//textarea[@placeholder='В арку налево. До железной двери и стучать. Раньше 6:00 не звонить. На объекте прораб Кузьмич.']")
 
     # Подтверждение заказа
-    submitOrderButtonMain = (By.CSS_SELECTOR, "input[ng-click='orderingSelfCtrl.make($event)']")
-    submitOrderButtonRight = (By.XPATH, "//button[@type='submit'][contains(text(),'Подтвердить заказ')]")
+    submitOrderButton = (By.XPATH, "//button[@class='confirm--send'][(text()='Подтвердить заказ')]")
 
 
 class OrderSelfUrControls(OrderSelfControls):
 
     # Реквизиты компании
-    companyName = (By.CSS_SELECTOR, "input[placeholder='Название']")
-    companyInn = (By.CSS_SELECTOR, "input[placeholder='ИНН']")
-    companyKpp = (By.CSS_SELECTOR, "input[placeholder='КПП']")
+    companyName = (By.XPATH, "//input[@placeholder='Название']")
+    companyInn = (By.XPATH, "//input[@placeholder='ИНН']")
+    companyKpp = (By.XPATH, "//input[@placeholder='КПП']")
 
     # Способы оплаты заказа
-    orderPayLegalNonCash = (By.XPATH, "//span[(text()='По безналичному расчету')]")
-    orderPayLegalCard = (By.CSS_SELECTOR, "input[value='legalCard']")
-    orderPayLegalCash = (By.CSS_SELECTOR, "input[value='legalCash']")
+    orderPayLegalNonCash = (By.XPATH, "//label[@for='pay--legalNonCash'][(text()='По безналичному расчету')]")
+    orderPayLegalCard = (By.XPATH, "//label[@for='pay--legalCard'][(text()='Банковской картой')]")
+    orderPayLegalCash = (By.XPATH, "//label[@for='pay--legalCash'][(text()='За наличный расчет')]")
 
 
 class OrderSelfFizControls(OrderSelfControls):
 
     # Способы оплаты заказа
-    orderPayOnline = (By.XPATH, "//span[(text()='На сайте картой')]")
-    orderPayBase = (By.XPATH, "//span[(text()='На базе или в офисе')]")
-    orderPayPromo = (By.XPATH, "//span[(text()='Баллами Клуба Друзей')]")
-    orderPayDelay = (By.XPATH, "//span[(text()='С отсрочкой на пять дней')]")
+    orderPayOnline = (By.XPATH, "//label[@for='pay--online'][(text()='Картой онлайн')]")
+    orderPayBase = (By.XPATH, "//label[@for='pay--base'][(text()='На базе или в офисе')]")
+    orderPayPromo = (By.XPATH, "//label[@for='pay--promo'][(text()='Баллами Клуба Друзей')]")
+    orderPayDelay = (By.XPATH, "//label[@for='pay--delay'][(text()='С отсрочкой на пять дней')]")

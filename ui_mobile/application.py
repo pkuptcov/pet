@@ -4,6 +4,7 @@ from ui_mobile.fixture.smoke import SmokeHelper
 from ui_mobile.fixture.register import RegisterHelper
 from ui_mobile.fixture.city import CityHelper
 
+
 CHROME_DEFAULT_VERSION = '68'
 
 

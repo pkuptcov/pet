@@ -4,34 +4,21 @@ from selenium.webdriver.common.by import By
 
 class HomeControls:
 
-    # Баннеры
-    bannerTop1 = (By.ID, "desktop_index_top1")
-    bannerTop2 = (By.ID, "desktop_index_top2")
-    bannerTop3 = (By.ID, "desktop_index_top3")
-    bannerSide1 = (By.ID, "desktop_through_side1")
-    bannerSide2 = (By.ID, "desktop_through_side2")
-    bannerInner1 = (By.XPATH, "//img[@src='//s1.petrovich.ru/common/banners/client.png']")
+    # Баннер
+    bannerTop1 = (By.XPATH, "//div[@id='mobile_index_top1']")
 
-    # Блок Петрович ЖЖОТ
-    burnViewAll = (By.XPATH, "//a[@href='/action-type/burns/']")
-    bannerAvailability = (By.CSS_SELECTOR, "div.tooltip_container.product_status_tooltip_container.tooltip_container_open")
+    # Блок с ссылками
+    urlAction = (By.XPATH, "//a[@href='/actions/']//p[(text()='Акции и новинки')]")
+    urlBases = (By.XPATH, "//a[@href='/map-bases/']//p[(text()='Строительные центры')]")
+    urlPropetrovich = (By.XPATH, "//a[@href='https://propetrovich.ru/']//p[(text()='Биржа профессионалов')]")
+    urlPetrovichClub = (By.XPATH, "//a[@href='http://petrovichclub.ru/']//p[(text()='Клуб Друзей')]")
 
-    # Баннер биржи профессионалов
-    bannerPropetrovichClient = (By.XPATH, "//img[@src='//s2.petrovich.ru/common/banners/client.png']")
+    # Кнопка форма оплаты заказа
+    payOrderButton = (By.XPATH, "//div[@class='p--order']//p[(text()='Оплатить заказ')]")
+    payOrderFormInput = (By.XPATH, "//input[@class='pay--number'][@placeholder='ТУЭ00000001']")
+    payOrderFormSubmit = (By.XPATH, "//button[@class='pay--send'][text()='оплатить заказ']")
+    payOrderFormClose = (By.XPATH, "//div[@class='modal--close']")
 
-    # Блок Вам может быть интересно
-    interestingViewAll = (By.XPATH, "//div[@class='rocketRetail--more']")
-    interestingPrevCat = (By.XPATH, "//button[@class='rr-tab-arrow rr-tab-arrow--next']")
-    interestingNextCat = (By.XPATH, "//button[@class='rr-tab-arrow rr-tab-arrow--prev']")
-    interestingAlLCat = (By.XPATH, "//li[@class='rr-tab-item swiper-slide-active']")
-
-    # Блок Новинки
-    noveltyViewAll = (By.XPATH, "//a[@href='/action-type/novelty/'][contains(text(),'Посмотреть все товары')]")
-
-    # Видео
-    video = (By.XPATH, "//source[@src='https://v.petrovich.ru/video/Kitchen_full_v3.mp4']")
-
-    # Рассылка
-    subscribeName = (By.NAME, "subscribeName")
-    subscribeEmail = (By.NAME, "subscribeEmail")
-    subscribeSubmit = (By.XPATH, "//button[@type='submit'][contains(text(),'Подписаться')]")
+    # Блок рассылки
+    subscribeEmail = (By.XPATH, "//input[@class='s--email'][@placeholder='Введите ваш e-mail']")
+    subscribeSubmit = (By.XPATH, "//button[@class='s--send'][text()='Подписаться']")

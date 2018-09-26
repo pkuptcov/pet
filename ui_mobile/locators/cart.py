@@ -4,53 +4,34 @@ from selenium.webdriver.common.by import By
 
 class CartControls:
 
-    # Форма добавить по-быстрому
-    cartFastAddToCart = (By.ID, "add-product-from-cart")
-    cartFastAddToCartSearch = (By.XPATH, "//input[@id='guid']")
-    cartFastAddToCartSudjest101847 = (By.XPATH, "//div[@class='ui-menu-item-wrapper']")
-    cartFastAddToCartQantityInput = (By.XPATH, "//input[@placeholder='1']")
-    cartFastAddToCartQantityUp = (By.XPATH, "//div[@class='fast-add-up stepper-arrow up product__stepper unit--step']")
-    cartFastAddToCartQantityDown = (By.XPATH, "//div[@class='fast-add-down stepper-arrow down product__stepper unit--step']")
-    cartFastAddToCartSubmit = (By.XPATH, "//div[@class='fast-add-button']")
-
     # Работа с корзиной и товарами
-    cartPrint = (By.CSS_SELECTOR, "a.cart_page_print_link")
-    cartSaveEstimate = (By.CSS_SELECTOR, "cart_page_save_link")
-    cartDelete = (By.CSS_SELECTOR, "a.cart_row_delete_link")
-    cartDeleteAll = (By.CSS_SELECTOR, "a.cart_page_delete_all_link")
-    cartSelectUr = (By.XPATH, "//a[(text()='Юридическое лицо')]")
-    cartSelectFiz = (By.XPATH, "//a[(text()='Физическое лицо')]")
-    cartDeleteAllConfirm = (By.XPATH, "//button[@class='confirm']")
-    cartDeleteAllCancel = (By.XPATH, "//button[@class='cancel']")
-    cartUpQty = (By.CSS_SELECTOR, "span.stepper-arrow.up")
-    cartDownQty = (By.CSS_SELECTOR, "span.stepper-arrow.down")
-    cartEnterQty = (By.NAME, "product_id")
-
-    # Форма сертификатов Высшей Лиги
-    cartCouponWhere = (By.XPATH, "//a[contains(text(),'Куда ввести номер сертификата?')]")
-    cartCouponInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.couponValue']")
-    cartCouponSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.checkVerifyCoupon($event)']")
+    cartSaveEstimate = (By.XPATH, "//p[(text()='Сохранить смету')]")
+    cartSaveEstimateName = (By.XPATH, "//input[@placeholder='Название для сметы']")
+    cartSaveEstimateSubmit = (By.XPATH, "//button[(text()='Сохранить')]")
+    cartSaveEstimateCancel = (By.XPATH, "//button[(text()='Отменить')]")
+    cartProductSelect = (By.XPATH, "(//div[@class='block--goods-preview'])[1]")
+    cartDelete = (By.XPATH, "(//p[@class='delete--item'])[1]")
+    cartDeleteAll = (By.XPATH, "//p[(text()='Удалить все товары')]")
+    cartSelectUr = (By.XPATH, "//p[(text()='Юридическое лицо')]")
+    cartSelectFiz = (By.XPATH, "//p[(text()='Физическое лицо')]")
+    cartDeleteAllConfirm = (By.XPATH, "//div[@class='confirmation--button confirmation--button-true js--button']")
+    cartDeleteAllCancel = (By.XPATH, "//div[@class='confirmation--button confirmation--button-false js--button']")
+    cartUpQty = (By.XPATH, "(//div[@class='c--plus'])[1]")
+    cartDownQty = (By.CSS_SELECTOR, "(//div[@class='c--minus'])[1]")
+    cartEnterQty = (By.XPATH, "(//div[@class='c--input'])[1]")
 
     # Блок с суммой заказа и выбором доставки / покупки
-    cartOrderDelivery = (By.XPATH, "//span[(text()='Доставка')]")
-    cartOrderSelf = (By.XPATH, "//span[(text()='Самовывоз')]")
+    cartOrderDelivery = (By.XPATH, "//label[(text()='Доставка')]")
+    cartOrderSelf = (By.XPATH, "//label[(text()='Самовывоз')]")
+    cartOrderPrice = (By.XPATH, "//p[@class='total--price cart--total-price ng-binding']")
     cartOrderInit = (By.XPATH, "//button[(text()='Оформить')]")
-    cartOrderPrice = (By.CSS_SELECTOR, ".cart_total_container_universal_sum_price")
 
 
 class CartControlsFiz(CartControls):
 
     # Форма карты клуба друзей
-    cartCardInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.cardInput']")
-    cartCardSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.addCard()']")
+    cartCardInput = (By.XPATH, "//input[@placeholder='№ карты']")
+    cartCardSubmit = (By.XPATH, "//button[@class='card--send']")
     cartCardHowGet = (By.XPATH, "//a[(text()='Как получить карту?')]")
-    cartCardChange = (By.XPATH, "//a[(text()='Изменить')]")
-    cartCardDelete = (By.XPATH, "//a[(text()='Удалить')]")
-    cartCardPin = (By.XPATH, "//a[contains(text(),'Ввести пин-код карты Клуба Друзей')]")
-
-
-class CartControlsUr(CartControls):
-
-    # Форма карты клуба друзей
-    cartInnInput = (By.CSS_SELECTOR, "input[ng-model='totalCtrl.innValue']")
-    cartInnSubmit = (By.CSS_SELECTOR, "button[ng-click='totalCtrl.checkVerifyInn($event)']")
+    cartCardChange = (By.XPATH, "//p[@class='enter--card']")
+    cartCardDelete = (By.XPATH, "//p[@class='delete--card']")

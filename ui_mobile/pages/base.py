@@ -24,3 +24,15 @@ class BasePage:
         self.wait.until(EC.visibility_of_element_located((selector_type, selector)))
         self.wait.until(EC.element_to_be_clickable((selector_type, selector)))
         return self.wd.find_element(selector_type, selector)
+
+    def check(self, selector_type, selector):
+        self.wait.until(EC.presence_of_element_located((selector_type, selector)))
+        self.wait.until(EC.visibility_of_element_located((selector_type, selector)))
+        self.wait.until(EC.element_to_be_clickable((selector_type, selector)))
+
+
+
+
+    # def check(self, selector_type, selector, value):
+    #     element = self.find_element(selector_type, selector)
+    #     assert element.value
