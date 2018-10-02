@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.cabinet import CabinetEstimatesControls
-from ui_desktop.locators.cabinet import CabinetExpenseControls
-from ui_desktop.locators.cabinet import CabinetOrderControls
-from ui_desktop.locators.cabinet import CabinetOrderListControls
-from ui_desktop.locators.cabinet import CabinetProfileControls
-from ui_desktop.locators.cabinet import CabinetProjectsControls
-from ui_desktop.pages.base import BasePage
+from ui_mobile.locators.cabinet import CabinetOrderControls
+from ui_mobile.locators.cabinet import CabinetOrderListControls
+from ui_mobile.locators.cabinet import CabinetProfileControls
+from ui_mobile.pages.base import BasePage
 
 
 class CabinetOrderPage(BasePage):

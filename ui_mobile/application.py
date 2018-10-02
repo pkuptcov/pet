@@ -3,6 +3,20 @@ from ui_mobile.pages.session import Session
 from ui_mobile.fixture.smoke import SmokeHelper
 from ui_mobile.fixture.register import RegisterHelper
 from ui_mobile.fixture.city import CityHelper
+from ui_mobile.pages.cart import CartPageFiz
+from ui_mobile.pages.cart import CartPage
+from ui_mobile.pages.catalog import CatalogPage
+from ui_mobile.pages.cabinet import CabinetOrderPage
+from ui_mobile.pages.header import HeaderBlock
+from ui_mobile.pages.authorization import AuthorizationPage
+from ui_mobile.pages.authorization import ForgotPasswordPage
+from ui_mobile.pages.authorization import RegisterPage
+from ui_mobile.pages.order_delivery import OrderDeliveryFizPage
+from ui_mobile.pages.order_delivery import OrderDeliveryUrPage
+from ui_mobile.pages.order_self import OrderSelfFizPage
+from ui_mobile.pages.order_self import OrderSelfUrPage
+from ui_mobile.pages.search_product import SearchBlock
+from ui_mobile.pages.thanks import ThanksPage
 
 
 CHROME_DEFAULT_VERSION = '68'
@@ -31,6 +45,20 @@ class Application:
         self.smoke = SmokeHelper(self)
         self.register = RegisterHelper(self)
         self.city = CityHelper(self)
+        self.cart = CartPage(self)
+        self.cart_fiz = CartPageFiz(self)
+        self.catalog = CatalogPage(self)
+        self.cabinet = CabinetOrderPage(self)
+        self.header = HeaderBlock(self)
+        self.authorization = AuthorizationPage(self)
+        self.authorization = ForgotPasswordPage(self)
+        self.authorization = RegisterPage(self)
+        self.order_delivery_fiz = OrderDeliveryFizPage(self)
+        self.order_delivery_ur = OrderDeliveryUrPage(self)
+        self.order_self_fiz = OrderSelfFizPage(self)
+        self.order_self_ur = OrderSelfUrPage(self)
+        self.search_product = SearchBlock(self)
+        self.thanks = ThanksPage(self)
 
     def get_webdriver(self):
         if self.browser == 'chrome':

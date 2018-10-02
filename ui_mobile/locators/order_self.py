@@ -59,6 +59,15 @@ class OrderSelfControls:
     # Подтверждение заказа
     submitOrderButton = (By.XPATH, "//button[@class='confirm--send'][(text()='Подтвердить заказ')]")
 
+    # Раскрыть пункты
+    orderBase = (By.XPATH, "//p[(text()='Выберите строительный центр')]")
+    orderAdditionalSevices = (By.XPATH, "//p[(text()='Дополнительные услуги')]")
+    orderPaymentType = (By.XPATH, "//p[(text()='Способ оплаты')]")
+    orderEmail = (By.XPATH, "//p[(text()='Ваша электронная почта')]")
+    orderPhone = (By.XPATH, "//p[(text()='Телефон для звонков и СМС')]")
+    orderComment = (By.XPATH, "//p[(text()='Комментарии к заказу')]")
+    orderAboutCompany = (By.XPATH, "//p[(text()='Информация о компании')]")
+
 
 class OrderSelfUrControls(OrderSelfControls):
 

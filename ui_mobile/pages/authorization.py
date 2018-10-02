@@ -1,7 +1,7 @@
-from ui_desktop.pages.base import BasePage
-from ui_desktop.locators.auth_form import RegisterControls
-from ui_desktop.locators.auth_form import AuthorizationControls
-from ui_desktop.locators.auth_form import ForgotPasswordControls
+from ui_mobile.pages.base import BasePage
+from ui_mobile.locators.auth_form import RegisterControls
+from ui_mobile.locators.auth_form import AuthorizationControls
+from ui_mobile.locators.auth_form import ForgotPasswordControls
 
 
 class AuthorizationPage(BasePage):

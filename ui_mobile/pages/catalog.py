@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.catalog import CatalogControls
-from ui_desktop.pages.base import BasePage
+from ui_mobile.locators.catalog import CatalogControls
+from ui_mobile.pages.base import BasePage
 
 
 class CatalogPage(BasePage):
@@ -19,18 +19,8 @@ class CatalogPage(BasePage):
         self.click(*self.controls.catalogProductName)
 
     def sort(self):
-        self.click(*self.controls.catalogSortPrice)
-        self.click(*self.controls.catalogSortTitle)
-        self.click(*self.controls.catalogSortAccordance)
-        self.click(*self.controls.catalogSortUsefulness)
-
-    def view(self):
-        self.click(*self.controls.catalogViewTile)
-        self.click(*self.controls.catalogViewList)
-
-    def compare(self):
-        self.click(*self.controls.catalogProductCompare)
-
-    def select_base(self):
-        self.click(*self.controls.catalogSubdivision)
-        self.click(*self.controls.catalogSubdivisionAll)
+        self.click(*self.controls.catalogSort)
+        self.click(*self.controls.catalogSortPriceAsc)
+        self.click(*self.controls.catalogSortPriceDesc)
+        self.click(*self.controls.catalogSortTitleAsc)
+        self.click(*self.controls.catalogSortTitleDesc)

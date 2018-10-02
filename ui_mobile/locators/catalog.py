@@ -51,7 +51,7 @@ class CatalogControls:
     # Выбор кол-ва товара
     catalogProductQuantityDown = (By.XPATH, "(//div[@class='c--minus c--stepper unit--step'])[1]")
     catalogProductQuantityUp = (By.XPATH, "(//div[@class='c--plus  c--stepper unit--step'])[1]")
-    catalogProductQuantityInput = (By.XPATH, "(//div[@class='c--input'])[1]")
+    catalogProductQuantityInput = (By.XPATH, "(//div[@class='c--input']//input[@class='cc--i unit--input'])[1]")
 
     # Альтернативные единицы измерения
     catalogAlterM2 = (By.XPATH, "(//p[(text()='За м2')])[1]")
@@ -61,7 +61,7 @@ class CatalogControls:
     catalogAlterPack = (By.XPATH, "(//p[(text()='за упаковку')])[1]")
 
     # Кнопка добавления в корзину
-    catalogAddToCart = (By.XPATH, "(//button[(text()=' В корзину ')])[1]")
+    catalogAddToCart = (By.XPATH, "(//button[(text()='В корзину')])[1]")
 
     # Кнопка "В козине"
     catalogAlreadyInCart = (By.XPATH, "(//button[(text()='В корзине')])[1]")

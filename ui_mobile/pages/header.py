@@ -1,33 +1,19 @@
 # -*- coding: utf-8 -*-
-from ui_desktop.locators.header import HeaderControls
-from ui_desktop.pages.base import BasePage
+from ui_mobile.locators.header import HeaderControls
+from ui_mobile.pages.base import BasePage
 
 
 class HeaderBlock(BasePage):
     controls = HeaderControls
 
-    def auth_link(self):
-        self.click(*self.controls.authLink)
+    def left_swipe(self):
+        self.click(*self.controls.leftMenu)
 
-    def reg_link(self):
-        self.click(*self.controls.registrationLink)
-
-    def map_bases_link(self):
-        self.click(*self.controls.headerBuildCenter)
-
-    def delivery_lift_link(self):
-        self.click(*self.controls.headerDeliveryAndLift)
-
-    def return_link(self):
-        self.click(*self.controls.headerReturn)
-
-    def services_link(self):
-        self.click(*self.controls.headerAllServices)
-
-    def select_region(self):
-        self.click(*self.controls.headerRegionSelect)
+    def right_swipe(self):
+        self.click(*self.controls.headerBasket)
 
     def select_msk(self):
+        self.click(*self.controls.headerRegionSelect)
         self.click(*self.controls.headerRegionMsk)
 
     def logo_link(self):
@@ -35,9 +21,7 @@ class HeaderBlock(BasePage):
 
     def cart_link(self):
         self.click(*self.controls.headerBasket)
+        self.click(*self.controls.headerBasketGoToCart)
 
-    def novelty_link(self):
-        self.click(*self.controls.headerNovelty)
-
-    def actions_link(self):
-        self.click(*self.controls.headerActions)
+    def phone_link(self):
+        self.click(*self.controls.headerPhoneNumber)
