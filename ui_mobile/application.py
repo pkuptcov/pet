@@ -29,22 +29,19 @@ class Application:
         self.version = version
         self.url = url
 
-        self.wd = webdriver.Chrome()
-        self.wd.set_window_size(1920, 1080)
+        # self.wd = webdriver.Chrome()
+        # self.wd.set_window_size(1920, 1080)
 
         if browser not in ['chrome']:
             raise Exception('{} browser is not supported'.format(browser))
 
-        # hub_url, capabilities = self.get_webdriver()
-        # self.wd = webdriver.Remote(
-        #     command_executor=hub_url,
-        #     desired_capabilities=capabilities)
-        # self.wd.set_window_size(1920, 1080)
+        hub_url, capabilities = self.get_webdriver()
+        self.wd = webdriver.Remote(
+            command_executor=hub_url,
+            desired_capabilities=capabilities)
+        self.wd.set_window_size(1920, 1080)
 
         self.session = Session(self)
-        self.smoke = SmokeHelper(self)
-        self.register = RegisterHelper(self)
-        self.city = CityHelper(self)
         self.cart = CartPage(self)
         self.cart_fiz = CartPageFiz(self)
         self.catalog = CatalogPage(self)
