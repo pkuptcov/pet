@@ -39,4 +39,3 @@ def test_self(app, settings):
     app.order_self.submit_order()
     app.thanks.order_link()
     app.session.logout()
-
