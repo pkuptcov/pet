@@ -19,18 +19,18 @@ class RegisterControls:
 class AuthorizationControls:
 
     # Форма авторизации
-    authLogin = (By.ID, "mainPetrovichLogin_login")
-    authPassword = (By.ID, "mainPetrovichLogin_password")
+    authLogin = (By.NAME, "login")
+    authPassword = (By.NAME, "password")
     authRemember = (By.NAME, "remember")
-    authSubmitButton = (By.XPATH, "//button[(text()='Вход')]")
-    authClose = (By.CSS_SELECTOR, "svg.ic.ic_close")  # or "use"
-    authForgotPasswordLink = (By.LINK_TEXT, "Получить пароль")
+    authSubmitButton = (By.XPATH, "//input[@value='Вход']")
+    authClose = (By.XPATH, "//span[@class='header-forms__close-btn']//*[@id='close']")
+    authForgotPasswordLink = (By.LINK_TEXT, "Забыли пароль?")
 
 
 class ForgotPasswordControls:
 
     # Форма восстановления пароля
     getPasswordEmail = (By.NAME, "email_restore")
-    getPasswordSubmit = (By.XPATH, "//button[contains(text(),'Выслать')]")
+    getPasswordSubmit = (By.XPATH, "//input[@value='Выслать']")
     getPasswordAuthLink = (By.CSS_SELECTOR, "a.form_open_link-forgot")
-    getPasswordClose = (By.CSS_SELECTOR, "svg.ic.ic_close")  # or "use"
+    getPasswordClose = (By.XPATH, "//span[@class='header-forms__close-btn']//*[@id='close']")
